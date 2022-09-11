@@ -1,0 +1,210 @@
+
+#Window_Controls{
+  display: flex;
+  position: absolute;
+  --Width: calc(32em/7);
+  width: var(--Width); 
+  padding: calc(32em/40);
+}
+
+.Window_Control_Buttons{
+  display: flex;
+  margin: 4%;
+  --Diameter: 18%;
+  width: var(--Diameter);
+  aspect-ratio: 1 / 1;
+  background-color: red;
+  border-radius: 100%;
+  border: 0.05em solid rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 50%;
+  font-weight: bold;
+  color: rgba(0,0,0,0.3);
+  /* box-shadow: inset 0 -0.1rem 0.5rem 0 rgba(0,0,0,0.2); */
+  transition: 0.02s;
+}
+
+#Close_Symbol{
+  height: 100%;
+  width: 100%;
+  background-image: url('./Assets/Close.svg');
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0);
+}
+
+#Close_Symbol:hover{
+  filter: opacity(1);
+}
+
+#Minimize_Symbol{
+  height: 100%;
+  width: 100%;
+  background-image: url('./Assets/Minimize.svg');
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0);
+}
+
+#Minimize_Symbol:hover{
+  filter: opacity(1);
+}
+
+#Maximize_Symbol{
+  height: 100%;
+  width: 100%;
+  background-image: url('./Assets/Maximize.svg');
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0);
+}
+
+#Maximize_Symbol:hover{
+  filter: opacity(1);
+}
+
+#Close_About_Window_Button{
+  background-color: rgba(237,106,94,1);
+}
+
+#Minimize_About_Window_Button{
+  background-color: rgba(244,191,79,1);
+  background-color: grey;
+  filter: opacity(0.3);
+}
+
+#Maximize_About_Window_Button{
+  background-color: rgba(98,196,85,1);
+  background-color: grey;
+  filter: opacity(0.3);
+}
+
+.About_Card{
+  position: absolute;
+  color: black;
+  --Height: 18em;
+  --Width: 32em;
+  height: var(--Height);
+  width: var(--Width);  
+  top: calc(50% - var(--Height)/2 - 1.5em);
+  left: calc(50% - var(--Width)/2);
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 0.5em;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(3em);
+  backdrop-filter: blur(3em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  transform: scale(0);
+  transition: 0.1s ease;
+  font-size: min(2vw,20px);
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 0.25fr;
+  grid-template-rows: 2fr 0.5fr repeat(10,1fr) 4fr;
+  color: rgb(65,65,65);
+  will-change: opacity, transform;
+} 
+
+.Show_About_Card{
+  transform: scale(1);
+  transition: 0.1s ease;
+}
+
+.About_Details{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    grid-column: 2 / span 3;
+}
+
+#Tab_Bar{
+  display: grid;
+  grid-gap: 0.2em;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5,1fr);
+  position: relative;
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 1;
+  padding: 1em 5em 1em 5em;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  opacity: 0;
+}
+
+.Tab_Bar_Items{
+  display: flex;
+  /* border: 0.2px solid rgba(255,255,255,0.2); */
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  font-size: 0.5em;
+  color: rgb(45,45,45);
+  padding: 0.6em;
+  border-radius: 0.25em;
+  background-color: rgba(0,0,0,0.05);
+}
+
+#About_Card_Title{
+  display: flex;
+  align-items: flex-end;
+  grid-column: 2 / span 3;
+  font-size: 1.3em;
+}
+
+#Image_Container{
+  display: flex;
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 13;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+#Circle_Mask{
+  display: flex;
+  position: relative;
+  background-color: gray;
+  height: min(20vw,10em);
+  width: min(20vw,10em); 
+  border-radius: 100%;
+  border: 0.32em solid rgba(220,220,220,1);
+  box-sizing: border-box;
+  box-shadow: 0 0.1em 0.2em 0.1em rgba(0,0,0,0.15); 
+  background-image: url("./Assets/Circle_Image.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.Detail_Buttons{
+  display: flex;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7em;
+  border-radius: 0.35em;
+  margin-right: 1em;
+  left: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(60,60,60);
+  background-color: rgba(255,255,255,0.35);
+  box-shadow: 0 0.1em 0.1em 0 rgba(0,0,0,0.05);
+  padding: 0.3em;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+

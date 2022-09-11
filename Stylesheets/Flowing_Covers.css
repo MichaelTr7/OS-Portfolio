@@ -1,0 +1,101 @@
+
+.Album_Covers{  
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0.2s;
+  transform: scale(1);
+  border-radius: 0.2em;
+  background-size: 102%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+#Album_0,#Album_3{
+  background-image: url("./Assets/Pac-Man.png");
+}
+
+#Album_1,#Album_4{
+  position: absolute;
+  background-image: url("./Assets/Autobots Icon.png");
+}
+
+#Album_2,#Album_5{
+  background-image: url("./Assets/Mario Coin.png");
+}
+
+.State_0{
+  left: 0%;
+  top: 0%;
+  animation: Expand_Keyframes 0.5s ease forwards;
+}
+
+.State_1{
+  left: -100%;
+  top: 0%;
+}
+
+.State_2{
+  left: -100%;
+  top: -100%;
+}
+
+.State_3{
+  left: 0%;
+  top: -100%;
+}
+
+.State_4{
+  left: 100%;
+  top: -100%;
+}
+
+.State_5{
+  left: 100%;
+  top: 0%;
+}
+
+#Album_Cover{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0.2s;
+  background-color: blue;
+  background-image: url("./Assets/Mario Coin.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@keyframes Expand_Keyframes {
+  from{transform: scale(0.5);}
+  to{transform: scale(1);}
+}
+
+.Slide_Album_Animation{
+  animation: Slide_Album_Keyframes 1s ease forwards; 
+}
+
+@keyframes Slide_Album_Keyframes {
+  0%{}
+  20%{transform: translateX(100%) translateY(0%); opacity: 0;}
+  40%{transform: translateX(100%) translateY(-100%);}
+  60%{transform: translateX(-100%) translateY(-100%);}
+  80%{transform: translateX(-100%)  translateY(0%);}
+  100%{transform: translateX(0%) translateY(0%); opacity: 1;}
+}
+
+
+
+
+
+
+
+
+

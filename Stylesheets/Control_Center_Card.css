@@ -1,0 +1,461 @@
+:root{
+  --Control_Center_Scaling_Factor: 1.6;
+}
+
+.Control_Center_Card{
+  --Spacing: 0.5em;
+  --Width: 18em;
+  --Control_Center_Scaling_Factor: 1.6;
+  display: grid;
+  grid-gap: var(--Spacing);
+  padding: var(--Spacing);
+  grid-template-rows: repeat(10,calc(1em * var(--Control_Center_Scaling_Factor))) calc(1.6em * var(--Control_Center_Scaling_Factor));
+  grid-template-columns: repeat(8,calc(1em * var(--Control_Center_Scaling_Factor)));
+  position: absolute;
+  color: black;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 1em;
+  top: 2.3em;
+  right: 0.3em;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  transform: translateX(18em);
+  opacity: 0;
+  transition: 0.2s;
+  box-sizing: border-box;
+  z-index: 50;
+  /* transform: translateX(0);
+  opacity: 1; */
+}
+
+.Show_Control_Center_Card{
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.Control_Centre_Divisions{
+  background-color: rgba(255,255,255,0.2);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.6em;
+  box-shadow: 0em 0.1em 0.3em 0.02em rgba(0,0,0,0.1);
+}
+
+#Main_Toggles_Container{
+  position: relative;
+  grid-row: 1 / span 4;
+  grid-column: 1 / span 4;
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: 1fr 3fr;
+  overflow: hidden;
+  grid-gap: 0.2em;
+  padding: 0.6em;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.Circle_Control_Center_Toggles{
+  position: relative;
+  background-color: blue; 
+  aspect-ratio: 1 / 1;
+  height: 1.6em;
+  border-radius: 100%;
+  background-color: rgba(0,0,0,0.1);
+  transition: 0.15s;
+}
+
+#Control_Center_FileDrop_Icon{
+  position: absolute;
+  --Diameter: 50%;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  transform: scale(1.3);
+}
+
+#Control_Center_Bluetooth_Icon{
+  position: absolute;
+  --Diameter: 60%;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+}
+
+#Control_Center_Do_Not_Disturb_Icon{
+  position: absolute;
+  --Diameter: 110%;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+}
+
+.Main_Toggle_Heading{
+  display: flex;
+  font-size: 0.6em;
+  font-weight: bolder;
+  padding-left: 0.7em;
+  align-items: center;
+  color: rgb(0,0,0,0.7);
+}
+
+.Main_Toggle_Subheadings > span{
+  font-weight: normal;
+  color: rgb(0,0,0,0.5);
+}
+
+#Do_Not_Disturb_Container{
+  grid-row: 1 / span 2;
+  grid-column: 5 / span 4;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 3fr;
+  overflow: hidden;
+  grid-gap: 0.2em;
+  padding: 0.6em;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+#Do_Not_Disturb_Circle{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  /* background-image: url("./Assets/Moon.svg"); */
+}
+
+#Keyboard_Brightness_Container{
+  position: relative;
+  grid-row: 3 / span 2;
+  grid-column: 5 / span 2;
+  overflow: hidden;
+}
+
+#Control_Center_Keyboard_Brightness_Icon{
+  position: absolute;
+  --Size: 38%;
+  height: var(--Size);
+  width: var(--Size);
+  top: calc(29% - var(--Size)/2);
+  left: calc(50% - var(--Size)/2);
+}
+
+#Screen_Mirroring_Container{
+  position: relative;
+  grid-row: 3 / span 2;
+  grid-column: 7 / span 2;
+  overflow: hidden;
+  transition: 0.15s;
+}
+
+#Control_Center_Screen_Mirroring_Icon{
+  position: absolute;
+  --Size: 38%;
+  height: var(--Size);
+  width: var(--Size);
+  top: calc(30% - var(--Size)/2);
+  left: calc(50% - var(--Size)/2);
+}
+
+.Function_Labels{
+  position: absolute;
+  display: flex;
+  height: 50%;
+  top: 45%;
+  font-size: 0.6em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(0,0,0,0.7);
+  padding: 0.3em;
+  box-sizing: border-box;
+}
+
+#Display_Container{
+  grid-row: 5 / span 2;
+  grid-column: 1 / span 8;
+  padding: 0.4em;
+  box-sizing: border-box;
+}
+
+#Sound_Container{
+  position: relative;
+  grid-row: 7 / span 2;
+  grid-column: 1 / span 8;
+  padding: 0.4em;
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Slider_Containers{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  background-color: rgb(35,35,35,);
+}
+
+.Slider_Labels{
+  display: flex;
+  height: calc(37%);
+  margin-left: -0.25em;
+  font-size: 0.7em;
+  font-weight: bolder;
+  padding-left: 0.7em;
+  align-items: center;
+  color: rgb(0,0,0,0.7);
+  align-items: center;
+}
+
+
+#Display_Slider[disabled],#Sound_Slider[disabled]{
+  -webkit-appearance: none; 
+  background-color: rgb(0,197,185);
+  opacity: 1;
+}
+
+#Display_Slider::-webkit-slider-thumb,#Sound_Slider::-webkit-slider-thumb{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 1000px;
+  border: 0.06em solid rgba(0,0,0,0.15);
+  background-color: rgba(250,250,250,1);
+  transition: width 0.5s, height 0.5s, border-radius 0.5s;
+  box-shadow: -0.01em 0em 0.2em 0.0em rgba(0,0,0,0.07);
+  filter: brightness(1);
+}
+
+#Display_Slider::-moz-range-thumb,#Sound_Slider::-moz-range-thumb{
+
+}
+
+#Display_Slider,#Sound_Slider{
+  position: absolute;
+  left: 0;
+  -webkit-appearance: none;
+  border-radius: 1000px;
+  width: 97.5%;
+  bottom: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right, rgba(250,250,250,1) 0%, rgba(250,250,250,1) 77.5%, rgba(0,0,0,0.1) 77.5%, rgba(0,0,0,0.1) 100%);
+  box-shadow: 0em 0em 0em 0.1em rgba(0,0,0,0.1);
+}
+
+#Sound_Slider{
+  width: calc(100% - 1.6em - 0.6em - 0.6em);
+}
+
+.Audio_Selector{
+  position: absolute;
+  bottom: 0;
+  right: 0.35em;
+  aspect-ratio: 1 / 1;
+  height: 1.6em;
+  border-radius: 100%;
+  background-color: rgba(0,0,0,0.1);  
+  transition: 0.2s;
+}
+
+#Audio_Selector_Icon,#Audio_Selector_Icon_Part_2{
+  transition: 0.2s;
+}
+
+#Control_Center_Audio_Selector_Icon{
+  position: absolute;
+  --Diameter: 65%;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(55% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  transition: 0.2s;
+}
+
+#Music_Player_Container{
+  justify-content: center;
+  align-items: center;
+  grid-row: 9 / span 2;
+  grid-column: 1 / span 8;
+  overflow: hidden;
+  display: grid;
+  grid-gap: 0.6em;
+  grid-template-columns: 1fr 4fr 0.6fr 0.6fr;
+  padding: 0.6em;
+  padding-right: 1em;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+#Play_Button,#Fast_Forward_Button{
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+#Play_Button{
+  background-size: 60% 50%;
+}
+
+.Play_Button{
+  background-image: url('./Assets/Play.svg');
+}
+
+.Toggle_Pause{
+  background-size: 50% 50%;
+  background-image: url('./Assets/Pause.svg');
+}
+
+#Fast_Forward_Button{
+  background-size: 100% 50%;
+  background-image: url('./Assets/Fast_Forward.svg');
+}
+
+
+#Album_Art{
+  position: relative;
+  background-color: rgba(0,0,0,0.1);
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.2em;
+  overflow: hidden;
+}
+
+#Battery_Percentage_Container{
+  position: relative;
+  grid-row: 11 / span 1;
+  grid-column: 1 / span 3;
+}
+
+#Control_Center_Battery_Percentage_Icon{
+  position: absolute;
+  --Size: 75%;
+  height: var(--Size);
+  width: var(--Size);
+  top: calc(50% - var(--Size)/2);
+  left: calc(48.5% - var(--Size)/2);
+}
+
+
+#Accessibility_Container{
+  position: relative;
+  grid-row: 11 / span 1;
+  grid-column: 4 / span 2;
+  width: calc(1.6em * 1.6);
+  transition: 0.2s;
+}
+
+#Control_Center_Accessibility_Icon{
+  position: absolute;
+  --Diameter: 57%;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  
+}
+
+#Control_Center_WIFI_Icon{
+  position: relative;
+  --Size: 60%;
+  height: var(--Size);
+  width: var(--Size);
+  top: calc(50% - var(--Size)/2);
+  left: calc(50% - var(--Size)/2);  
+}
+
+
+.Control_Centre_Main_Toggle_Touch_Zones{
+  position: absolute;
+  height: calc(100%/3);
+  width: 100%; 
+  left: 0;
+}
+
+#Main_Toggle_Touch_Zone_1{
+  top: 0;
+}
+
+#Main_Toggle_Touch_Zone_2{
+  top: calc(100% * 1/3);
+}
+
+#Main_Toggle_Touch_Zone_3{
+  top: calc(100% * 2/3);
+}
+
+.White_Fill_Toggle{
+  fill-opacity: 1;
+  fill: white;
+}
+
+.Main_Toggle_Symbols{
+  transition: 0.15s;
+}
+
+.Main_Toggle_Background{
+  background-color: #2075FB;
+}
+
+.Toggle_Purple_Background{
+  background-color: #595AD3;  
+  animation: Moon_Spin_Frames 0.15s linear forwards;
+}
+
+@keyframes Moon_Spin_Frames {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+#Keyboard_Brightness_Meter{
+  --Margin: 0rem;
+  position: absolute;
+  height: calc(100% - 2 * var(--Margin));
+  width: calc(100% - 2 * var(--Margin));
+  top: var(--Margin);
+  left: var(--Margin);
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(255,255,255,0.85) 50%);
+  background-size: 100% 200%;
+  background-position:  0% 0%;  
+  transition: 0.2s;
+}
+
+.Toggle_Screen_Mirroring{
+  background-color: rgba(255,255,255,0.85);
+  transition: 0.2s;
+}
+
+.Toggle_Audio_Selector{
+  background-color: rgba(59,115,242); 
+  transition: 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

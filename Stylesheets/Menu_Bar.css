@@ -1,0 +1,72 @@
+
+#Menu_Bar{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6em 5fr 2em 3.8em 2em 8em;
+  position: fixed;
+  top: 0;
+  color: rgba(0,0,0,0.4);
+  height: 2em;
+  width: 100vw;
+  background-color: rgba(225,225,232,0.5);
+  -webkit-backdrop-filter: blur(30em);
+  font-weight: bold;
+  z-index: 5;
+  -webkit-backdrop-filter: blur(2em);
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  box-sizing: border-box;
+  backdrop-filter: blur(30em);
+}
+
+.Menu_Bar_Buttons{
+  display: flex;
+  text-align: center;
+  color: rgba(0,0,0,0.4);
+  height: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  font-weight: normal;
+}
+
+.Menu_Bar_Buttons:nth-child(1){
+  font-weight: bold;
+}
+
+#Network_Button{
+  background-image: url("./Assets/WIFI_1.svg");
+  background-size: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Menu_Bar_Buttons:hover{
+  background-color: rgba(0,0,0,0.1);
+  cursor: default;
+}
+
+#Battery_Button{
+  background-image: url("./Assets/Battery_Icon_2.svg");
+  background-size: 100%;
+  background-position: 50% 55%;
+  background-repeat: no-repeat;
+}
+
+#Notification_Button{
+  background-image: url("./Assets/Notification_Centre.svg");
+  background-size: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+

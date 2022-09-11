@@ -1,0 +1,33 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_110_6)">
+<rect width="500" height="500" rx="250" fill="url(#paint0_linear_110_6)"/>
+<circle cx="334.14" cy="138.513" r="67.584" fill="white" fill-opacity="0.5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M274.862 318.378L162 186L-218 632.914H5.44923L-45.6512 692.574H715.376L336 247L274.862 318.378Z" fill="#3F07B8"/>
+<path d="M336 247L404.484 497.434L93 521.68L336 247Z" fill="#940BDD"/>
+<path d="M162 186L264 550.5L-81 463.68L162 186Z" fill="#940BDD"/>
+<circle cx="88.5" cy="116.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="220.5" cy="157.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="249.5" cy="201.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="444.5" cy="162.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="156.5" cy="148.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="187.5" cy="103.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="438.842" cy="282.026" r="4.5" transform="rotate(-14.4828 438.842 282.026)" fill="white" fill-opacity="0.2"/>
+<circle cx="454.482" cy="229.483" r="4.5" transform="rotate(-14.4828 454.482 229.483)" fill="white" fill-opacity="0.2"/>
+<circle cx="402.158" cy="211.974" r="4.5" transform="rotate(-14.4828 402.158 211.974)" fill="white" fill-opacity="0.2"/>
+<circle cx="147.5" cy="71.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="244.5" cy="88.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="224.5" cy="42.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="316.5" cy="42.5" r="4.5" fill="white" fill-opacity="0.2"/>
+<circle cx="39.658" cy="218.044" r="4.5" transform="rotate(60 39.658 218.044)" fill="white" fill-opacity="0.2"/>
+<circle cx="97.342" cy="163.956" r="4.5" transform="rotate(60 97.342 163.956)" fill="white" fill-opacity="0.2"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_110_6" x1="250" y1="3.27033e-06" x2="140.266" y2="530.935" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D17FB9"/>
+<stop offset="0.951651" stop-color="#D2BED7"/>
+</linearGradient>
+<clipPath id="clip0_110_6">
+<rect width="500" height="500" rx="250" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,171 @@
+
+.Network_Card{
+  display: grid;
+  grid-template-rows: 2.5em 0.535em 1.5em 2em 2em 0.535em 1.5em 0.535em 1.5em;
+  grid-template-columns: repeat(10,1fr);
+  position: absolute;
+  color: black;
+  height: 12.84em;
+  width: 14em;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 0.5em;
+  top: 2.3em;
+  right: 1.3em;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  transform: translateX(18em);
+  opacity: 0;
+  transition: 0.2s;
+  overflow: hidden;
+  transition: 0.2s;
+  z-index: 52;
+}
+
+.Network_Card_Collapsed{
+  height: 2.5em;
+  height: 12.84em;
+}
+
+.Show_Network_Card{
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#Wifi_Label,#Preferred_Networks_Label,#Other_Networks_Label,#Network_Preferences_Label{
+  display: flex;
+  font-size: 0.8em;
+  grid-column: 1 / span 7;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 1em;
+  font-weight: bold;
+  font-family: Arial;
+  color: rgb(65,65,65);
+}
+
+.Station_Toggle_Buttons{
+  grid-column: 8 / span 3;
+  height: 100%;
+  width: 135%;
+}
+
+.Wifi_Card_Spacers{
+  display: flex;
+  grid-column: 1 / span 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.Horizontal_Rules{
+  height: 0.05em;
+  width: 90%;
+  background-color: rgba(0,0,0,0.1);
+}
+
+#Preferred_Networks_Label,#Other_Networks_Label{
+  font-size: 0.78em;
+  color: rgba(0,0,0,0.4);
+}
+
+#Network_Preferences_Label{
+  font-size: 0.78em;
+  color: rgb(65,65,65);
+  font-weight: normal;
+}
+
+.WIFI_Symbols{
+  display: flex;
+  position: relative;
+  --Diameter: 1.5em;
+  background-color: #2075FB;
+  grid-column: 1 / span 3;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  margin-left: -0.4em;
+  background-size: 60% 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.Network_Card_Collapsed{
+  height: 2.5em;
+}
+
+
+
+.Off_Wifi_Toggle{
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+.Network_Names{
+  display: flex;
+  grid-column: 4 / span 6;
+  box-sizing: border-box;
+  padding-left: 1em;
+  font-family: Arial;
+  color: rgb(65,65,65);
+  align-items: center;
+  font-size: 0.78em;
+  width: 100%;
+  height: 100%;
+  margin-left: -2.5em;
+}
+
+.Hover_Highlights{
+  position: absolute;
+  --Height: 1.9em;
+  --Width: 96%;
+  height: var(--Height);
+  width: var(--Width); 
+  top: calc(4.535em + (2em - var(--Height))/2);
+  left: calc((100% - var(--Width))/2);
+  box-sizing: border-box;
+  border-radius: 0.2em;
+}
+
+#Select_Element_2{
+  top: 6.535em;
+  top: calc(4.535em + (2em - var(--Height))/2 + 2em);
+}
+
+#Select_Element_3{
+  top: 6.535em;
+  height: 1.5em;
+  top: calc(4.535em + (2em - var(--Height))/2 + 4.5em);  
+}
+  
+#Select_Element_4{
+  top: 6.535em;
+  height: 1.5em;
+  top: calc(4.535em + (2em - var(--Height))/2 + 6.535em);  
+}
+
+.Hover_Highlights:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.Toggle_White_WIFI_Symbol{
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+

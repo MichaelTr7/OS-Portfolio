@@ -1,0 +1,87 @@
+
+
+.Translate_Right_Animation_1{
+  animation: 0.3s Translate_Right_Keyframes ease forwards;
+  animation-delay: 0.2s;
+}
+
+.Translate_Right_Animation_2{
+  animation: 0.2s Translate_Right_Keyframes ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes Translate_Right_Keyframes {
+  from{transform: translateX(-5rem); filter: opacity(0);}
+  to{transform: translateX(0rem); filter: opacity(1);}
+}
+
+.Fade_In_Animation{
+  animation: 1s Fade_In_Keyframes ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes Fade_In_Keyframes {
+  from{filter: opacity(0);}
+  to{filter: opacity(1);}
+}
+
+.Translate_Up_Animation{
+  animation: 0.3s Translate_Up_Keyframes ease forwards;
+  animation-delay: 0.2s;
+}
+
+.Translate_Up_Animation_2{
+  animation: 0.3s Translate_Up_Keyframes ease forwards;
+  animation-delay: 0.4s;
+}
+
+.Translate_Up_Animation_3{
+  animation: 0.3s Translate_Up_Keyframes ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes Translate_Up_Keyframes {
+  from{transform: translateY(3rem); filter: opacity(0);}
+  to{transform: translateY(0rem); filter: opacity(1);}
+}
+
+.Translate_Right_Animation{
+  animation: 0.6s Translate_Right_Keyframes ease forwards;
+  animation-delay: 0.6s;
+}
+
+.Translate_Right_Animation_2{
+  animation: 0.6s Translate_Right_Keyframes ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes Translate_Right_Keyframes {
+  from{transform: translateX(-20rem); filter: opacity(0);}
+  to{transform: translateX(0rem); filter: opacity(1);}
+}
+
+.Translate_Air_Quality_Index_Bars{
+    animation: 0.35s Translate_Air_Quality_Index_Bars_Keyframes ease forwards;
+    animation-delay: 1s;  
+}
+
+@keyframes Translate_Air_Quality_Index_Bars_Keyframes {
+    from{transform: translateX(-150%);}
+    to{transform: translateX(0%);}
+}
+
+.Fade_In_Air_Quality_Containers_Animation{
+  animation: 0.2s Fade_In_Air_Quality_Containers_Keyframes ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes Fade_In_Air_Quality_Containers_Keyframes {
+  from{filter: opacity(0);}
+  to{filter: opacity(1);}
+}
+
+
+
+
+
+

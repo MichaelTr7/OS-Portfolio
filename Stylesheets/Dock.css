@@ -1,0 +1,176 @@
+
+:root{
+  --Dock_Width: min(calc(80vw),40em);
+}
+
+#Icon_Label{
+  display: flex;
+  position: absolute;
+  height: 2em;
+  z-index: 20;
+  text-align: center;
+  color: rgba(0,0,0,0.4);
+  font-size: 0.8em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.2);
+  background-color: rgba(129,125,170,1);
+  top: -50%;
+  opacity: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 0.5em;
+  z-index: 20;
+}
+
+#Icon_Label:after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  position: absolute;
+  bottom: -0.4em;
+  left: 50%;
+  background-color: rgba(129,125,170,1);
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+#Dock{
+  position: fixed;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(10,10%);
+  background-color: rgba(225,225,232,0.5);
+  bottom: 0;
+  --Dock_Width: min(calc(80vw),40em);
+  width: var(--Dock_Width);
+  left: calc(50% - var(--Dock_Width)/2);
+  bottom: 0.3em;
+  padding: calc(0.02*var(--Dock_Width));
+  padding-left: calc(0.02*var(--Dock_Width)/2);
+  padding-right: calc(0.02*var(--Dock_Width)/2);
+  border-radius: calc(0.035*var(--Dock_Width));
+  -webkit-backdrop-filter: blur(30em), saturate(500%);
+  box-shadow: 0 calc(0.003*var(--Dock_Width)) calc(0.005*var(--Dock_Width)) 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.3);
+  z-index: 15;
+}
+
+.App_Icons{
+  --Dock_Width: min(calc(80vw),40em);
+  left: calc(50% - var(--Width)/2);
+  position: relative;
+  display: flex;
+  --Width: calc(100% - 0.02*var(--Dock_Width));
+  width: var(--Width);
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: calc(0.0175*var(--Dock_Width));
+  box-shadow: 0 calc(0.001*var(--Dock_Width)) calc(0.003*var(--Dock_Width)) calc(0.0005*var(--Dock_Width)) rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  background-size: 105%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+#Background{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./Assets/Background.png");
+  background-size: 100vw 100vh;
+  background-position: center;
+  background-color: rgba(205,205,217,1);
+  filter: saturate(0.97);
+}
+
+#Certifications_Icon{
+  background-image: url("./Assets/Certifications_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 105%;
+}
+
+#Education_Icon{
+  background-image: url("./Assets/Education_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+}
+
+
+#Courses_Icon{
+  background-image: url("./Assets/Courses_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+}
+
+#Volunteer_Work_Icon{
+  background-image: url("./Assets/Volunteer_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 105%;
+}
+
+#Toybox_Icon{
+  background-image: url("./Assets/Toybox_Icon_V2.svg");
+  -webkit-transform: translate3d(0,0,0);
+  filter: hue-rotate(230deg);
+  background-size: 105%;
+}
+
+#Academic_Projects_Icon{
+  background-image: url("./Assets/Projects_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+}
+
+#Skills_Icon{
+  background-image: url("./Assets/Gear.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+}
+
+#Messages_Icon{
+  background-image: url("./Assets/Messages_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+  filter: saturate(0.8);
+}
+
+#Links_Icon{
+  background-image: url("./Assets/Links_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+  filter: saturate(0.8);
+}
+
+#Mail_Icon{
+  background-image: url("./Assets/Mail_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+  filter: saturate(0.8);
+}
+
+#Mail_Icon{
+  background-image: url("./Assets/Mail_Icon.svg");
+  -webkit-transform: translate3d(0,0,0);
+  background-size: 100%;
+  filter: saturate(0.8);
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+
+:root{
+  --Thumb_Size: 1.2em;
+  --Margin: 0.1em;
+}
+
+
+.Switch_Containers{
+  display: block;
+  position: relative;
+  --Height: calc(var(--Thumb_Size));
+  --Width: calc(2*var(--Thumb_Size));
+  height: 100%;
+  width: 80%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.Toggle_Insets{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  --Height: calc(var(--Thumb_Size));
+  --Width: calc(2*var(--Thumb_Size));
+  height: var(--Height);
+  width: var(--Width);
+  padding: var(--Margin);
+  /* background-color: blue; */
+  background-color: rgba(0,0,0,0.1);
+  top: calc(50% - var(--Height)/2 - var(--Margin));
+  left: calc(50% - var(--Width)/2 - var(--Margin));
+  transition: 0.2s;
+  border-radius: 1000px;
+  transform-origin: center;
+  box-shadow: inset 0 0 0.2em 0.05em rgba(0,0,0,0.03);
+
+}
+
+.Toggle_Insets:before {
+  position: absolute;
+  content: "";
+  height: var(--Thumb_Size);
+  width: var(--Thumb_Size);
+  top: var(--Margin);
+  left: var(--Margin);
+  background-color: rgb(235,235,235);
+  transition: 0.1s;
+  border-radius: 100%;
+  box-shadow: 0 0.1em 0.2em 0 rgba(0,0,0,0.2);
+}
+
+.Toggle_Mechanisms{
+  visibility: hidden;
+}
+
+.Toggle_Mechanisms:checked + .Toggle_Insets {
+  background-color: #2075FB;
+}
+
+.Toggle_Mechanisms:checked + .Toggle_Insets:before {
+  transform: translateX(calc(1 * var(--Thumb_Size)));
+}

@@ -1,0 +1,128 @@
+
+.Battery_Card{
+  display: grid;
+  grid-template-rows: 2em 1.5em 0.535em 1.5em 1.5em 0.535em 1.5em;
+  grid-template-columns: 1fr;
+  position: absolute;
+  color: black;
+  height: 9em;
+  width: 13em;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 0.5em;
+  top: 2.3em;
+  right: 0.3em;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  backdrop-filter: blur(1em);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  transform: translateX(18em);
+  opacity: 0;
+  transition: 0.2s;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.25em;
+  z-index: 51;
+}
+
+.Show_Battery_Card{
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#Battery_Card_Title{
+  margin-top: 0.5em;
+}
+
+#Battery_Card_Title,#Power_Source_Heading,#Energy_Heading,#Using_Significant_Energy_Application,#Battery_Preferences_Label{
+  display: flex;
+  font-size: 0.8em;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 1em;
+  font-weight: bold;
+  font-family: Arial;
+  color: rgb(65,65,65);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#Power_Source_Heading,#Energy_Heading,#Using_Significant_Energy_Application,#Battery_Preferences_Label{
+  font-size: 0.78em;
+  color: rgba(0,0,0,0.4);
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+#Using_Significant_Energy_Application{
+  grid-row: 5 / span 1;
+  height: 100%;
+}
+
+#Significant_App_Energy_Logo{
+  height: 70%;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 0.4em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('./Assets/Robotic_Arm_Icon.png');
+}
+
+#Significant_App_Energy_Label{
+  padding-left: 0.5em;
+}
+
+#Battery_Preferences_Label{
+  color: rgb(65,65,65);
+}
+
+.Battery_Card_Spacers{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Horizontal_Rules_2{
+  height: 0.05em;
+  width: 90%;
+  background-color: rgba(0,0,0,0.1);
+}
+
+#Battery_Card_Select_Element_1,#Battery_Card_Select_Element_2{
+  position: absolute;
+  height: 1.5em;
+  width: calc(100% - 0.5em);
+}
+
+#Battery_Card_Select_Element_1{
+  top: 5.535em;
+  left: 0.25em;  
+}
+
+#Battery_Card_Select_Element_2{
+  top: 7.57em;
+  left: 0.25em;  
+}
+
+#Battery_Card_Select_Element_1:hover,#Battery_Card_Select_Element_2:hover{
+  background-color: rgba(0,0,0,0.1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

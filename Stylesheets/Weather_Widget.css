@@ -1,0 +1,204 @@
+
+#Weather_Widget{
+  display: grid;
+  column-gap: 1.6rem;
+  grid-template-rows: 1fr 2fr repeat(10,1fr); 
+  grid-template-columns: repeat(6,1fr);
+  position: relative;
+  grid-row: 3 / span 2;
+  grid-column: 1 / span 2;
+  padding: 1.1rem;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgb(0,185,230) -30.4%, rgb(0,170,248) 105.99%);
+  background: linear-gradient(180deg, #04071F 0%, #2F364F 100%);
+}
+
+#Weather_Widget > div{
+  /* border: 1px dashed rgba(255,255,255,0.2); */
+  /* box-sizing: border-box; */
+}
+
+#City_Label{
+  display: flex;
+  grid-column: 1 / span 3;
+  color: var(--Muted_White);
+  font-size: 1rem;
+  align-items: flex-start;
+  text-align: left;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+#Current_Weather_Symbol{
+  grid-column: 6 / span 1;
+}
+
+#Current_Temperature_Label{
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
+  color: var(--Muted_White);
+  font-size: 2.5rem;
+  font-weight: lighter;
+  align-items: flex-end;
+  text-align: left;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+#Current_Weather_Summary{
+  display: flex;
+  grid-row: 2 / span 1;
+  grid-column: 5 / span 2;
+  color: var(--Muted_White);
+  font-size: 0.8rem;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+.Seperators{
+  position: relative;
+  grid-column: 1 / span 6;
+  transform: translateX(-20rem);
+  filter: opacity(0);
+}
+
+.Seperators > div{
+  position: absolute;
+  --Height: 2%;
+  --Width: 100%;
+  height: var(--Height);
+  width: var(--Width);
+  background-color: rgba(255,255,255,0.4);
+  top: calc(50% - var(--Height)/2); 
+  left: calc(50% - var(--Width)/2);
+  border-radius: 1000rem;
+}
+
+.Time_Headers{
+  display: flex;   
+  grid-row: 4 / span 1;
+  color: var(--Muted_White);
+  font-size: 0.7rem;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+.Temperature_Labels{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+.Day_Of_The_Week_Headers{
+  grid-column: 1 / span 1;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+.Daily_Weather_Icons{
+  
+}
+
+.Todays_Low,.Todays_High{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(3rem);
+  filter: opacity(0);
+}
+
+.Todays_Low{
+  grid-column: 3 / span 1; 
+  color: rgba(255,255,255,0.5);
+}
+
+.Todays_High{
+  grid-column: 6 / span 1; 
+}
+
+
+.Air_Quality_Index_Bars{
+  position: absolute;
+  grid-column:  4 / span 2;
+  height: 100%;
+  width: calc(100% + 4rem);
+  left: -2rem;
+}
+
+.Air_Quality_Bar_Containers{
+  position: absolute;
+  --Height: 15%;
+  --Width: 80%;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(50% - var(--Height)/2);
+  left: calc(50% - var(--Width)/2);
+  border-radius: 1000rem;
+  background-color: rgba(0,0,0,0.15);
+  box-shadow: 0 0.02rem 0.03rem 0 rgba(0,0,0,0.1);
+  filter: opacity(0);
+  overflow: hidden;
+}
+
+.Air_Quality_Bars{
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  width: 100%; 
+  border-radius: 1000rem;
+  background: rgb(196,207,101);
+  background: linear-gradient(90deg, rgba(196,207,101,1) 0%, rgba(234,206,73,1) 50%, rgba(242,167,59,1) 100%);
+  filter: saturate(2);
+  transform: translateX(-150%);
+  /* box-shadow: 0 0.02rem 0.03rem 0 rgba(0,0,0,0.1); */
+} 
+
+#Air_Quality_Bar_1{
+  width: 90%;
+  left: 10%;
+}
+
+#Air_Quality_Bar_2{
+  width: 70%;
+  left: 20%;
+}
+
+#Air_Quality_Bar_3{
+  width: 95%;
+}
+
+
+#Air_Quality_Bar_4{
+  width: 90%;
+  left: 5%;
+}
+
+#Air_Quality_Bar_5{
+  width: 77%;
+  left: 18%;
+}
+
+
+
+
+
+
+
+

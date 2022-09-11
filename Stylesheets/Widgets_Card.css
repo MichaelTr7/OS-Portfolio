@@ -1,0 +1,70 @@
+
+.Widgets_Card::-webkit-scrollbar {
+  display: none;
+}
+
+.Widgets_Card {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Widgets_Card,.Widgets_Glass_Background{
+  display: grid;
+  --Spacing: 0.9em;
+  grid-gap: var(--Spacing);
+  padding: var(--Spacing);
+  box-sizing: border-box;
+  grid-template-rows: repeat(5,10em);
+  grid-template-columns: repeat(2,10em);
+  position: absolute;
+  color: black;
+  height: calc(100vh - 2em);
+  border-radius: 0em;
+  top: 2em;
+  right: 0em;
+  z-index: 1;
+  transform: translateX(25em);
+  transition: 0.2s ease;
+  z-index: 20;
+  overflow: scroll;
+  z-index: 20;
+  filter: opacity(0);
+  /* transform: translateX(0);
+  filter: opacity(1); */
+}
+
+.Widgets_Glass_Background{
+  width: 22em;
+  background-color: rgba(0,0,0,1);
+  -webkit-backdrop-filter: blur(1000rem);
+  backdrop-filter: blur(1000rem);
+  filter: blur(500rem);
+  box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
+  -webkit-mask: -webkit-gradient(linear,right 0%,left 0%,from(rgba(0,0,0, 1)),to(rgba(0,0,0,0)));
+  z-index: 19;
+  filter: opacity(0);
+  transform: translateX(20em);
+  transition: 0.2s ease;
+}
+
+.Show_Widgets_Card{
+  transform: translateX(0);
+  filter: opacity(1);
+  transition: 0.2s;
+}
+
+.Widget_Blocks{
+  background-color: rgba(255,255,255,1);
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 0.1rem 0.2rem 0.1rem rgba(0,0,0,0.3);
+}
+
+#Clock_Widget{
+  position: relative;
+  grid-column: 2 / span 1;
+  background: linear-gradient(180deg, #434343 -30.4%, #2B2B2B 105.99%);
+}
+
+
+
