@@ -1,0 +1,166 @@
+
+.Window_Templates{
+  position: absolute;
+  height: 21rem;
+  width: 21rem;
+  background-color: rgb(242,242,242);
+  z-index: 50;
+  border-radius: 0.8rem;
+  cursor: default;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 0.7rem 0.3rem rgba(0,0,0,0.1);
+}
+
+.Title_Bars{
+  height: 2rem;
+  width: 100%;
+  background-color: red;
+}
+
+.App_Controls{
+  height: 2.5rem;
+  width: 4rem;
+  /* border: 1px solid grey; */
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3,1fr);
+  padding: 0.4rem 0rem 0rem 1rem;
+  -webkit-app-region: no-drag;
+}
+  
+.App_Controls > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-app-region: no-drag;
+}
+
+.Close_Toggles{
+  background-color: rgba(237,106,94,1);
+  pointer-events: none;
+  -webkit-app-region: no-drag;
+}
+
+.Minimize_Toggles{
+  background-color: rgba(244,191,79,1);
+  pointer-events: none;
+  -webkit-app-region: no-drag;
+}
+
+.Expand_Toggles{
+  background-color: rgba(98,196,85,1);
+  pointer-events: none;
+  -webkit-app-region: no-drag;
+}
+
+.Control_Toggles{
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  border: 0.05rem solid rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.Control_Toggles:hover{
+  filter: brightness(0.95);
+}
+
+.Close_Icons{
+  background-image: url('../Assets/Close.svg');
+}
+
+.Minimize_Icons{
+  background-image: url('../Assets/Minimize.svg');
+}
+
+.Expand_Icons{
+  background-image: url('../Assets/Maximize.svg');
+}
+
+#Toybox_Window{
+  --Height: 21rem;
+  --Width: 21rem;
+  top: calc(2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 50;
+}
+
+#Messages_Window{
+  --Height: 21rem;
+  --Width: 21rem;
+  top: calc(3rem + 2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 51;
+}
+
+#Projects_Window{
+  --Height: 21rem;
+  --Width: 21rem;
+  top: calc(2 * 3rem + 2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 52;
+}
+
+#Skills_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(3 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 53;
+}
+
+#Education_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(4 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 54;
+}
+
+#Courses_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(5 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 55;
+}
+
+#Certifications_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(6 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 56;
+}
+
+#Volunteer_Work_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(7 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 57;
+}
+
+#Mail_Work_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(8 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 58;
+}
+
+#Links_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(9 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 59;
+}
+
+
+
+
+
+
+
+

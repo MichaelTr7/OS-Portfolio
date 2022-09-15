@@ -60,7 +60,7 @@
   backdrop-filter: blur(1em);
   box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
   background-color: rgba(255,255,255,0.3);
-  z-index: 15;
+  z-index: 100;
 }
 
 .App_Icons{
@@ -111,6 +111,7 @@
 #Courses_Icon{
   background-image: url("./Assets/Courses_Icon.svg");
   -webkit-transform: translate3d(0,0,0);
+  background-size: 105%;
 }
 
 #Volunteer_Work_Icon{
@@ -126,7 +127,7 @@
   background-size: 105%;
 }
 
-#Academic_Projects_Icon{
+#Projects_Icon{
   background-image: url("./Assets/Projects_Icon.svg");
   -webkit-transform: translate3d(0,0,0);
   background-size: 100%;

@@ -194,7 +194,6 @@ function Display_Card(){
     Widgets_Card_Background.classList.remove("Show_Widgets_Card");
     Control_Center_Card.classList.toggle("Show_Control_Center_Card");
   }
-
 }
 
 function Unfocus_Cards(){

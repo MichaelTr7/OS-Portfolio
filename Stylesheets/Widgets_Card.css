@@ -27,7 +27,7 @@
   transition: 0.2s ease;
   z-index: 20;
   overflow: scroll;
-  z-index: 20;
+  z-index: 102;
   filter: opacity(0);
   /* transform: translateX(0);
   filter: opacity(1); */
@@ -41,9 +41,9 @@
   filter: blur(500rem);
   box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
   -webkit-mask: -webkit-gradient(linear,right 0%,left 0%,from(rgba(0,0,0, 1)),to(rgba(0,0,0,0)));
-  z-index: 19;
+  z-index: 101;
   filter: opacity(0);
-  transform: translateX(20em);
+  transform: translateX(25em);
   transition: 0.2s ease;
 }
 

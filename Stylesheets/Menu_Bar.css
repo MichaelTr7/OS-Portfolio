@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   color: rgba(0,0,0,0.4);
-  height: 2em;
+  height: 2rem;
   width: 100vw;
   background-color: rgba(225,225,232,0.5);
   -webkit-backdrop-filter: blur(30em);
@@ -17,6 +17,7 @@
   padding-right: 0.3em;
   box-sizing: border-box;
   backdrop-filter: blur(30em);
+  z-index: 100;
 }
 
 .Menu_Bar_Buttons{
