@@ -39,65 +39,18 @@ function Magnify_Focussed_Icons(Target_Icon){
   
   // Central Icon
   Target_Icon.classList.add('Scale_Level_0');
-  // console.log(Target_Icon);
-
   
   // Magnify - Level 1
   let Immediate_Left_Icon = Icons_Class[Immediate_Neighbouring_Indices[Left]];
   let Immediate_Right_Icon = Icons_Class[Immediate_Neighbouring_Indices[Right]];
   if((Immediate_Left_Icon >= 0) & (Immediate_Left_Icon < Icons_Class.length)){    
-  }
-  
+  }  
 
   // Magnify - Level 2
   let Secondary_Left_Icon = Icons_Class[Secondary_Neighbouring_Indices[Left]];
   let Secondary_Right_Icon = Icons_Class[Secondary_Neighbouring_Indices[Right]];
   
-  
-  
-  
-  
-  
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-// function Add_Field(){
-//     Field_Container = document.getElementById("Left_Panel");
-//     // Creating the field object to be appended
-//     let New_File_Query = document.createElement("div");
-//     New_File_Query.classList.add("File_Queries");
-//     let New_Field = document.createElement("input");
-//     New_Field.placeholder = "Filename";
-//     New_Field.spellcheck="false";
-//     New_Field.classList.add("File_Fields");
-//     New_File_Query.appendChild(New_Field);
-//     let New_Delete_Button = document.createElement("button");
-//     New_Delete_Button.classList.add("Delete_Buttons");
-//     New_Delete_Button.innerHTML = "×";
-//     New_Delete_Button.tabIndex = "-1";
-//     New_Delete_Button.addEventListener("click",Delete_File_Query);
-//     New_File_Query.appendChild(New_Delete_Button);
-//     Field_Container.appendChild(New_File_Query);
-//     Field_Container.scrollTop = Field_Container.scrollHeight;
-// }
-// 
-// function Delete_File_Query(){
-//     this.parentElement.remove();
-// }

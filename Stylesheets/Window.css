@@ -17,15 +17,64 @@ html,body{
 body {
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* Hide scrollbars */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   filter: brightness(1);
-  /* background: rgb(207,165,203); */
-  background: rgb(0,0,0);
-  
+  background: rgb(0,0,0);  
 }
 
 body::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+  display: none;
 }
+
+.Close_Window{
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+:root{
+  --Window_Scaler: 1;
+  --X_Position_1: 0;
+  --Y_Position_1: 0;
+  --X_Position_2: 0;
+  --Y_Position_2: 0;
+  
+  --X_Position_1R: 0;
+  --Y_Position_1R: 0;
+  --X_Position_2R: 0;
+  --Y_Position_2R: 0;
+}
+
+.Shrink_Window{
+  animation: Shrink_Window_Frames 1s ease forwards;
+}
+
+.Unshrink_Window{
+  animation: Unshrink_Window_Frames 1s ease forwards;
+
+}
+
+@keyframes Shrink_Window_Frames {
+  0%{top: var(--Y_Position_1); left: var(--X_Position_1); transform: scale(1);}
+  40%{left: var(--X_Position_2);}
+  60%{opacity: 1;}
+  100%{top: var(--Y_Position_2); left: var(--X_Position_2); transform: scale(0); opacity: 0;}
+}
+
+
+@keyframes Unshrink_Window_Frames {
+  0%{top: var(--Y_Position_2R); left: var(--X_Position_2R); transform: scale(0); opacity: 0;}
+  20%{opacity: 1;}
+  40%{left: var(--X_Position_2R);}
+  100%{top: var(--Y_Position_1R); left: var(--X_Position_1R); transform: scale(1);}
+}
+
+
+
+
+
+
+
+

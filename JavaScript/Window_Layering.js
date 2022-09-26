@@ -1,6 +1,5 @@
 
 function Setup_Window_Layering(){
-  console.log("Windowing layering");
   let App_Windows = document.getElementsByClassName('Window_Templates');
   for(Index=0; Index < App_Windows.length; Index++){
     App_Windows[Index].addEventListener('mousedown',Sort_Windows);
@@ -15,7 +14,7 @@ var Window_Stack = ["Toybox_Window",
                     "Courses_Window",
                     "Certifications_Window",
                     "Volunteer_Work_Window",
-                    "Mail_Work_Window",
+                    "Mail_Window",
                     "Links_Window"];
 
 var Z_Stack = ["50","51","52","53","54","55","56","57","58","59"];

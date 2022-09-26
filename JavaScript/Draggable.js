@@ -3,6 +3,10 @@ function Setup_Draggable_Element(Target_Element){
   Target_Element.addEventListener('mousedown',Drag_Start);
 
   function Drag_Start(e){
+    console.log("Dragging");
+    console.log(this);
+    Target_Element.classList.remove('Unshrink_Window'); 
+    Target_Element.classList.remove('Shrink_Window');  
     document.addEventListener('mousemove',Dragging);
     document.addEventListener('mouseup',Drag_End);
     var Window_Height = document.getElementById("Background").getBoundingClientRect().height;
@@ -41,4 +45,12 @@ function Setup_Draggable_Element(Target_Element){
     }  
   }
 }
+
+
+
+
+
+
+
+
 

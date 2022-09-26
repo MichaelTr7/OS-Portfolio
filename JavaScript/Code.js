@@ -14,6 +14,7 @@ window.onload = function(){
   Setup_Spectrum_Analyzer();
   Setup_Window_Functionality();
   Setup_Window_Layering();
+  Setup_Window_Controls();
 }
 
 
