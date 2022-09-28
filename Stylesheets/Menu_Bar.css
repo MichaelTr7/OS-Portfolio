@@ -18,7 +18,17 @@
   box-sizing: border-box;
   backdrop-filter: blur(30em);
   z-index: 100;
+  transform: translateY(-2rem);
+  opacity: 0;
+  animation: Show_Menu_Bar 0.2s ease forwards;
+  animation-delay: 0.3s;
 }
+
+@keyframes Show_Menu_Bar {
+  to{transform: translateY(0rem); opacity: 1;}
+}
+
+
 
 .Menu_Bar_Buttons{
   display: flex;
