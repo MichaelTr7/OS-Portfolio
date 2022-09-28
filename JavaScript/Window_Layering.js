@@ -38,7 +38,15 @@ function Remove_Array_Item(Array,Target_Element){
   return Array;
 }
 
-
+function Pop_To_Top(Target_Window){
+  var Window_ID = String(Target_Window.id);
+  Window_Stack = Remove_Array_Item(Window_Stack,Window_ID);
+  Window_Stack.push(Window_ID);
+  for(Index=0; Index < Window_Stack.length; Index++){
+    document.getElementById(Window_Stack[Index]).style.zIndex = Z_Stack[Index];
+  }  
+  return Window_Stack;
+}
 
 
 

@@ -1,5 +1,6 @@
 
 .Window_Templates{
+  /* display: block; */
   position: absolute;
   height: 21rem;
   width: 21rem;
@@ -12,8 +13,8 @@
   border-radius: calc(0.0175*var(--Dock_Width));
   transform: scaleX(1) translate(0,0);
   transform-origin: center;
-  
    /* scaleY(1); */
+  filter: opacity(0);
 }
 
 .Title_Bars{

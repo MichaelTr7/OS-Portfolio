@@ -3,8 +3,7 @@ function Setup_Draggable_Element(Target_Element){
   Target_Element.addEventListener('mousedown',Drag_Start);
 
   function Drag_Start(e){
-    console.log("Dragging");
-    console.log(this);
+    // console.log("Dragging");
     Target_Element.classList.remove('Unshrink_Window'); 
     Target_Element.classList.remove('Shrink_Window');  
     document.addEventListener('mousemove',Dragging);
@@ -34,12 +33,12 @@ function Setup_Draggable_Element(Target_Element){
       var Top_Position = Math.max(Current_Cursor_Y_Position - Cursor_Y_Difference,Top_Constraint);
       Top_Position = Math.min(Top_Position,Bottom_Constraint);
       var Left_Position = Math.max(Current_Cursor_X_Position - Cursor_X_Difference,Left_Constraint);
-      Left_Position = Math.min(Left_Position,Right_Constraint);
-      Target_Element.style.top = Top_Position + "px";
-      Target_Element.style.left = Left_Position + "px";
+      Left_Position = Math.min(Left_Position,Right_Constraint);      
+      Target_Element.style.top = 100*Top_Position/window.innerHeight + "%";
+      Target_Element.style.left = 100*Left_Position/window.innerWidth + "%";
     }
     
-    function Drag_End(e){     
+    function Drag_End(e){
       Target_Element.removeEventListener('mousemove',Dragging);
       document.removeEventListener('mousemove',Dragging);
     }  

@@ -48,12 +48,11 @@ body::-webkit-scrollbar {
 }
 
 .Shrink_Window{
-  animation: Shrink_Window_Frames 1s ease forwards;
+  animation: Shrink_Window_Frames 0.7s ease forwards;
 }
 
 .Unshrink_Window{
-  animation: Unshrink_Window_Frames 1s ease forwards;
-
+  animation: Unshrink_Window_Frames 0.7s ease forwards;
 }
 
 @keyframes Shrink_Window_Frames {
