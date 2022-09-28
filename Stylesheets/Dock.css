@@ -61,6 +61,16 @@
   box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
   background-color: rgba(255,255,255,0.3);
   z-index: 100;
+  transform: translateY(10rem);
+  filter: opacity(0);
+  animation: Show_Dock 0.5s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes Show_Dock {
+  0%{transform: translateY(10rem); filter: opacity(0);}
+  80%{transform: translateY(-0.8rem); filter: opacity(1);}
+  100%{transform: translateY(0); filter: opacity(1);}
 }
 
 .App_Icons{
