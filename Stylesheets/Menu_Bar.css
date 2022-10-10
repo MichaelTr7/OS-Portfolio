@@ -21,7 +21,7 @@
   transform: translateY(-2rem);
   opacity: 0;
   animation: Show_Menu_Bar 0.2s ease forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.5s;
 }
 
 @keyframes Show_Menu_Bar {

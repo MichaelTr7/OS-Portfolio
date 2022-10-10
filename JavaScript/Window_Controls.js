@@ -16,7 +16,13 @@ function Setup_Window_Controls(){
   var App_Icons = document.getElementsByClassName('App_Icons');
   for(Index=0; Index < App_Icons.length; Index++){
     App_Icons[Index].addEventListener('click',Toggle_Window);
-  }  
+  }
+  // document.addEventListener("keydown",Hot_Key_Pressed);
+  
+  var Window_Bodies = document.getElementsByClassName('Window_Bodies');
+  for(Index=0; Index < Window_Bodies.length; Index++){
+    Window_Bodies[Index].addEventListener("hover",Prevent_Dragging_On_Child_Elements);
+  }
 }
 
 function Close_Window(){
@@ -28,8 +34,8 @@ function Close_Window(){
 function Minimize_Window(){
   var Parent_Window = this.parentElement.parentElement;
   var Window_Bounds = Parent_Window.getBoundingClientRect();
-  var Parent_Window_Height = Window_Bounds.width;
-  var Parent_Window_Width = Window_Bounds.height;
+  var Parent_Window_Height = Window_Bounds.height;
+  var Parent_Window_Width = Window_Bounds.width;
   var App_Icon_ID = String(Parent_Window.id).replace("Window","Icon");
   var App_Icon = document.getElementById(App_Icon_ID);
   var App_Icons_Bounds = App_Icon.getBoundingClientRect();
@@ -42,6 +48,8 @@ function Minimize_Window(){
   var Y_Scaler = App_Icon_Size/Parent_Window_Height;
   var Scaling_Factor = X_Scaler;
   
+  
+  console.log(Parent_Window_Height);
   var X_Position_1_Percentage = 100*Window_Bounds.x/window.innerWidth + "%";
   var Y_Position_1_Percentage = 100*Window_Bounds.y/window.innerHeight + "%";
   var X_Position_2_Percentage = 100*(App_Icons_Bounds.x + App_Icons_Bounds.width/2 - Parent_Window_Width/2)/window.innerWidth + "%";
@@ -68,7 +76,8 @@ function Minimize_Window(){
 function Maximize_Window(){
   // console.log("Maximize Window ...");
   var Parent_Window = this.parentElement.parentElement;
-  
+  var Expand_ClassName = "Expand_" + String(Parent_Window.id);
+  Parent_Window.classList.toggle(Expand_ClassName);
 }
 
 function Toggle_Window(){
@@ -99,11 +108,31 @@ function Toggle_Window(){
     Pop_To_Top(Target_Window); 
   }
   if(Contains_Close){
-    
+    Target_Window.classList.remove("Close_Window");
   }
-  
-  
+}
+
+function Prevent_Dragging_On_Child_Elements(e){
+  console.log("Prevent dragging");
+  e.preventDefault();
   
 }
+
+
+
+
+
+function Hot_Key_Pressed(e){
+  let Typed_Letter = String(e.key).toLowerCase();
+  console.log(Typed_Letter);
+}
+
+
+
+
+
+
+
+
 
 

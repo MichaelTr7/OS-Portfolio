@@ -1,6 +1,5 @@
 
 .Window_Templates{
-  /* display: block; */
   position: absolute;
   height: 21rem;
   width: 21rem;
@@ -13,21 +12,19 @@
   border-radius: calc(0.0175*var(--Dock_Width));
   transform: scaleX(1) translate(0,0);
   transform-origin: center;
-   /* scaleY(1); */
   filter: opacity(0);
-}
+  pointer-events: none;
+  background-color: rgba(0,0,0,0);
+  background-color: rgba(225,225,225,0.7);
 
-.Title_Bars{
-  height: 2rem;
-  width: 100%;
-  background-color: red;
+  -webkit-backdrop-filter: blur(5rem);
+  backdrop-filter: blur(5rem);
 }
 
 .App_Controls{
   display: flex;
   height: 2.5rem;
   width: 4rem;
-  /* border: 1px solid grey; */
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3,1fr);
@@ -35,7 +32,6 @@
   -webkit-app-region: no-drag;
   justify-content: center;
   align-items: center;
-  
 }
   
 .App_Controls > div{
@@ -43,27 +39,31 @@
   justify-content: center;
   align-items: center;
   -webkit-app-region: no-drag;
-  height: 40%;
+  height: 39%;
   border-radius: 100%;
   aspect-ratio: 1 / 1;
+  -webkit-app-region: no-drag;
 }
 
 .Close_Toggles{
   background-color: rgba(237,106,94,1);
   pointer-events: none;
   -webkit-app-region: no-drag;
+  pointer-events: all;
 }
 
 .Minimize_Toggles{
   background-color: rgba(244,191,79,1);
   pointer-events: none;
   -webkit-app-region: no-drag;
+  pointer-events: all;
 }
 
 .Expand_Toggles{
   background-color: rgba(98,196,85,1);
   pointer-events: none;
   -webkit-app-region: no-drag;
+  pointer-events: all;
 }
 
 .Control_Toggles{
@@ -90,88 +90,201 @@
   background-image: url('../Assets/Maximize.svg');
 }
 
-#Toybox_Window{
+.Toybox_Window{
   --Height: 21rem;
   --Width: 21rem;
   top: calc(2.5rem);
   left: calc(50% - var(--Width)/2);
   z-index: 50;
+  filter: opacity(1);
+  transition: 0.2s;
+  transition-property: height, width;
+  display: none;
+}
+.Expand_Toybox_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Messages_Window{
-  --Height: 21rem;
-  --Width: 21rem;
-  top: calc(3rem + 2.5rem);
-  left: calc(50% - var(--Width)/2);
-  z-index: 51;
-}
-
-#Projects_Window{
+.Projects_Window{
   --Height: 21rem;
   --Width: 21rem;
   top: calc(2 * 3rem + 2.5rem);
   left: calc(50% - var(--Width)/2);
   z-index: 52;
+  filter: opacity(1);
+  transition: 0.2s;
+  transition-property: height, width;
+  display: none;
+}
+.Expand_Projects_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Skills_Window{
+.Skills_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(3 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 53;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Skills_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Education_Window{
+.Education_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(4 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 54;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Education_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Courses_Window{
+.Courses_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(5 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 55;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Courses_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Certifications_Window{
+.Certifications_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(6 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 56;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Certifications_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
+}
+.Expand_Certifications_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Volunteer_Work_Window{
+.Volunteer_Work_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(7 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 57;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Volunteer_Work_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Mail_Window{
+.Mail_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(8 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 58;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Mail_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
-#Links_Window{
+.Links_Window{
     --Height: 21rem;
     --Width: 21rem;
     top: calc(9 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 59;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+.Expand_Links_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
 }
 
 
+.Title_Bars{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box; 
+  pointer-events: all;
+  z-index: -1;
+  display: flex;
+  padding-top: 0.3rem;
+  padding-right: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.2);
+  background-color: none;
+}
 
+.Window_Bodies{
+  /* border: 1px dashed rgba(0,0,0,0.2); */
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+  box-sizing: border-box;
+}
 
 
 

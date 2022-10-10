@@ -21,7 +21,7 @@ function Setup_Window_Functionality(){
   for(Index=0; Index < Application_Windows.length; Index++){
     Setup_Draggable_Element(Application_Windows[Index]);
   }
-  Randomize_Windows();
+  // Randomize_Windows();
 }
 
 function Randomize_Windows(){

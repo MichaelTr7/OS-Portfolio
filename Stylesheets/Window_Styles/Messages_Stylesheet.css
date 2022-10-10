@@ -1,0 +1,83 @@
+
+.Messages_Window{
+  --Height: 28rem;
+  --Width: 21rem;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(3rem + 2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 51;
+  filter: opacity(1);
+  transition: 0.2s;
+  transition-property: height, width;
+}
+
+.Expand_Messages_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
+}
+
+.Chat_Selection_Container{
+  position: relative;
+  --Width: calc(100% - 5rem);
+  --Height: calc(var(--Width)/4);
+  display: grid;
+  grid-gap: 7%;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: repeat(3,1fr);
+  position: relative;
+  height: var(--Height);
+  width: var(--Width);
+  margin: 0 auto;
+  z-index: -1;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.Pinned_Chats{
+  display: flex;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  background-color: rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: Arial;
+  color: rgba(255,255,255,0.7);
+}
+
+.Name_Labels{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0,0,0,0.3);
+  font-size: 0.8rem;
+}
+
+.Recent_Chats{
+  position: relative;
+  width: 100%;
+  border: 1px dashed grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

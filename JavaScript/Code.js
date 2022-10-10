@@ -15,6 +15,17 @@ window.onload = function(){
   Setup_Window_Functionality();
   Setup_Window_Layering();
   Setup_Window_Controls();
+  
+  Setup_Certifications_App();
+  Setup_Courses_App();
+  Setup_Education_App();
+  Setup_Links_App();
+  Setup_Mail_App();
+  Setup_Messages_App();
+  Setup_Projects_App();
+  Setup_Skills_App();
+  Setup_Toybox_App();
+  Setup_Volunteer_Work_App();
 }
 
 
