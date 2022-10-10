@@ -13,7 +13,7 @@
 }
 
 .Expand_Messages_Window{
-  --New_Height: 30rem;
+  --New_Height: 28rem;
   --New_Width: 35rem;
   height: var(--New_Height);
   width: var(--New_Width);
@@ -38,9 +38,17 @@
   margin-bottom: 1.5rem;
 }
 
+.Pinned_Chat_Containers{
+  position: relative;
+}
+
 .Pinned_Chats{
+  position: absolute;
   display: flex;
-  width: 100%;
+  --Width: 4.5rem;
+  width: var(--Width);
+  top: calc(50% - var(--Width)/2);
+  left: calc(50% - var(--Width)/2);
   aspect-ratio: 1 / 1;
   border-radius: 100%;
   background-color: rgba(0,0,0,0.2);
@@ -64,16 +72,70 @@
 
 .Recent_Chats{
   position: relative;
-  width: 100%;
-  border: 1px dashed grey;
+  height: 4.3rem;
+  overflow: hidden;
 }
 
+.Chat_Bubbles{
+  display: flex;
+  position: absolute;
+  --Height: 80%;
+  height: var(--Height);
+  aspect-ratio: 1 / 1;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 100%;
+  top: calc(50% - var(--Height)/2);
+  left: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,0.7);
+}
 
+.Chat_Dividers{
+  position: absolute;
+  display: flex;
+  --Height: 0.1rem;
+  height: var(--Height);
+  width: calc(100% - 6rem);
+  right: 1rem;
+  bottom: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 1000rem;
+}
 
+.Name_Headers{
+  position: absolute;
+  width: calc(100% - 6rem);
+  right: 1rem;
+  top: 0.5rem;
+  color: rgba(0,0,0,0.55);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 
+.Chat_Previews{
+  position: absolute;
+  width: calc(100% - 6rem);
+  right: 1rem;
+  top: 1.5rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.3);
+}
 
-
-
+#Compose_Chat_Button{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.2);
+  border-radius: 0.3rem;
+  z-index: -1;
+}
 
 
 

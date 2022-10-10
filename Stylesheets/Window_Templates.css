@@ -284,6 +284,7 @@
   width: 100%;
   pointer-events: all;
   box-sizing: border-box;
+  overflow: scroll;
 }
 
 

@@ -23,9 +23,8 @@
     <link rel="stylesheet" href="./Stylesheets/Weather_Widget.css">
     <link rel="stylesheet" href="./Stylesheets/Animations.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Templates.css">
-
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Messages_Stylesheet.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!--Linking scripts-->
     <!--Adding P5.js libraries/modules-->
@@ -610,10 +609,11 @@
         <div class="Expand_Icons"></div>
         </div></div>
       </div>
-      <div class="Title_Bars">Messages</div>
-      <div class="Window_Bodies">
+      <div class="Title_Bars"></div>
+      <span id="Compose_Chat_Button" class="material-symbols-outlined"> edit_square </span>
+      <div id="Chat_Grid" class="Window_Bodies">
         <div class="Chat_Selection_Container">
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">T</div></div>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">TN</div></div>
             <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">S</div></div>
             <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">M</div></div>
             <label class="Name_Labels">Tom Nook</label>
@@ -621,11 +621,25 @@
             <label class="Name_Labels">Michael</label>
         </div>
         <div class="Recent_Chats_Container">
-            <div class="Recent_Chats">Hi</div>
-            <div class="Recent_Chats">Hi</div>
-            <div class="Recent_Chats">Hi</div>
-          
-          
+            <div class="Recent_Chats">
+              <div class="Chat_Bubbles">M</div>
+              <label class="Name_Headers">Michael</label>
+              <label class="Chat_Previews">Hi! Thank you for taking the time to take a look at my portfolio! :)</label>
+              <div class="Chat_Dividers"></div>
+            </div>
+            <div class="Recent_Chats">
+              <div class="Chat_Bubbles">TN</div>
+              <label class="Name_Headers">Tom Nook</label>
+              <label class="Chat_Previews">The brick bridge build has been completed.</label>
+              <div class="Chat_Dividers"></div>
+            </div>
+            <div class="Recent_Chats">
+              <div class="Chat_Bubbles">S</div>
+              <label class="Name_Headers">Starman</label>
+              <label class="Chat_Previews">We've landed on Mars! Over and out!</label>
+              <div class="Chat_Dividers"></div>
+            </div>
+  
         </div>
       </div>
     </div>
