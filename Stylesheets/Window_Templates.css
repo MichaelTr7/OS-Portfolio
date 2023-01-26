@@ -21,6 +21,35 @@
   backdrop-filter: blur(5rem);
 }
 
+.Title_Bars{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box; 
+  pointer-events: all;
+  z-index: -1;
+  display: flex;
+  padding-top: 0.3rem;
+  padding-right: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.2);
+  background-color: none;
+}
+
+.Window_Bodies{
+  /* border: 1px dashed rgba(0,0,0,0.2); */
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+
 .App_Controls{
   display: flex;
   height: 2.5rem;
@@ -90,202 +119,20 @@
   background-image: url('../Assets/Maximize.svg');
 }
 
-.Toybox_Window{
-  --Height: 21rem;
-  --Width: 21rem;
-  top: calc(2.5rem);
-  left: calc(50% - var(--Width)/2);
-  z-index: 50;
-  filter: opacity(1);
-  transition: 0.2s;
-  transition-property: height, width;
-  display: none;
-}
-.Expand_Toybox_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Projects_Window{
-  --Height: 21rem;
-  --Width: 21rem;
-  top: calc(2 * 3rem + 2.5rem);
-  left: calc(50% - var(--Width)/2);
-  z-index: 52;
-  filter: opacity(1);
-  transition: 0.2s;
-  transition-property: height, width;
-  display: none;
-}
-.Expand_Projects_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Skills_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(3 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 53;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Skills_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Education_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(4 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 54;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Education_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Courses_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(5 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 55;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Courses_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Certifications_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(6 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 56;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Certifications_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-.Expand_Certifications_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Volunteer_Work_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(7 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 57;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Volunteer_Work_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Mail_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(8 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 58;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Mail_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
-
-.Links_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(9 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 59;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
-}
-.Expand_Links_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
-  height: var(--New_Height);
-  width: var(--New_Width);
-}
 
 
-.Title_Bars{
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3rem;
-  width: 100%;
-  box-sizing: border-box; 
-  pointer-events: all;
-  z-index: -1;
-  display: flex;
-  padding-top: 0.3rem;
-  padding-right: 1.5rem;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.8rem;
-  color: rgba(0,0,0,0.2);
-  background-color: none;
-}
 
-.Window_Bodies{
-  /* border: 1px dashed rgba(0,0,0,0.2); */
-  height: 100%;
-  width: 100%;
-  pointer-events: all;
-  box-sizing: border-box;
-  overflow: scroll;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

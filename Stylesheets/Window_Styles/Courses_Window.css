@@ -1,0 +1,19 @@
+
+.Courses_Window{
+    --Height: 21rem;
+    --Width: 21rem;
+    top: calc(5 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 55;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+
+.Expand_Courses_Window{
+  --New_Height: 30rem;
+  --New_Width: 35rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
+}

@@ -1,0 +1,182 @@
+
+::-webkit-scrollbar {
+    width: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.Projects_Window {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Projects_Window{  
+  --Height: 28rem;
+  --Width: 35rem;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(2 * 3rem + 2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 52;
+  filter: opacity(1);
+  transition: 0.2s;
+  transition-property: height, width;
+}
+
+.Expand_Projects_Window{
+  --New_Height: 70vh;
+  height: var(--New_Height);
+  min-height: 28rem;
+}
+
+.Project_Sections{
+  height: 14rem;
+  padding: 0 0.9rem 0.9rem 0.9rem;
+  box-sizing: border-box;  
+  overflow: hidden;
+}
+
+.Project_Display_Panels{
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  grid-template-rows: repeat(5,1fr);
+  grid-template-columns: repeat(12,1fr);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.6rem;
+  background-color: rgba(0,0,0,0.05);
+  box-sizing: border-box;  
+}
+
+.Project_Sections:last-child{
+  margin-bottom: 3.5rem;
+}
+
+.Project_Previews{
+  grid-row: 1 / span 5;
+  grid-column: 1 / span 6; 
+  border: 1px dashed white;
+}
+
+.Project_Icons{
+  margin: 0 auto;
+  grid-row: 1 / span 2;
+  grid-column: 7 / span 2;
+  background-color: transparent;
+  height: 95%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0.1rem 0.2rem 0.1rem rgba(0,0,0,0.3);
+  border-radius: 0.78rem;
+}
+
+.Download_Buttons{
+  grid-row: 1 / span 2;
+  grid-column: 9 / span 4;
+  /* padding: 0.2rem; */
+  box-sizing: border-box;
+  /* border: 1px dashed white; */
+}
+
+.Project_Summaries{
+  grid-row: 3 / span 3;
+  grid-column: 7 / span 6;
+  /* border: 1px dashed white; */
+}
+
+#Icon_1{
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Icon.png');
+}
+
+#Icon_2{
+  background-image: url('./Project_Window_Assets/Icon_Converter_Icon.png');
+}
+
+#Icon_3{
+  background-image: url('./Project_Window_Assets/GPA_Grapher_Icon.png');
+  background-size: 80%;
+  background-color: rgb(55,55,55);
+}
+
+#Icon_4{
+  background-image: url('./Project_Window_Assets/Folder_Painter_Icon.png');
+}
+
+#Icon_5{
+  background-image: url('./Project_Window_Assets/Audio_Dock_Icon.png');
+}
+
+#Icon_6{
+  background-image: url('./Project_Window_Assets/Routine_Square_Icon.png');
+}
+
+#Icon_7{
+  background-image: url('./Project_Window_Assets/ImTune_Icon.png');
+}
+
+#Icon_8{
+  background-image: url('./Project_Window_Assets/Simple_Connect_Icon.png');
+}
+
+.Download_Buttons > button{
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgba(0,0,0,0.1);
+  color: rgb(80,80,80);
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+#Icon_3_Download_Button > button{
+  width: calc(50% - 0.35rem);
+}
+
+#Icon_3_Download_Button > button:first-child{
+  float: right;
+}
+
+#Icon_8_Download_Button > button{
+  width: calc(50% - 0.35rem);
+}
+
+#Icon_8_Download_Button > button:first-child{
+  float: right;
+}
+
+.Project_Summaries > h1{
+  color: rgb(80,80,80);
+  margin: 0;
+}
+
+.Project_Summaries > h3{
+  color: rgb(80,80,80);
+  margin: 0;
+  color: rgb(100,100,100);
+  font-weight: lighter;
+  font-size: 0.75rem;
+}
+
+
+.Project_Summaries > ul{
+  color: rgb(80,80,80);
+  margin: 0.4rem 0 0 0;
+  color: rgb(100,100,100);
+  font-weight: lighter;
+  font-size: 0.75rem;
+  margin-left: -1rem;
+}
+
+
+
+
+
+
+

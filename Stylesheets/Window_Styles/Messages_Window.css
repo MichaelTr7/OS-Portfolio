@@ -10,6 +10,7 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
+  display: none; 
 }
 
 .Expand_Messages_Window{
