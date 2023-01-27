@@ -258,7 +258,6 @@
   filter: opacity(0.8);
 }
 
-
 #Launch_Icon_8A,#Launch_Icon_8B{
   position: absolute;
   background-image: url('./Project_Window_Assets/Chrome_Icon.svg');
@@ -287,6 +286,54 @@
   text-align: center;
   justify-content: center;
 }
+
+.Project_Previews{
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1rem 0.2rem 0.1rem rgba(0,0,0,0.3);
+  border: none;
+}
+
+#Project_Preview_1{
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Project_Selector_Buttons{
+  position: absolute;
+  background-color: transparent;
+  border: 0.1rem solid rgba(0,0,0,0.2);
+  border-radius: 1000rem;
+  color: rgba(0,0,0,0.2);
+  margin-left: 0.2rem;
+  margin-right: 0.2rem; 
+  width: 5rem;
+  margin-top: -0.3rem;
+}
+
+#All_Projects_Toggle{
+  margin-right: 1rem;
+  left: 6rem;  
+}
+
+#Hardware_Projects_Toggle{
+  left: 11.5rem;  
+}
+
+#Software_Projects_Toggle{
+  left: 17rem;  
+}
+
+.Filter_Indicator{
+  background-color: rgba(0,0,0,0.32);
+  color: rgba(255,255,255,0.5);
+  border: 0.1rem solid rgba(0,0,0,0.05);
+}
+
+
+
+
 
 
 
