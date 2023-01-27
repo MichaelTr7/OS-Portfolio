@@ -158,6 +158,16 @@
   float: right;
 }
 
+#Icon_8_Download_Button > button:first-child{
+  float: left;
+  position: relative;
+}
+
+#Icon_8_Download_Button > button:last-child{
+  float: right;
+  position: relative;
+}
+
 .Project_Summaries > h1{
   color: rgb(80,80,80);
   margin: 0;
@@ -249,7 +259,34 @@
 }
 
 
+#Launch_Icon_8A,#Launch_Icon_8B{
+  position: absolute;
+  background-image: url('./Project_Window_Assets/Chrome_Icon.svg');
+  height: calc(100% - 0.7rem);
+  width: 100%;
+  background-size: 42%;
+  filter: opacity(0.8);
+}
 
+#Launch_Icon_8B{
+  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+}
+
+#Icon_8_Download_Button{
+  position: relative;
+}
+
+#Icon_8_Download_Button > button > div{
+  position: absolute;
+  margin: 0 auto;
+  font-size: 0.3rem;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
 
 
 
