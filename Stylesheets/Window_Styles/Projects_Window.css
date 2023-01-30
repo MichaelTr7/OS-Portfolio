@@ -128,6 +128,12 @@
   background-image: url('./Project_Window_Assets/Simple_Connect_Icon.png');
 }
 
+#Icon_9, #Icon_10, #Icon_11, #Icon_12{
+  background-image: url('./Project_Window_Assets/Gear_Icon.png');
+  filter: opacity(0.95);
+}
+
+
 .Download_Buttons > button{
   border-radius: 0.5rem;
   border: none;
