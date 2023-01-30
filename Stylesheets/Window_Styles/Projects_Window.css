@@ -359,6 +359,43 @@
   filter: saturate(1.1) brightness(1.05);
 }
 
+#Project_Preview_9{
+  background-image: url('./Project_Window_Assets/Fuse_And_Sound_Module_Preview.png');
+  background-repeat: no-repeat;
+  background-size: 140%;
+  background-position: center;
+  filter: saturate(1.1) brightness(1.05);
+  background-color: black;
+}
+
+#Project_Preview_10{
+  background-image: url('./Project_Window_Assets/LED_Spectrum_Analyzer_Preview.jpeg');
+  background-repeat: no-repeat;
+  background-size: 105%;
+  background-position: center;
+  filter: saturate(1.1) brightness(1.05);
+  background-color: black;
+}
+
+#Project_Preview_11{
+  background-image: url('./Project_Window_Assets/Arduino_Mega_Shield_Preview.png');
+  background-repeat: no-repeat;
+  background-size: 105%;
+  background-position: center;
+  filter: saturate(1.1) brightness(1.05);
+  background-color: black;
+}
+
+#Project_Preview_12{
+  background-image: url('./Project_Window_Assets/Lithium_Ion_Battery_Tester_Preview.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: saturate(1.1) brightness(1.05);
+  background-color: black;
+}
+
+
 .Project_Selector_Buttons{
   position: absolute;
   background-color: transparent;
@@ -394,6 +431,6 @@
   display: none;
 }
 
-
+/* https://www.ecb.torontomu.ca/capstone/topics/2019/DX06.html */
 
 
