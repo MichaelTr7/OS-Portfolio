@@ -23,12 +23,18 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-}
-
-.Expand_Projects_Window{
+  
+  
   --New_Height: 70vh;
   height: var(--New_Height);
   min-height: 28rem;
+}
+
+.Expand_Projects_Window{
+  --Height: 30rem;
+  --Width: 35rem;
+  height: var(--Height);
+  width: var(--Width);
 }
 
 .Project_Sections{
@@ -294,6 +300,57 @@
 }
 
 #Project_Preview_1{
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#Project_Preview_2{
+  background-image: url('./Project_Window_Assets/Icon_Converter_Preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#Project_Preview_3{
+  background-image: url('./Project_Window_Assets/GPA_Grapher_Preview.png');
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: center;
+  background-color: #282828;
+}
+
+#Project_Preview_4{
+  background-image: url('./Project_Window_Assets/Folder_Painter_Preview_2.png');
+  background-repeat: no-repeat;
+  background-size: 145%;
+  background-position: center;
+}
+
+#Project_Preview_5{
+  background-image: url('./Project_Window_Assets/Audio_Dock_Preview.png');
+  background-color: #141E43;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#Project_Preview_6{
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#Project_Preview_7{
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#Project_Preview_8{
   background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
   background-repeat: no-repeat;
   background-size: cover;
