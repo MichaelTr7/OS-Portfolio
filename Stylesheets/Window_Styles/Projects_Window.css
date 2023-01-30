@@ -13,9 +13,9 @@
 }
 
 .Projects_Window{  
-  --Height: 30rem;
+  /* --Height: 30rem; */
   --Width: 35rem;
-  height: var(--Height);
+  /* height: var(--Height); */
   width: var(--Width);
   top: calc(2 * 3rem + 2.5rem);
   left: calc(50% - var(--Width)/2);
@@ -23,8 +23,6 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  
-  
   --New_Height: 70vh;
   height: var(--New_Height);
   min-height: 28rem;
@@ -337,24 +335,28 @@
 }
 
 #Project_Preview_6{
-  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-image: url('./Project_Window_Assets/Routine_Square_Preview.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  filter: saturate(1.1) brightness(1.05);
 }
 
 #Project_Preview_7{
-  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-image: url('./Project_Window_Assets/ImTUne_Preview.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: black;
 }
 
 #Project_Preview_8{
-  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-image: url('./Project_Window_Assets/Connect4_Preview.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-size: 115%;
   background-position: center;
+  filter: saturate(1.1) brightness(1.05);
 }
 
 .Project_Selector_Buttons{
