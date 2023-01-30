@@ -80,7 +80,36 @@
   to{filter: opacity(1);}
 }
 
+.Squeeze_Animation{
+  animation: Squeeze_Keyframes 0.15s ease-out forwards;
+}
 
+@keyframes Squeeze_Keyframes{
+  0%{transform: scale(1);}
+  50%{transform: scale(0.90);}
+  100%{transform: scale(1);}
+}
+
+.Pulse_Fade_Animation{
+  animation: Pulse_Fade_Keyframes 1s ease-out forwards;
+}
+
+@keyframes Pulse_Fade_Keyframes {
+  0%{transform: translateX(0%); filter: opacity(1);}
+  35%{transform: translateX(140%); filter: opacity(0);}
+  100%{transform: translateX(0%); filter: opacity(1);}
+}
+
+
+.Pulse_Fade_Animation_2{
+  animation: Pulse_Fade_Keyframes_2 1s ease-out forwards;
+}
+
+@keyframes Pulse_Fade_Keyframes_2 {
+  0%{transform: translateX(0%); filter: opacity(1);}
+  35%{transform: translateX(-140%); filter: opacity(0);}
+  100%{transform: translateX(0%); filter: opacity(1);}
+}
 
 
 

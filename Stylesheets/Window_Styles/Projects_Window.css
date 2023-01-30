@@ -26,6 +26,9 @@
   --New_Height: 70vh;
   height: var(--New_Height);
   min-height: 28rem;
+  overflow: hidden;
+  will-change: transform;
+  transition: all 0.001s linear;
 }
 
 .Expand_Projects_Window{
@@ -417,14 +420,17 @@
 #All_Projects_Toggle{
   margin-right: 1rem;
   left: 6rem;  
+  transition: 0.15s;
 }
 
 #Hardware_Projects_Toggle{
   left: 11.5rem;  
+  transition: 0.15s;
 }
 
 #Software_Projects_Toggle{
   left: 17rem;  
+  transition: 0.15s;
 }
 
 .Filter_Indicator{
