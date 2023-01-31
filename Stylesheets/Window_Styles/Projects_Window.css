@@ -13,9 +13,7 @@
 }
 
 .Projects_Window{  
-  /* --Height: 30rem; */
   --Width: 35rem;
-  /* height: var(--Height); */
   width: var(--Width);
   top: calc(2 * 3rem + 2.5rem);
   left: calc(50% - var(--Width)/2);
