@@ -1,17 +1,4 @@
 
-::-webkit-scrollbar {
-    width: 0;
-}
- 
-::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-.Projects_Window {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .Projects_Window{  
   --Width: 35rem;
   width: var(--Width);
@@ -27,6 +14,20 @@
   overflow: hidden;
   will-change: transform;
   transition: all 0.001s linear;
+  display: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.Projects_Window {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .Expand_Projects_Window{
@@ -84,15 +85,24 @@
   position: relative;
   grid-row: 1 / span 2;
   grid-column: 9 / span 4;
-  /* padding: 0.2rem; */
   box-sizing: border-box;
-  /* border: 1px dashed white; */
+
+}
+
+.Download_Buttons > button{
+  transform: scale(1);
+  transition: 0.2s;  
+}
+
+.Download_Buttons > button:hover{
+  transform: scale(1.05);
+  border: 2px solid rgba(0,0,0,0.2);
+  transition: 0.2s;  
 }
 
 .Project_Summaries{
   grid-row: 3 / span 3;
   grid-column: 7 / span 6;
-  /* border: 1px dashed white; */
 }
 
 #Icon_1{
@@ -145,6 +155,8 @@
   width: 100%;
   text-align: left;
   padding-left: 1rem;
+  border: 2px solid rgba(255,255,255,0);
+
 }
 
 #Icon_3_Download_Button > button{
@@ -439,6 +451,12 @@
 
 #Icon_9_Download_Button,#Icon_10_Download_Button,#Icon_11_Download_Button{
   display: none;
+}
+
+.Link_Labels{
+  height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
 /* https://www.ecb.torontomu.ca/capstone/topics/2019/DX06.html */

@@ -1,19 +1,52 @@
 
 .Courses_Window{
-    --Height: 21rem;
-    --Width: 21rem;
-    top: calc(5 * 3rem + 2.5rem);
-    left: calc(50% - var(--Width)/2);
-    z-index: 55;
-    filter: opacity(1);
-    transition: 0.2s;
-    transition-property: height, width;
-    display: none;
+  --Height: 30rem;
+  --Width: 35rem;
+  height: var(--Height); 
+  width: var(--Width); 
+  top: calc(5 * 3rem + 2.5rem);
+  left: calc(50% - var(--Width)/2);
+  z-index: 55;
+  filter: opacity(1);
+  transition: 0.2s;
+  transition-property: height, width;
+  /* display: none; */
 }
 
 .Expand_Courses_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
+  --New_Height: 21rem;
+  --New_Width: 21rem;
   height: var(--New_Height);
   width: var(--New_Width);
 }
+
+#Courses_Window_Body{
+  padding: 1rem;
+}
+
+#Book_Shelf{
+  height: calc(100% - 3rem);
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.7rem solid #705C49;
+  border-bottom: 3rem solid #705C49;
+  border-radius: 0.5rem;
+}
+
+.Shelves{
+  height: 50%;
+  box-sizing: border-box;
+}
+
+#Top_Shelf{
+  border-bottom: calc(1.7rem/2) solid #705C49;
+}
+
+#Bottom_Shelf{
+  border-top: calc(1.7rem/2) solid #705C49;
+}
+
+
+
+
+

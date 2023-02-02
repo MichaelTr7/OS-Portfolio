@@ -13,7 +13,50 @@
 
 .Expand_Education_Window{
   --New_Height: 30rem;
-  --New_Width: 35rem;
   height: var(--New_Height);
-  width: var(--New_Width);
 }
+
+#Education_Circle{
+  background-color: rgba(0,0,0,0.1);
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border: 0.3rem solid white;
+  box-shadow: 0 0.1rem 0.5rem 0.1rem rgba(0,0,0,0.2), inset 0 -0.1rem 0.5rem 0.1rem rgba(0,0,0,0.2);
+  background-image: url('../Window_Styles/Education_Window_Assets/Ryerson_Logo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#School_Header{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  color: rgb(80,80,80);
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+#Degree_Label{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  color: rgb(80,80,80);
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+
+
+
+
+
