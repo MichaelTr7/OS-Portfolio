@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <meta name="viewport" 
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="utf-8">
@@ -29,7 +30,7 @@
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Skills_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Education_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Courses_Window.css">
-    <link rel="stylesheet" href="./Stylesheets/Window_Styles/Certifications_Window.css">
+    <link rel="stylesheet" href="./Stylesheets/Window_Styles/Acknowledgements_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Volunteer_Work_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Mail_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Links_Window.css">    
@@ -58,7 +59,7 @@
     <script src="./JavaScript/App_Code/Skills.js"></script>
     <script src="./JavaScript/App_Code/Education.js"></script>
     <script src="./JavaScript/App_Code/Courses.js"></script>
-    <script src="./JavaScript/App_Code/Certifications.js"></script>
+    <script src="./JavaScript/App_Code/Acknowledgements.js"></script>
     <script src="./JavaScript/App_Code/Volunteer_Work.js"></script>
     <script src="./JavaScript/App_Code/Mail.js"></script>
     <script src="./JavaScript/App_Code/Links.js"></script>
@@ -114,7 +115,7 @@
     <!-- Courses -->
     <div id="Courses_Icon" class="App_Icons" data-index=5></div>
     <!-- Certifications -->
-    <div id="Certifications_Icon" class="App_Icons" data-index=6></div>
+    <div id="Acknowledgements_Icon" class="App_Icons" data-index=6></div>
     <!-- Volunteer Work -->
     <div id="Volunteer_Work_Icon" class="App_Icons" data-index=7></div>
     <!-- Awards -->
@@ -890,7 +891,7 @@
         <div><div class="Minimize_Toggles Control_Toggles">
         <div class="Minimize_Icons"></div>
         </div></div>
-        <div><div class="Expand_Toggles Control_Toggles">
+        <div><div class="Expand_Toggles Control_Toggles" style="display:none;">
         <div class="Expand_Icons"></div>
         </div></div>
       </div>
@@ -899,18 +900,57 @@
         <!-- <h1 id="Courses_Header">Notable Courses</h1> -->
 
         <div id="Book_Shelf">
-        <div id="Top_Shelf" class="Shelves"> </div>
-        <div id="Bottom_Shelf" class="Shelves"> </div>
+        <div id="Top_Shelf" class="Shelves">
+          <div class="Book_Slots"><div id="Book_1" class="Books"><div class="Book_Titles">CMOS Mixed-Mode Circuits</div></div></div>
+          <div class="Book_Slots"><div id="Book_2" class="Books"><div class="Book_Titles">Image Processing</div></div></div>
+          <div class="Book_Slots"><div id="Book_3" class="Books"><div class="Book_Titles">Electronics I</div></div></div>
+          <div class="Book_Slots"><div id="Book_4" class="Books"><div class="Book_Titles">Communication Systems</div></div></div>
+          <div class="Book_Slots"><div id="Book_5" class="Books"><div class="Book_Titles">Digital Signal Processing</div></div></div>
+          <div class="Book_Slots"><div id="Book_6" class="Books"><div class="Book_Titles">Electric Circuit Analysis</div></div></div>
+          <div class="Book_Slots"><div id="Book_7" class="Books"><div class="Book_Titles">Calculus II</div></div></div>
+          <div class="Book_Slots"><div id="Book_8" class="Books"><div class="Book_Titles">Physics: Waves and Fields</div></div></div>
+          <div class="Book_Slots"><div id="Book_9" class="Books"><div class="Book_Titles">Software Systems</div></div></div>
+          <div class="Book_Slots"><div id="Book_10" class="Books"><div class="Book_Titles">Digital Systems</div></div></div>
+          <div class="Book_Slots"><div id="Book_11" class="Books"><div class="Book_Titles">Electric Networks</div></div></div>
+          <div class="Book_Slots"><div id="Book_12" class="Books"><div class="Book_Titles">Solid State Physics</div></div></div>
+          <div class="Book_Slots"><div id="Book_13" class="Books"><div class="Book_Titles">Discrete Mathematics</div></div></div>
+          <div class="Book_Slots"><div id="Book_14" class="Books"><div class="Book_Titles">Field Theory</div></div></div>
+          <!-- <div class="Book_Slots"><div id="Book_15" class="Books"><div class="Book_Titles">Title</div></div></div> -->
+        </div>
+        <div id="Bottom_Shelf" class="Shelves">
+          <div class="Book_Slots"><div id="Book_16" class="Books"><div class="Book_Titles">Microprocessor Systems</div></div></div>
+          <div class="Book_Slots"><div id="Book_17" class="Books"><div class="Book_Titles">Electronic Circuits II</div></div></div>
+          <div class="Book_Slots"><div id="Book_18" class="Books"><div class="Book_Titles">Control Systems</div></div></div>
+          <div class="Book_Slots"><div id="Book_19" class="Books"><div class="Book_Titles">Signals and Systems I</div></div></div>
+          <div class="Book_Slots"><div id="Book_20" class="Books"><div class="Book_Titles">Electromagnetics</div></div></div>
+          <div class="Book_Slots"><div id="Book_21" class="Books"><div class="Book_Titles">Energy Conservation</div></div></div>
+          <div class="Book_Slots"><div id="Book_22" class="Books"><div class="Book_Titles">Power, Change and Technology</div></div></div>
+          <div class="Book_Slots"><div id="Book_23" class="Books"><div class="Book_Titles">Thermodynamics and Fluids</div></div></div>
+          <div class="Book_Slots"><div id="Book_24" class="Books"><div class="Book_Titles">Law and Ethics</div></div></div>
+          <div class="Book_Slots"><div id="Book_25" class="Books"><div class="Book_Titles">Writing Skills</div></div></div>
+          <div class="Book_Slots"><div id="Book_26" class="Books"><div class="Book_Titles">Engineering Capstone Design</div></div></div>
+          <div class="Book_Slots"><div id="Book_27" class="Books"><div class="Book_Titles">Course Calendar</div></div></div>
+          <div class="Book_Slots"><div id="Book_28" class="Books"><div class="Book_Titles">General Chemistry</div></div></div>
+          <div class="Book_Slots"><div id="Book_29" class="Books"><div class="Book_Titles">Introduction to Engineering</div></div></div>
+          <!-- <div class="Book_Slots"><div id="Book_30" class="Books"><div class="Book_Titles">Title</div></div></div> -->
+        </div>
+        <h1 id="Shelf_Label">LIBRARY: NOTABLE COURSES</h1>
         </div>
         
         
-        
-        
+      
+        <div id="Book_Summary" class="Book_Summary">
+          <iframe id="Course_Info_Frame" src="https://www.torontomu.ca/calendar/2022-2023/programs/feas/electrical/"></iframe>
+          <button id="Back_To_Library_Button" type="button" name="button">Back to Library</button>
+
+        </div>
       
       </div>
+      
+
     </div>
     
-    <div id="Certifications_Window" class="Certifications_Window Window_Templates" data-origin_x1="0" data-origin_x2="0" data-origin_y1="0" data-origin_y2="0" data-original_window_height="0" data-original_window_width="0">
+    <div id="Acknowledgements_Window" class="Acknowledgements_Window Window_Templates" data-origin_x1="0" data-origin_x2="0" data-origin_y1="0" data-origin_y2="0" data-original_window_height="0" data-original_window_width="0">
       <div class="App_Controls">
         <div><div class="Close_Toggles Control_Toggles">
         <div class="Close_Icons"></div>
@@ -922,12 +962,33 @@
         <div class="Expand_Icons"></div>
         </div></div>
       </div>
-      <div class="Title_Bars">Certifications</div>
-      <div class="Window_Bodies">
-      
-      
-      
-      
+      <div class="Title_Bars">Acknowledgements</div>
+      <div id="Acknowledgements_Window_Body" class="Window_Bodies">
+        <div class="Certificates">
+        <div id="Acknowledgement_1" class="Certificate_Sheets">
+        <div></div>
+        <label>Entrance Scholarship</label>
+        </div>
+        <h1 class="Certificate_Headers">2016 - Ryerson University</h1>
+        
+        </div>
+        <div class="Certificates">
+        <div id="Acknowledgement_2" class="Certificate_Sheets">
+        <div></div>
+        <label>4th Year Deans List</label>
+        </div>
+        <h1 class="Certificate_Headers">2020 - Ryerson University</h1>
+        
+        </div>
+        <div class="Certificates">
+        <div id="Acknowledgement_3" class="Certificate_Sheets">
+        <div></div>
+        <label>Spolight Award</label>
+        </div>
+        <h1 class="Certificate_Headers">2022 - Advanced Micro Devices, AMD</h1>
+        
+        </div>
+
       
       
       </div>
@@ -962,7 +1023,11 @@
         </div></div>
       </div>
       <div class="Title_Bars">Mail</div>
-      <div class="Window_Bodies"></div>
+      <div id="Mail_Window_Body" class="Window_Bodies">
+      
+      
+      
+      </div>
     </div>
     
     <div id="Links_Window" class="Links_Window Window_Templates" data-origin_x1="0" data-origin_x2="0" data-origin_y1="0" data-origin_y2="0" data-original_window_height="0" data-original_window_width="0">
@@ -973,16 +1038,45 @@
         <div><div class="Minimize_Toggles Control_Toggles">
         <div class="Minimize_Icons"></div>
         </div></div>
-        <div><div class="Expand_Toggles Control_Toggles">
+        <div><div style="display:none;" class="Expand_Toggles Control_Toggles">
         <div class="Expand_Icons"></div>
         </div></div>
       </div>
       <div class="Title_Bars">Links</div>
-      <div class="Window_Bodies"></div> 
+      <div id="Links_Window_Body" class="Window_Bodies">
+        <div class="Links_Circle" id="Links_Circle">
+          <div id="Stick_Label_1" class="Stick_Labels">
+          <div class="Stick_Label_Arms">
+            <div class="Stick_Endpoints">
+            <div id="Link_Container_1" class="Link_Containers">
+              <div id="Link_Symbol_1" class="Link_Symbols"></div>
+              <div class="Link_Labels">GitHub</div></div>
+            </div>
+          </div>
+          </div>
+          <div id="Stick_Label_2" class="Stick_Labels">
+          <div class="Stick_Label_Arms">
+            <div class="Stick_Endpoints">
+            <div id="Link_Container_2" class="Link_Containers">
+              <div id="Link_Symbol_2" class="Link_Symbols"></div>
+              <div class="Link_Labels">Stack Overflow</div></div>
+            </div>
+          </div>
+          </div>
+          <div id="Stick_Label_3" class="Stick_Labels">
+          <div class="Stick_Label_Arms">
+            <div class="Stick_Endpoints">
+            <div id="Link_Container_3" class="Link_Containers">
+              <div id="Link_Symbol_3" class="Link_Symbols"></div>
+              <div class="Link_Labels">LinkedIn</div></div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div id="Reveal_Links_Label" class="Reveal_Links_Label">Press to<br>Reveal</div>
+      </div> 
     </div>
-    
-    
-    
+  
     <template id="">
       <div id="Extra_Window" class="Extra_Window Window_Templates" style="filter:opacity(1); top: 30%; left: 30%;" data-origin_x1="0" data-origin_x2="0" data-origin_y1="0" data-origin_y2="0" data-original_window_height="0" data-original_window_width="0">
         <div class="App_Controls">

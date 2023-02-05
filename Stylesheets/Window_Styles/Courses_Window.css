@@ -10,12 +10,12 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  /* display: none; */
+  display: none;
 }
 
 .Expand_Courses_Window{
-  --New_Height: 21rem;
-  --New_Width: 21rem;
+  --New_Height: 45rem;
+  --New_Width: 52.5rem;
   height: var(--New_Height);
   width: var(--New_Width);
 }
@@ -28,23 +28,302 @@
   height: calc(100% - 3rem);
   width: 100%;
   box-sizing: border-box;
-  border: 1.7rem solid #705C49;
-  border-bottom: 3rem solid #705C49;
+  border: 1.7rem solid #534233;
+  border-bottom: 3rem solid #534233;
   border-radius: 0.5rem;
+  background-color: #372B1F;
+  box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,0.2), inset 0 0rem 0.05rem 0.1rem rgba(255,255,255,0.1);
 }
 
 .Shelves{
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(14,1fr);
   height: 50%;
   box-sizing: border-box;
+  padding-left: 0.2rem;
+  padding: 0.2rem;
+  box-shadow: inset 0 0.5rem 0.2rem 0.4rem rgba(0,0,0,0.1);
 }
 
 #Top_Shelf{
-  border-bottom: calc(1.7rem/2) solid #705C49;
+  border-bottom: calc(1.7rem/2) solid #534233;
 }
 
 #Bottom_Shelf{
-  border-top: calc(1.7rem/2) solid #705C49;
+  border-top: calc(1.7rem/2) solid #534233;
 }
+
+#Shelf_Label{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  height: 3rem;
+  width: 100%;
+  color: #413225;
+  font-weight: bold;
+}
+
+.Book_Slots{
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.Books{
+  width: 100%;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,0.1), inset 0 0rem 0.05rem 0.1rem rgba(255,255,255,0.03);
+  border-bottom: 1rem solid rgba(0,0,0,0.2);
+  border-top: 0.3rem solid rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  padding-bottom: 0.5rem;
+  transition: 0.2s;
+}
+
+.Books:hover{
+  filter: brightness(1.5);
+  transform: translateY(-0.5rem);
+}
+
+.Book_Selected_Animation{
+  animation: Book_Selected_Keyframes 0.3s ease forwards;
+}
+
+@keyframes Book_Selected_Keyframes{
+  0%{transform: translateY(0);}
+  50%{transform: translateY(-0.5rem);}
+  100%{transform: translateY(0);}
+}
+
+#Book_1{
+  height: 92%;
+  background-color: #B0513C;
+}
+
+#Book_2{
+  height: 80%;
+  background-color: #B0513C;
+}
+
+#Book_3{
+  height: 90%;
+  background-color: #B0513C;
+}
+
+#Book_4{
+  height: 90%;
+  background-color: #47875A;
+}
+
+#Book_5{
+  height: 80%;
+  background-color: #47875A;
+}
+
+#Book_6{
+  height: 95%;
+  background-color: #47875A;
+}
+
+#Book_7{
+  height: 70%;
+  background-color: #47875A;
+}
+
+#Book_8{
+  height: 85%;
+  background-color: #5B666B;
+}
+
+#Book_9{
+  height: 80%;
+  background-color: #5B666B;
+}
+
+#Book_10{
+  height: 67%;
+  background-color: #23668C;
+}
+
+#Book_11{
+  height: 72%;
+  background-color: #23668C;
+}
+
+#Book_12{
+  height: 95%;
+  background-color: #3F7626;
+}
+
+#Book_13{
+  height: 87%;
+  background-color: #3F7626;
+}
+
+#Book_14{
+  height: 75%;
+  background-color: #3F7626;
+}
+
+#Book_15{
+  height: 90%;
+  background-color: #3F7626;
+}
+
+#Book_16{
+  height: 90%;
+  background-color: #593865;
+}
+
+#Book_17{
+  height: 85%;
+  background-color: #593865;
+}
+
+#Book_18{
+  height: 65%;
+  background-color: #77472D;
+}
+
+#Book_19{
+  height: 80%;
+  background-color: #77472D;
+}
+
+#Book_20{
+  height: 90%;
+  background-color: #944B77;
+}
+
+#Book_21{
+  height: 75%;
+  background-color: #944B77;
+}
+
+#Book_22{
+  height: 90%;
+  background-color: #944B77;
+}
+
+#Book_23{
+  height: 90%;
+  background-color: #2E6C61;
+}
+
+#Book_24{
+  height: 77%;
+  background-color: #2E6C61;
+}
+
+#Book_25{
+  height: 70%;
+  background-color: #2E6C61;
+}
+
+#Book_26{
+  height: 95%;
+  background-color: #2E6C61;
+}
+
+#Book_27{
+  height: 89%;
+  background-color: #2E6C61;
+}
+
+#Book_28{
+  height: 77%;
+  background-color: #6A6D56;
+}
+
+#Book_29{
+  height: 95%;
+  background-color: #6A6D56;
+}
+
+#Book_30{
+  height: 82%;
+  background-color: #6A6D56;
+}
+
+
+.Book_Titles{
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transform: rotateZ(180deg);
+  font-size: 0.7rem;
+  color: rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+
+.Book_Summary{
+  position: absolute;
+  --Height: 75%;
+  --Width: 90%;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(50% - var(--Height)/2);
+  left: calc(50% - var(--Width)/2);
+  margin: 0 auto;
+  padding-top: 5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background-color: #534233;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 1rem 2rem 0.5rem rgba(0,0,0,0.2), inset  0 0.03rem 0.03rem 0.02rem rgba(255,255,255,0.1);
+  transform: translateY(120%);
+  transition: 0.2s;
+  transition-delay: 0s;
+}
+
+.Display_Course_Info{
+  transform: translateY(0);
+}
+
+#Course_Info_Frame{
+  display: block;
+  position: relative;
+  height: 85%;
+  width: 100%;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+#Back_To_Library_Button{
+  display: flex;
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  color: rgba(0,0,0,0.42);
+  font-weight: bold;
+  background-color: #534233;
+  box-shadow: 0 0.5rem 2rem 0.05rem rgba(0,0,0,0.2), inset  0 0.03rem 0.03rem 0.02rem rgba(255,255,255,0.1);
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -17,13 +17,13 @@
   display: none;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 0;
 }
  
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
-}
+} */
 
 .Projects_Window {
   -ms-overflow-style: none;

@@ -1,3 +1,13 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 .Window_Templates{
   position: absolute;
@@ -41,7 +51,6 @@
 }
 
 .Window_Bodies{
-  /* border: 1px dashed rgba(0,0,0,0.2); */
   height: 100%;
   width: 100%;
   pointer-events: all;

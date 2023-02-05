@@ -47,9 +47,7 @@ function Minimize_Window(){
   var X_Scaler = App_Icon_Size/Parent_Window_Width;
   var Y_Scaler = App_Icon_Size/Parent_Window_Height;
   var Scaling_Factor = X_Scaler;
-  
-  
-  console.log(Parent_Window_Height);
+    
   var X_Position_1_Percentage = 100*Window_Bounds.x/window.innerWidth + "%";
   var Y_Position_1_Percentage = 100*Window_Bounds.y/window.innerHeight + "%";
   var X_Position_2_Percentage = 100*(App_Icons_Bounds.x + App_Icons_Bounds.width/2 - Parent_Window_Width/2)/window.innerWidth + "%";

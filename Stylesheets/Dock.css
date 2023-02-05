@@ -105,7 +105,7 @@
   filter: saturate(0.97);
 }
 
-#Certifications_Icon{
+#Acknowledgements_Icon{
   background-image: url("./Assets/Certifications_Icon.svg");
   -webkit-transform: translate3d(0,0,0);
   background-size: 105%;

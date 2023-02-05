@@ -12,7 +12,7 @@ var Window_Stack = ["Toybox_Window",
                     "Skills_Window",
                     "Education_Window",
                     "Courses_Window",
-                    "Certifications_Window",
+                    "Acknowledgements_Window",
                     "Volunteer_Work_Window",
                     "Mail_Window",
                     "Links_Window"];

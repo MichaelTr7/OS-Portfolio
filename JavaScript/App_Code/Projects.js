@@ -11,13 +11,11 @@ function Setup_Projects_App(){
   }
 }
 
-
 function Open_New_Tab(){
   console.log("Open new tab");
   let URL = this.dataset.link;
   window.open(URL, '_blank').focus();
 }
-
 
 function Filter_Projects(){
   this.classList.remove('Squeeze_Animation');

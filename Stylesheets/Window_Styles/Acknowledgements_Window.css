@@ -1,0 +1,107 @@
+
+.Acknowledgements_Window{
+    --Height: 15rem;
+    --Width: 35rem;
+    height:var(--Height);
+    width:var(--Width);
+    top: calc(6 * 3rem + 2.5rem);
+    left: calc(50% - var(--Width)/2);
+    z-index: 56;
+    filter: opacity(1);
+    transition: 0.2s;
+    transition-property: height, width;
+    display: none;
+}
+
+.Expand_Acknowledgements_Window{
+  --New_Height: 15rem;
+  --New_Width: 17.5rem;
+  height: var(--New_Height);
+  width: var(--New_Width);
+}
+
+#Acknowledgements_Window_Body{
+  position: absolute;
+  display: flex;
+  height: calc(100% - 3rem);
+  padding: 1rem 2rem 0rem 2rem;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-flow: row wrap;
+}
+
+.Certificates{
+  display: grid;
+  row-gap: 0.5rem;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 1fr;
+  height: 9.7rem;
+  width: 5.8rem;
+  /* border: 1px dashed white; */
+  box-sizing: border-box;
+}
+
+.Certificate_Sheets{
+  position: relative;
+  display: flex;
+  background-color: white;
+  border-radius: 0.7rem;
+  font-size: 0.7rem;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: grey;
+  font-weight: bold;
+}
+
+.Certificate_Sheets > div{
+  top: -1rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-blend-mode: multiply;
+  z-index: 1;
+  filter: opacity(0.87);
+}
+
+.Certificate_Sheets > label{
+  z-index: 2;
+}
+
+.Certificate_Headers{
+  display: flex;
+  margin: 0;
+  font-size: 0.6rem;
+  justify-content: center;
+  align-items: flex;
+  text-align: center;
+  box-sizing: border-box;
+  color: rgb(80,80,80);
+  font-weight: normal;
+}
+
+#Acknowledgement_1 > div{
+  background-image: url('../Window_Styles/Acknowledgements_Window_Assets/Ryerson_Logo.png');
+}
+
+#Acknowledgement_2 > div{
+  background-image: url('../Window_Styles/Acknowledgements_Window_Assets/Ryerson_Logo.png');
+}
+
+#Acknowledgement_3 > div{
+  background-image: url('../Window_Styles/Acknowledgements_Window_Assets/AMD_Logo.png');
+}
+
+
+
+
+

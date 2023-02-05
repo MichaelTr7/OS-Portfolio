@@ -1,8 +1,15 @@
 
+:root{
+  --Links_Circle_Diameter: 5.5rem;
+}
+
 .Links_Window{
-    --Height: 21rem;
-    --Width: 21rem;
+    --Height: calc(0.8 * 27rem);
+    --Width: calc(0.8 * 35rem);
+    height: var(--Height);
+    width: var(--Width);
     top: calc(9 * 3rem + 2.5rem);
+    top: 5rem;
     left: calc(50% - var(--Width)/2);
     z-index: 59;
     filter: opacity(1);
@@ -12,9 +19,209 @@
 }
 
 .Expand_Links_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
+  --New_Height: 27rem;
+  --New_Width: 27rem;
   height: var(--New_Height);
   width: var(--New_Width);
 }
+
+#Links_Window_Body{
+  position: absolute;
+  height: calc(100% - 3rem);
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.Links_Circle{
+  position: absolute;
+  --Diameter: 7rem;
+  height: var(--Links_Circle_Diameter);
+  width: var(--Links_Circle_Diameter);
+  border-radius: 100%;
+  top: calc(50% - var(--Links_Circle_Diameter)/2 - 1.5rem);
+  left: calc(50% - var(--Links_Circle_Diameter)/2);
+  border: 1rem solid transparent;
+  box-sizing: border-box;
+  z-index: 0;
+  box-shadow: inset 0rem 0rem 0.3rem 0.1rem rgba(0,0,0,0.2);
+  background-image: url('../Window_Styles/Links_Window_Assets/Power_Button.svg');
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  transition: 0.2s;
+}
+
+#Links_Circle:hover{
+  background-color: rgba(255,255,255,0.15);
+}
+
+.Reveal_Links_Label{
+  position: relative;
+  display: flex;
+  height: 2rem;
+  width: 10rem;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  top: 2rem;
+  border-radius: 1000rem;
+  padding: 0.2rem;
+  color: rgba(0,0,0,0.2);
+  transition: 0.2s;
+}
+
+.Hide_Reveal_Links_Label{
+  color: rgba(0,0,0,0);
+  transition: 0.5s;
+}
+
+.Links_Circle_Expand{
+  border: 1rem solid #6CC2AF;
+}
+
+
+.Stick_Labels{
+  --Height: 300%;
+  --Width: 1rem;
+  position: absolute;
+  height: var(--Height);
+  width: var(--Width);
+  background-color: #6CC2AF;
+  top: calc(50% - var(--Height)/2);
+  left: calc(50% - var(--Width)/2);
+  z-index: 1;
+  background-color: transparent;
+}
+
+#Stick_Label_1{
+  transform: rotateZ(calc(180deg));
+}
+
+#Stick_Label_2{
+  transform: rotateZ(calc(300deg));
+}
+
+#Stick_Label_3{
+  transform: rotateZ(calc(420deg));
+}
+
+.Stick_Label_Arms{
+  position: absolute;
+  width: 1rem;
+  z-index: 2;
+  height: calc(50% - var(--Links_Circle_Diameter)/2 + 1rem);
+  transition: 0.2s;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #6CC2AF 50%);
+  background-size: 100% 200%;
+  background-position:  0% 0%;
+  transition-delay: 0.2s;
+  border-radius: 1000rem;
+}
+
+.Stick_Endpoints{
+  position: absolute;
+  --Diameter: 2rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(-1 * var(--Diameter) + 0.5rem);
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  border: 0.5rem solid #6CC2AF;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: 0.2s;
+  transition-delay: 0.4s;
+  box-shadow: inset 0rem 0rem 0.12rem 0.05rem rgba(0,0,0,0.2);
+}
+
+.Stick_Label_Arms_Expand{
+  background-position:  0% 100%;
+}
+
+.Stick_Endpoints_Expand{
+  transform: scale(1);
+}
+
+.Link_Containers{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr;
+  --Height: 2rem;
+  --Width: 10rem;
+  position: absolute;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(50% - var(--Height)/2);
+  left: calc(50% - var(--Width)/2);
+  background-color: white;
+  border-radius: 1000rem;
+  background-color: #6CC2AF;
+  box-shadow: inset 0rem 0rem 0.12rem 0.05rem rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.35);
+  font-weight: bold;
+  overflow: hidden;
+  padding-right: 0.5rem;
+}
+
+#Link_Container_1{
+  transform: rotateZ(calc(0deg + 180deg)) translateY(2.3rem);
+}
+
+#Link_Container_2{
+  transform: rotateZ(calc(-120deg + 180deg)) translateY(-2.3rem) translateX(-3rem);
+}
+
+#Link_Container_3{
+  transform: rotateZ(calc(-240deg + 180deg)) translateY(-2.75rem) translateX(3rem);
+}
+
+.Link_Symbols{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: 0.5rem;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Link_Labels{
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+#Link_Symbol_1{
+  background-image: url('../Window_Styles/Links_Window_Assets/GitHub_Icon.png');
+  background-size: 75%;
+  left: 2.45rem;
+  filter: opacity(0.4);
+}
+
+#Link_Symbol_2{
+  background-image: url('../Window_Styles/Links_Window_Assets/StackOverflow_Icon.png');
+  background-size: 55%;
+  left: 0.5rem;
+  filter: opacity(0.4);
+}
+
+#Link_Symbol_3{
+  background-image: url('../Window_Styles/Links_Window_Assets/LinkedIn_Icon.png');
+  background-size: 60%;
+  left: 2rem;
+  filter: opacity(0.4);
+}
+
+
+
+
+
+
+
+
+
+
 

@@ -1,8 +1,11 @@
 
 .Mail_Window{
     --Height: 21rem;
-    --Width: 21rem;
+    --Width: calc((35/27)*21rem);
+    height: var(--Height);
+    width: var(--Width);
     top: calc(8 * 3rem + 2.5rem);
+    top: calc(1 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 58;
     filter: opacity(1);
@@ -12,7 +15,7 @@
 }
 
 .Expand_Mail_Window{
-  --New_Height: 30rem;
+  --New_Height: 27rem;
   --New_Width: 35rem;
   height: var(--New_Height);
   width: var(--New_Width);
