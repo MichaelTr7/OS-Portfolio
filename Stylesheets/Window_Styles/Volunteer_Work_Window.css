@@ -1,8 +1,11 @@
 
 .Volunteer_Work_Window{
-    --Height: 21rem;
-    --Width: 21rem;
+    --Height: 27rem;
+    --Width: 35rem;
+    height: var(--Height);
+    width: var(--Width);
     top: calc(7 * 3rem + 2.5rem);
+    top: calc(2 * 3rem + 2.5rem);
     left: calc(50% - var(--Width)/2);
     z-index: 57;
     filter: opacity(1);
@@ -12,8 +15,67 @@
 }
 
 .Expand_Volunteer_Work_Window{
-  --New_Height: 30rem;
-  --New_Width: 35rem;
+  --New_Height: 18rem;
+  --New_Width: calc((35/27)*18rem);
   height: var(--New_Height);
   width: var(--New_Width);
 }
+
+#Volunteer_Work_Body{
+  display: flex;
+  height: calc(100% - 3rem);
+  width: 100%;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-around;
+  
+}
+
+#Heart_Monitor{
+  height: 10rem;
+  width: 100%;
+  background-color: red;
+  border-radius: 0.7rem;
+}
+
+.Volunteer_Boxes{
+  /* height: 10rem; */
+  width: 15.8rem;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 0.7rem;
+  font-size: 0.85rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.Volunteer_Boxes > h1{
+  margin: 0;
+  color: rgb(80,80,80);
+}
+
+.Volunteer_Boxes > h3{
+  margin: 0;
+  color: rgb(80,80,80);
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+.Volunteer_Boxes > ul > li{
+    margin-top: 0.5rem;
+}
+
+
+.Volunteer_Boxes > ul{
+  color: rgb(80,80,80);
+  font-weight: normal;
+  font-size: 0.82rem;
+}
+
+
+
+
+
+
+

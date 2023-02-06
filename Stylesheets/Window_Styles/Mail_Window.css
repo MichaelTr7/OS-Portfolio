@@ -15,8 +15,83 @@
 }
 
 .Expand_Mail_Window{
-  --New_Height: 27rem;
+  --New_Height: 21rem;
   --New_Width: 35rem;
   height: var(--New_Height);
   width: var(--New_Width);
 }
+
+.Mail_Headers{
+  height: 1.2rem;
+  font-size: 0.85rem;
+  color: rgb(80,80,80);
+  font-weight: bold;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.Mail_Subheaders{
+  height: 1rem;
+  font-size: 0.7rem;
+  color: rgb(80,80,80);
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+#Mail_Window_Body{
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+  /* border: 1px dashed white; */
+}
+
+#Mail_Form > input, #Mail_Form > textarea{
+  background-color: rgba(0,0,0,0.1);
+  border: none;
+  margin-bottom: 1rem;
+}
+
+#Start_Mail_Button{
+  background-color: rgba(59,129,246,1);
+  height: 2rem;
+  width: 5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 0.5rem;
+  margin-left: 0.4rem;
+  filter: brightness(1);
+  transition: 0.2s;
+}
+
+#Start_Mail_Button:hover{
+  filter: brightness(1.1);
+}
+
+#Name_Input{
+  width: 15rem;
+  height: 2rem;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  color: rgb(80,80,80);
+  border-radius: 0.5rem;
+}
+
+#Body_Input{
+  height: 10rem;
+  width: 100%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  color: rgb(80,80,80);
+  border: none;
+  resize:none;
+  border-radius: 0.7rem;
+}
+
+
+
+
+
