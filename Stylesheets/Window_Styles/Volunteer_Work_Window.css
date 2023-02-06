@@ -1,6 +1,6 @@
 
 .Volunteer_Work_Window{
-    --Height: 27rem;
+    --Height: 35rem;
     --Width: 35rem;
     height: var(--Height);
     width: var(--Width);
@@ -11,11 +11,64 @@
     filter: opacity(1);
     transition: 0.2s;
     transition-property: height, width;
-    display: none;
+    /* display: none; */
+}
+
+#Heart_Monitor_Colour_Control_Knob_Backdrop{
+  --Diameter: 2.8rem;
+  margin-top: 1rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+}
+
+#Heart_Monitor_Speed_Control_Knob_Backdrop{
+  --Diameter: 2.5rem;
+  margin-top: 1rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+}
+
+.Heart_Monitor_Control_Knob_Backdrops{
+  position: relative;
+  --Diameter: 3rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  margin: 0 auto;
+  background-color: grey;
+  border-radius: 100%;
+  box-shadow: 0 0.05rem 0.5rem 0.1rem rgba(0,0,0,0.05);
+}
+
+.Heart_Monitor_Control_Knobs{
+  position: absolute;
+  --Margin: 1.2rem;
+  --Diameter: calc(100% - var(--Margin));
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  background-color: rgb(110,110,110);
+  box-shadow: 0 0.05rem 0.1rem 0.1rem rgba(0,0,0,0.2),
+  inset 0 0.05rem 0rem 0.02rem rgba(255,255,255,0.05);
+}
+
+#Heart_Monitor_Speed_Control_Knob{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0,0,0,0.3);
+  font-size: 0.8rem;
+  --Margin: 0.9rem;
+  --Diameter: calc(100% - var(--Margin));
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
 }
 
 .Expand_Volunteer_Work_Window{
-  --New_Height: 18rem;
+  --New_Height: 27rem;
   --New_Width: calc((35/27)*18rem);
   height: var(--New_Height);
   width: var(--New_Width);
@@ -30,24 +83,57 @@
   gap: 1rem;
   align-items: flex-start;
   justify-content: space-around;
-  
 }
 
 #Heart_Monitor{
-  height: 10rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: 4rem 1fr;
+  height: 11rem;
   width: 100%;
-  background-color: red;
+  background-color: #2B2B2B;
   border-radius: 0.7rem;
+  box-shadow: 0 0.2rem 0.5rem 0.1rem rgba(0,0,0,0.35);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
+#Heart_Monitor_Control_Panel{
+  background-color: rgba(255,255,255,0.04);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.1rem 0.12rem 0.1rem rgba(0,0,0,0.1), 
+  inset 0 0.05rem 0rem 0.02rem rgba(255,255,255,0.05);
+}
+
+#Heart_Monitor_Screen{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 0.4rem;
+  box-shadow: inset 0 0.1rem 0.12rem 0.1rem rgba(0,0,0,0.1), 
+  0 0.05rem 0rem 0.02rem rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+.Grid_Squares{
+  --Size: 3.1rem;
+  height: var(--Size);
+  width: var(--Size);
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+
 .Volunteer_Boxes{
-  /* height: 10rem; */
   width: 15.8rem;
   background-color: rgba(0,0,0,0.1);
   border-radius: 0.7rem;
   font-size: 0.85rem;
   padding: 1rem;
   box-sizing: border-box;
+  box-shadow: 0 0.2rem 0.5rem 0.1rem rgba(0,0,0,0.05);
 }
 
 .Volunteer_Boxes > h1{
@@ -65,7 +151,6 @@
 .Volunteer_Boxes > ul > li{
     margin-top: 0.5rem;
 }
-
 
 .Volunteer_Boxes > ul{
   color: rgb(80,80,80);

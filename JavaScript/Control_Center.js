@@ -172,8 +172,6 @@ function Toggle_Audio_Selector(){
 
 function Toggle_Accessibility_Features(){
   this.classList.toggle("Toggle_Screen_Mirroring");
-
-  
 }
 
 
