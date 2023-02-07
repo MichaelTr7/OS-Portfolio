@@ -10,7 +10,7 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  display: none; 
+  /* display: none;  */
 }
 
 .Expand_Messages_Window{
@@ -24,19 +24,17 @@
   position: relative;
   --Width: calc(100% - 5rem);
   --Height: calc(var(--Width)/4);
-  display: grid;
-  grid-gap: 7%;
-  grid-template-rows: 4fr 1fr;
-  grid-template-columns: repeat(3,1fr);
-  position: relative;
+  display: flex;
+  gap: 7%;
   height: var(--Height);
   width: var(--Width);
   margin: 0 auto;
   z-index: -1;
   box-sizing: border-box;
-  box-sizing: border-box;
   margin-top: 0.2rem;
   margin-bottom: 1.5rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .Pinned_Chat_Containers{
@@ -44,7 +42,7 @@
 }
 
 .Pinned_Chats{
-  position: absolute;
+  position: relative;
   display: flex;
   --Width: 4.5rem;
   width: var(--Width);
@@ -61,8 +59,10 @@
 }
 
 .Name_Labels{
+  position: relative;
+  top: 1rem;
   display: flex;
-  height: 100%;
+  height: 1rem;
   width: 100%;
   text-align: center;
   justify-content: center;
@@ -71,11 +71,6 @@
   font-size: 0.8rem;
 }
 
-.Recent_Chats{
-  position: relative;
-  height: 4.3rem;
-  overflow: hidden;
-}
 
 .Chat_Bubbles{
   display: flex;
@@ -90,6 +85,7 @@
   justify-content: center;
   align-items: center;
   color: rgba(255,255,255,0.7);
+  font-size: 1.3rem;
 }
 
 .Chat_Dividers{
@@ -137,6 +133,68 @@
   border-radius: 0.3rem;
   z-index: -1;
 }
+
+#Recent_Chats_Container{
+  position: absolute;
+  display: flex;
+  height: calc(100% - 10rem);
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.Recent_Chat_Boxes{
+  display: flex;
+  position: relative;
+  height: 4.3rem;
+  width: 100%;
+  overflow: hidden;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0px;
+}
+
+.Recent_Chat_Boxes > div{
+  scroll-snap-align: end; 
+}
+
+.Swipe_Actions_Menu{
+  display: grid;
+  grid-template-columns: 4.2rem 4.2rem;
+  position: absolute;
+  width: 8.4rem;
+  height: 100%;
+  box-sizing: border-box;
+  top: 0; 
+  left: 100%;
+  align-items: center;
+}
+
+.Pin_Buttons{
+  display: block;
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  background-color: #F4BF4F;
+  margin-right: 0.2rem;
+  border-radius: 0.3rem;
+}
+
+.Delete_Buttons{
+  display: block;
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  background-color: #EC6A5E;
+  /* padding-right: 1000rem; */
+  border-radius: 0.3rem;
+  margin-right: 0.2rem;
+}
+
+
 
 
 

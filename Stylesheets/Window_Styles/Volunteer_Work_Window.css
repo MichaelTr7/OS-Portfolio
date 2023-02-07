@@ -11,7 +11,7 @@
     filter: opacity(1);
     transition: 0.2s;
     transition-property: height, width;
-    /* display: none; */
+    display: none;
 }
 
 #Heart_Monitor_Colour_Control_Knob_Backdrop{
@@ -41,7 +41,7 @@
 
 .Heart_Monitor_Control_Knobs{
   position: absolute;
-  --Margin: 1.2rem;
+  --Margin: 1.4rem;
   --Diameter: calc(100% - var(--Margin));
   height: var(--Diameter);
   width: var(--Diameter);
@@ -51,6 +51,39 @@
   background-color: rgb(110,110,110);
   box-shadow: 0 0.05rem 0.1rem 0.1rem rgba(0,0,0,0.2),
   inset 0 0.05rem 0rem 0.02rem rgba(255,255,255,0.05);
+}
+
+.Heart_Monitor_Colour_Labels{
+  display: flex;
+  --Diameter: 0.6rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  color: rgba(0,0,0,0.4);
+  font-size: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+#Heart_Monitor_Red_Label{
+  position: absolute;
+  left: 0;
+}
+
+#Heart_Monitor_Green_Label{
+  position: absolute;
+  top: 0;
+}
+
+#Heart_Monitor_Blue_Label{
+  position: absolute;
+  left: calc(100% - 0.6rem);
+}
+
+#Heart_Monitor_Colour_Control_Knob_Ticker{
+  
 }
 
 #Heart_Monitor_Speed_Control_Knob{

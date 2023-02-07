@@ -623,32 +623,26 @@
       <span id="Compose_Chat_Button" class="material-symbols-outlined"> edit_square </span>
       <div id="Chat_Grid" class="Window_Bodies">
         <div class="Chat_Selection_Container">
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">TN</div></div>
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">S</div></div>
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">M</div></div>
-            <label class="Name_Labels">Tom Nook</label>
-            <label class="Name_Labels">Starman</label>
-            <label class="Name_Labels">Michael</label>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">TN</div><label class="Name_Labels">Tom Nook</label></div>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">S</div><label class="Name_Labels">Starman</label></div>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">M</div><label class="Name_Labels">Michael</label></div>
         </div>
-        <div class="Recent_Chats_Container">
-            <div class="Recent_Chats">
-              <div class="Chat_Bubbles">M</div>
-              <label class="Name_Headers">Michael</label>
-              <label class="Chat_Previews">Hi! Thank you for taking the time to take a look at my portfolio! :)</label>
-              <div class="Chat_Dividers"></div>
-            </div>
-            <div class="Recent_Chats">
-              <div class="Chat_Bubbles">TN</div>
-              <label class="Name_Headers">Tom Nook</label>
-              <label class="Chat_Previews">The brick bridge build has been completed.</label>
-              <div class="Chat_Dividers"></div>
-            </div>
-            <div class="Recent_Chats">
-              <div class="Chat_Bubbles">S</div>
-              <label class="Name_Headers">Starman</label>
-              <label class="Chat_Previews">We've landed on Mars! Over and out!</label>
-              <div class="Chat_Dividers"></div>
-            </div>
+        <div id="Recent_Chats_Container" class="Recent_Chats_Container">
+            <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">M</div> <label class="Name_Headers">Michael</label> <label class="Chat_Previews">Hi! Thank you for taking the time to take a look at my portfolio! :)</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
+              <button class="Pin_Buttons" type="button" name="button"></button>
+              <button class="Delete_Buttons" type="button" name="button"></button>
+            </div></div>
+            <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">TN</div> <label class="Name_Headers">Tom Nook</label> <label class="Chat_Previews">The brick bridge build has been completed.</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
+              <button class="Pin_Buttons" type="button" name="button"></button>
+              <button class="Delete_Buttons" type="button" name="button"></button>
+            </div></div>
+            <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">S</div> <label class="Name_Headers">Starman</label> <label class="Chat_Previews">We've landed on Mars! Over and out!</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
+              <button class="Pin_Buttons" type="button" name="button"></button>
+              <button class="Delete_Buttons" type="button" name="button"></button>
+            </div></div>
+  
+  
+  
   
         </div>
       </div>
@@ -1011,7 +1005,12 @@
         <div id="Heart_Monitor">
           <div id="Heart_Monitor_Control_Panel">
             <div id="Heart_Monitor_Colour_Control_Knob_Backdrop" class="Heart_Monitor_Control_Knob_Backdrops">
-              <div id="Heart_Monitor_Colour_Control_Knob" class="Heart_Monitor_Control_Knobs"></div>
+              <div id="Heart_Monitor_Colour_Control_Knob" class="Heart_Monitor_Control_Knobs">
+                <div id="Heart_Monitor_Colour_Control_Knob_Ticker"></div>
+              </div>
+              <div id="Heart_Monitor_Red_Label" class="Heart_Monitor_Colour_Labels">R</div>
+              <div id="Heart_Monitor_Green_Label" class="Heart_Monitor_Colour_Labels">G</div>
+              <div id="Heart_Monitor_Blue_Label" class="Heart_Monitor_Colour_Labels">B</div>
             </div>
             <div id="Heart_Monitor_Speed_Control_Knob_Backdrop" class="Heart_Monitor_Control_Knob_Backdrops">
               <div id="Heart_Monitor_Speed_Control_Knob" class="Heart_Monitor_Control_Knobs">x1</div>
