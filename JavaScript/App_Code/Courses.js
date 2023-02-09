@@ -1,6 +1,6 @@
 
 function Setup_Courses_App(){
-  console.log("Setup Courses App:");
+  // console.log("Setup Courses App:");
   let Books = document.getElementsByClassName('Books');
   for(let Book of Books){
     Book.addEventListener('click',Open_Course_Info);

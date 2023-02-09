@@ -1,6 +1,6 @@
 
 function Setup_Skills_App(){
-  console.log("Setup Skills App:");
+  // console.log("Setup Skills App:");
   
   
 }

@@ -22,24 +22,36 @@
 
 .Chat_Selection_Container{
   position: relative;
-  --Width: calc(100% - 5rem);
+  --Width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   --Height: calc(var(--Width)/4);
   display: flex;
   gap: 7%;
-  height: var(--Height);
   width: var(--Width);
-  margin: 0 auto;
   z-index: -1;
   box-sizing: border-box;
   margin-top: 0.2rem;
-  margin-bottom: 1.5rem;
   justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .Pinned_Chat_Containers{
   position: relative;
 }
+
+#Chat_Grid{
+  position: absolute;
+  display: flex;
+  /* background-color: rgba(0,0,0,0.2); */
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  z-index: -5;
+}
+
 
 .Pinned_Chats{
   position: relative;
@@ -56,19 +68,23 @@
   font-size: 2rem;
   font-family: Arial;
   color: rgba(255,255,255,0.7);
+  z-index: 100;
+  pointer-events: all;
 }
 
 .Name_Labels{
   position: relative;
-  top: 1rem;
+  top: 0.5rem;
   display: flex;
   height: 1rem;
   width: 100%;
+  /* margin-top: 0.8rem; */
   text-align: center;
   justify-content: center;
   align-items: center;
   color: rgba(0,0,0,0.3);
   font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -135,7 +151,8 @@
 }
 
 #Recent_Chats_Container{
-  position: absolute;
+  top: 0;
+  position: relative;
   display: flex;
   height: calc(100% - 10rem);
   width: 100%;
@@ -194,10 +211,50 @@
   margin-right: 0.2rem;
 }
 
+.Chat_Bubble_Remove_Buttons{
+  display: flex;
+  position: absolute;
+  --Diameter: 1.2rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: 0;
+  left: 0;
+  background-color: rgba(220,220,220,1);
+  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: rgba(0,0,0,0.5);
+  border: none;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  /* transform: scale(0); */
+  transition: 0.1s;
+  transform-origin: center;
+}
+
+.Show_Chat_Bubble_Remove_Button{
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+  transition: 0.3s;
+}
+
+.Show_Chat_Bubble_Remove_Button:hover{
+  transform: scale(1.1);
+}
 
 
-
-
+#Messages_Background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  /* z-index: -1; */
+}
 
 
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <meta name="viewport" 
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="utf-8">
@@ -622,17 +621,18 @@
       <div class="Title_Bars"></div>
       <span id="Compose_Chat_Button" class="material-symbols-outlined"> edit_square </span>
       <div id="Chat_Grid" class="Window_Bodies">
-        <div class="Chat_Selection_Container">
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">TN</div><label class="Name_Labels">Tom Nook</label></div>
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">S</div><label class="Name_Labels">Starman</label></div>
-            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">M</div><label class="Name_Labels">Michael</label></div>
+        <div id="Chat_Selection_Container" class="Chat_Selection_Container">
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">TN</div><label class="Name_Labels">Tom Nook</label><button class="Chat_Bubble_Remove_Buttons">✕</button></div>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">S</div><label class="Name_Labels">Starman</label><button class="Chat_Bubble_Remove_Buttons">✕</button></div>
+            <div class="Pinned_Chat_Containers"><div class="Pinned_Chats">M</div><label class="Name_Labels">Michael</label><button class="Chat_Bubble_Remove_Buttons">✕</button></div>
+
         </div>
         <div id="Recent_Chats_Container" class="Recent_Chats_Container">
             <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">M</div> <label class="Name_Headers">Michael</label> <label class="Chat_Previews">Hi! Thank you for taking the time to take a look at my portfolio! :)</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
               <button class="Pin_Buttons" type="button" name="button"></button>
               <button class="Delete_Buttons" type="button" name="button"></button>
             </div></div>
-            <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">TN</div> <label class="Name_Headers">Tom Nook</label> <label class="Chat_Previews">The brick bridge build has been completed.</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
+            <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">TN</div> <label class="Name_Headers">Tom Nook</label> <label class="Chat_Previews">Update: The brick bridge build has been completed.</label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
               <button class="Pin_Buttons" type="button" name="button"></button>
               <button class="Delete_Buttons" type="button" name="button"></button>
             </div></div>
@@ -643,9 +643,9 @@
   
   
   
-  
         </div>
       </div>
+
     </div>
     
     <div id="Projects_Window" class="Projects_Window Window_Templates" data-origin_x1="0" data-origin_x2="0" data-origin_y1="0" data-origin_y2="0" data-original_window_height="0" data-original_window_width="0">

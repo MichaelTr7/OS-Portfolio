@@ -1,6 +1,6 @@
 
 function Setup_Mail_App(){
-  console.log("Setup Mail App:");
+  // console.log("Setup Mail App:");
   var Form = document.getElementById("Mail_Form");
   Form.addEventListener('submit', Prevent_Form_Default);  
   document.getElementById('Start_Mail_Button').addEventListener('click',Open_Email);

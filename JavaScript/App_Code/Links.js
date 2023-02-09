@@ -1,6 +1,6 @@
 
 function Setup_Links_App(){
-  console.log("Setup Links App:");
+  // console.log("Setup Links App:");
   document.getElementById('Links_Circle').addEventListener('click',Expand_Links);
   let Links_Bars = document.getElementsByClassName('Link_Containers');
   for(let Links of Links_Bars){
