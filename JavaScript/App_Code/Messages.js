@@ -24,14 +24,30 @@ function Setup_Messages_App(){
   for(let Button of Remove_Pin_Buttons){
     Button.addEventListener('mousedown',Unpin_Chat);
   }
-  // let Delete_Chat_Buttons = 
-
-
-
+  let Delete_Chat_Buttons = document.getElementsByClassName('Delete_Chat_Buttons');
+  for(let Delete_Chat_Button of Delete_Chat_Buttons){
+    Delete_Chat_Button.addEventListener('click',Delete_Entire_Chat);
+  }
+  document.getElementById('Send_Button').addEventListener('click',Send_Message);
+  var Messages_Bank = document.getElementById('Messages_Bank');
+  document.getElementById('Message_Temporary_Spacer').scrollIntoView({ behavior: "smooth" });
+    
+  Setup_Bubble_Auto_Scroll();
 }
 
-
-
+function Delete_Entire_Chat(){
+  console.log("Delete Entire Chat");
+  let Chat_Row_To_Delete = (this.parentElement).parentElement;
+  let Chat_Name_To_Delete = String(Chat_Row_To_Delete.querySelector("label").innerHTML);
+  
+  let Name_Labels = document.getElementsByClassName('Name_Labels');
+  for(let Name of Name_Labels){
+    if(String(Name.innerHTML) == Chat_Name_To_Delete){
+      Name.parentElement.remove();
+    }
+  }
+  Chat_Row_To_Delete.remove();  
+}
 
 function Unpin_Chat(){
   (this.parentElement).remove();
@@ -131,6 +147,37 @@ const Pinned_Chat_Component = (Name,Initials) => {
   </div>
   `;
 };
+
+function Send_Message(){
+  console.log("Send Message");
+  
+
+}
+
+function Setup_Bubble_Auto_Scroll(){
+  console.log("Setup Auto Scrolling");
+  const Send_Message_Box = document.getElementById('Send_Message_Box');
+  Send_Message_Box.addEventListener("focus",Typing_In_Progress);
+  Send_Message_Box.addEventListener("blur",Typing_Not_In_Progress);
+}
+
+function Typing_In_Progress(){
+  document.addEventListener('keydown',User_Typing);
+}
+
+function Typing_Not_In_Progress(){
+  document.removeEventListener('keydown',User_Typing);
+}
+
+function User_Typing(){
+  console.log("Typing");
+  const Send_Message_Box = document.getElementById('Send_Message_Box');
+  console.log(Send_Message_Box.innerHTML);
+  
+  
+}
+
+
 
 
 
