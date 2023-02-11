@@ -162,19 +162,21 @@ function Setup_Bubble_Auto_Scroll(){
 }
 
 function Typing_In_Progress(){
-  document.addEventListener('keydown',User_Typing);
+  document.addEventListener('keyup',User_Typing);
 }
 
 function Typing_Not_In_Progress(){
-  document.removeEventListener('keydown',User_Typing);
+  document.removeEventListener('keyup',User_Typing);
 }
 
 function User_Typing(){
-  console.log("Typing");
-  const Send_Message_Box = document.getElementById('Send_Message_Box');
-  console.log(Send_Message_Box.innerHTML);
-  
-  
+  const Current_Message_Typed = document.getElementById('Send_Message_Box');
+  var Number_Of_Lines = Math.round((Current_Message_Typed.getBoundingClientRect().height - 28.8125)/14.96875) + 1;
+  var Pad_Height = Current_Message_Typed.getBoundingClientRect().height - 28.8125;
+  let Message_Temporary_Spacer = document.getElementById('Message_Temporary_Spacer');
+  Message_Temporary_Spacer.style.height = Pad_Height + "px";
+  let Messages_Bank = document.getElementById('Messages_Bank');
+  Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
 }
 
 

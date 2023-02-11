@@ -451,6 +451,13 @@
   box-sizing: border-box;
 }
 
+#Message_Temporary_Spacer{
+  display: inline-block;
+  width: 100%;
+  /* background-color: red; */
+  padding-bottom: 0.5rem;
+}
+
 :root{
     --Message_Bubble_Margins: 1rem;
     --Send_Area_Height: 3.6rem;
