@@ -13,12 +13,11 @@
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  /* display: none;  */
   overflow: hidden;
 }
 
 .Expand_Messages_Window{
-  --New_Height: 28rem;
+  --New_Height: 32srem;
   --New_Width: 35rem;
   height: var(--New_Height);
   width: var(--New_Width);
@@ -140,15 +139,24 @@
 }
 
 #Compose_Chat_Button{
+  display: flex;
   position: absolute;
   top: 0.5rem;
   right: 0.7rem;
+  height: 2rem;
+  width: 2rem;
   font-size: 1.4rem;
   padding: 0.2rem;
   box-sizing: border-box;
   color: rgba(0,0,0,0.2);
   border-radius: 0.3rem;
-  z-index: -1;
+  background-color: rgba(0,0,0,0);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  z-index: 5000;
+  border: none;
+  padding-bottom: 0.4rem;
 }
 
 #Recent_Chats_Container{
@@ -265,6 +273,12 @@
   box-sizing: border-box;
   border-radius: 0.7rem;
   overflow: hidden;
+  transform: translateY(120%);
+  transition: 0.2s;
+}
+
+.Toggle_Message_Panel{
+  transform: translateY(0);
 }
 
 #Contact_Selector{
@@ -403,7 +417,7 @@
   display: flex;
   height: auto;
   width: 100%;
-  padding-bottom: 1rem;
+  padding-bottom: 0.7rem;
 }
 
 .Recipient_Message_Chunk{

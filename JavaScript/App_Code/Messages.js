@@ -22,6 +22,9 @@ const New_Message_Component = (Contents) => {
 };
 
 function Setup_Messages_App(){
+  console.log(document.getElementById('Compose_Chat_Button'));
+  document.getElementById('Compose_Chat_Button').addEventListener('click',Compose_Chat);
+
   let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
   for(let Chat_Row of Recent_Chat_Boxes){
     Chat_Row.addEventListener('scroll',Chat_Sliding);
@@ -50,7 +53,6 @@ function Setup_Messages_App(){
   }
   document.getElementById('Send_Button').addEventListener('click',Send_Message);
   var Messages_Bank = document.getElementById('Messages_Bank');
-  // document.getElementById('Message_Temporary_Spacer').scrollIntoView({ behavior: "smooth" });
   var Messages_Bank = document.getElementById('Messages_Bank');
   Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
   Setup_Bubble_Auto_Scroll();
@@ -188,7 +190,6 @@ function Send_Message(){
   let Send_Message_Box = document.getElementById('Send_Message_Box');
   const Message_Contents = Send_Message_Box.innerHTML;
   let Sender_Name = document.getElementById('Message_Contact_Input').value;  
-
   if((Message_Contents != '') & (Sender_Name != '')){
     var New_Message = New_Message_Component(Message_Contents);
     var Messages_Bank = document.getElementById('Messages_Bank');
@@ -197,16 +198,25 @@ function Send_Message(){
     Padding_Element.style.height = 0;
     Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
     Send_Message_Box.innerHTML = '';
-  
-    
   }
+}
+
+function Compose_Chat(){
+
+
+
+  let Message_Panel = document.getElementById('Message_Panel');
+  Message_Panel.classList.add('Toggle_Message_Panel');
+  
+  
   
 
-  
-  
-  
-  
 }
+
+
+
+
+
 
 
 
