@@ -1,6 +1,26 @@
 
 var Long_Press_Timer;
 
+const Pinned_Chat_Component = (Name,Initials) => {
+  return `
+  <div class="Pinned_Chat_Containers">
+    <div class="Pinned_Chats">${Initials}</div>
+    <label class="Name_Labels">${Name}</label>
+    <button class="Chat_Bubble_Remove_Buttons">✕</button>
+  </div>
+  `;
+};
+
+const New_Message_Component = (Contents) => {
+  return `
+  <div class="Message_Chunk Sender_Message_Chunk">
+    <div class="Sender_Bubbles Message_Bubbles">
+    ${Contents}
+    </div>
+  </div>
+  `;
+};
+
 function Setup_Messages_App(){
   let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
   for(let Chat_Row of Recent_Chat_Boxes){
@@ -30,8 +50,9 @@ function Setup_Messages_App(){
   }
   document.getElementById('Send_Button').addEventListener('click',Send_Message);
   var Messages_Bank = document.getElementById('Messages_Bank');
-  document.getElementById('Message_Temporary_Spacer').scrollIntoView({ behavior: "smooth" });
-    
+  // document.getElementById('Message_Temporary_Spacer').scrollIntoView({ behavior: "smooth" });
+  var Messages_Bank = document.getElementById('Messages_Bank');
+  Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
   Setup_Bubble_Auto_Scroll();
 }
 
@@ -138,24 +159,7 @@ function Pin_Chat(){
   }
 }
 
-const Pinned_Chat_Component = (Name,Initials) => {
-  return `
-  <div class="Pinned_Chat_Containers">
-    <div class="Pinned_Chats">${Initials}</div>
-    <label class="Name_Labels">${Name}</label>
-    <button class="Chat_Bubble_Remove_Buttons">✕</button>
-  </div>
-  `;
-};
-
-function Send_Message(){
-  console.log("Send Message");
-  
-
-}
-
 function Setup_Bubble_Auto_Scroll(){
-  console.log("Setup Auto Scrolling");
   const Send_Message_Box = document.getElementById('Send_Message_Box');
   Send_Message_Box.addEventListener("focus",Typing_In_Progress);
   Send_Message_Box.addEventListener("blur",Typing_Not_In_Progress);
@@ -179,7 +183,30 @@ function User_Typing(){
   Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
 }
 
+function Send_Message(){
+  console.log("Send Message");
+  let Send_Message_Box = document.getElementById('Send_Message_Box');
+  const Message_Contents = Send_Message_Box.innerHTML;
+  let Sender_Name = document.getElementById('Message_Contact_Input').value;  
 
+  if((Message_Contents != '') & (Sender_Name != '')){
+    var New_Message = New_Message_Component(Message_Contents);
+    var Messages_Bank = document.getElementById('Messages_Bank');
+    let Padding_Element = document.getElementById('Message_Temporary_Spacer');
+    Padding_Element.insertAdjacentHTML('beforebegin', New_Message);
+    Padding_Element.style.height = 0;
+    Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
+    Send_Message_Box.innerHTML = '';
+  
+    
+  }
+  
+
+  
+  
+  
+  
+}
 
 
 

@@ -1,3 +1,6 @@
+.App_Controls{
+  
+}
 
 .Messages_Window{
   --Height: 28rem;
@@ -319,7 +322,7 @@
 }
 
 #Message_Area{
-  position: relative;
+  position: absolute;
   height: calc(100% - var(--Contact_Selector_Height));
   width: 100%;
   background-color: rgba(255,255,255,0.9);
@@ -354,6 +357,7 @@
 }
 
 #Messages_Bank{
+  position: absolute;
   display: block;
   height: calc(100%);
   width: 100%;
@@ -363,10 +367,11 @@
   padding: 1rem;
   overflow-x: hidden;
   padding-bottom: 3.5rem;
+  scroll-behavior: smooth;
 }
 
 .Message_Bubbles{
-  display: inline-block;
+  display: flex;
   position: relative;
   font-size: 0.8rem;
   padding: 0.3rem;
@@ -377,16 +382,21 @@
   padding: 0.5rem;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 .Recipient_Bubbles{
   background-color: rgb(233,233,235);
+  flex-wrap: wrap;
 }
 
 .Sender_Bubbles{
   color: white;
   background-color: rgb(52,120,247);
   margin-right: 0;
+  flex-wrap: wrap;
 }
 
 .Message_Chunk{
@@ -438,6 +448,7 @@
 }
 
 #Send_Button{
+  display: flex;
   position: absolute;
   bottom: 0.9rem;
   right: 0.8rem;
@@ -448,6 +459,11 @@
   width: var(--Diameter);
   border-radius: 100%;
   color: rgba(255,255,255,0.9);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 0.2rem;
   box-sizing: border-box;
 }
 
