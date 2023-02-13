@@ -17,7 +17,7 @@
 }
 
 .Expand_Messages_Window{
-  --New_Height: 32srem;
+  --New_Height: 32rem;
   --New_Width: 35rem;
   height: var(--New_Height);
   width: var(--New_Width);
@@ -261,7 +261,7 @@
   background-color: red;
 }
 
-#Message_Panel{
+.Message_Panel{
   position: absolute;
   --Margin: 1rem;
   --Height: calc(100% - 3rem - 1 * var(--Margin));
@@ -273,12 +273,14 @@
   box-sizing: border-box;
   border-radius: 0.7rem;
   overflow: hidden;
-  transform: translateY(120%);
-  transition: 0.2s;
+  transform: translateY(120%) scale(0.5);
+  transition: 0.2s ease;
+  filter: opacity(0);
 }
 
 .Toggle_Message_Panel{
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: opacity(1);
 }
 
 #Contact_Selector{

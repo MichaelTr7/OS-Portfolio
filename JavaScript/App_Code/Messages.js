@@ -23,7 +23,7 @@ const New_Message_Component = (Contents) => {
 
 function Setup_Messages_App(){
   console.log(document.getElementById('Compose_Chat_Button'));
-  document.getElementById('Compose_Chat_Button').addEventListener('click',Compose_Chat);
+  document.getElementById('Compose_Chat_Button').addEventListener('click',Show_Compose_Chat_Panel);
 
   let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
   for(let Chat_Row of Recent_Chat_Boxes){
@@ -201,16 +201,9 @@ function Send_Message(){
   }
 }
 
-function Compose_Chat(){
-
-
-
+function Show_Compose_Chat_Panel(){
   let Message_Panel = document.getElementById('Message_Panel');
-  Message_Panel.classList.add('Toggle_Message_Panel');
-  
-  
-  
-
+  Message_Panel.classList.toggle('Toggle_Message_Panel');
 }
 
 
