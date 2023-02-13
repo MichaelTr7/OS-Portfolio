@@ -22,14 +22,24 @@ const New_Message_Component = (Contents) => {
 };
 
 function Setup_Messages_App(){
-  console.log(document.getElementById('Compose_Chat_Button'));
   document.getElementById('Compose_Chat_Button').addEventListener('click',Show_Compose_Chat_Panel);
 
+  let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
+  for(let Chat_Row of Chat_Rows){
+    Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
+  }
+
+  let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
+  for(let Pinned_Chat_Container of Pinned_Chat_Containers){
+    Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
+  }
+  
   let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
   for(let Chat_Row of Recent_Chat_Boxes){
     Chat_Row.addEventListener('scroll',Chat_Sliding);
   }
   document.getElementById('Messages_Window').addEventListener('click',Clicked_Messages_Window);
+  document.getElementById('Message_Window_Title_Bar').addEventListener('click',Hide_Compose_Window);
   document.getElementById('Messages_Window').addEventListener('mousedown',Hide_Remove_Buttons);
   let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
   for(let Button of Pin_Buttons){
@@ -206,7 +216,9 @@ function Show_Compose_Chat_Panel(){
   Message_Panel.classList.toggle('Toggle_Message_Panel');
 }
 
+function Hide_Compose_Window(event){
 
+}
 
 
 

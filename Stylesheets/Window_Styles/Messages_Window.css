@@ -1,6 +1,4 @@
-.App_Controls{
-  
-}
+
 
 .Messages_Window{
   --Height: 28rem;
@@ -97,7 +95,7 @@
   background-color: rgba(0,0,0,0.2);
   border-radius: 100%;
   top: calc(50% - var(--Height)/2);
-  left: 1rem;
+  left: 0rem;
   justify-content: center;
   align-items: center;
   color: rgba(255,255,255,0.7);
@@ -109,7 +107,7 @@
   display: flex;
   --Height: 0.1rem;
   height: var(--Height);
-  width: calc(100% - 6rem);
+  width: calc(100% - 5rem);
   right: 1rem;
   bottom: 0;
   justify-content: flex-end;
@@ -120,7 +118,7 @@
 
 .Name_Headers{
   position: absolute;
-  width: calc(100% - 6rem);
+  width: calc(100% - 5rem);
   right: 1rem;
   top: 0.5rem;
   color: rgba(0,0,0,0.55);
@@ -130,7 +128,7 @@
 
 .Chat_Previews{
   position: absolute;
-  width: calc(100% - 6rem);
+  width: calc(100% - 5rem);
   right: 1rem;
   top: 1.5rem;
   height: 2.5rem;
@@ -139,7 +137,7 @@
 }
 
 #Compose_Chat_Button{
-  display: flex;
+  /* display: flex; */
   position: absolute;
   top: 0.5rem;
   right: 0.7rem;
@@ -154,9 +152,10 @@
   align-items: center;
   align-content: center;
   justify-content: center;
-  z-index: 5000;
+  z-index: 500000;
   border: none;
   padding-bottom: 0.4rem;
+  position: absolute;
 }
 
 #Recent_Chats_Container{
@@ -168,6 +167,7 @@
   box-sizing: border-box;
   flex-wrap: wrap;
   align-content: flex-start;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 .Recent_Chat_Boxes{
@@ -179,7 +179,11 @@
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 0px;
+  /* background-color: red; */
 }
+
+
+
 
 .Recent_Chat_Boxes > div{
   scroll-snap-align: end; 
