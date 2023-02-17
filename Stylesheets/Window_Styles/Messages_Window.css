@@ -182,9 +182,6 @@
   /* background-color: red; */
 }
 
-
-
-
 .Recent_Chat_Boxes > div{
   scroll-snap-align: end; 
 }
@@ -277,9 +274,10 @@
   box-sizing: border-box;
   border-radius: 0.7rem;
   overflow: hidden;
-  transform: translateY(120%) scale(0.5);
+  /* Here */
+  /* transform: translateY(120%) scale(0.5);
   transition: 0.2s ease;
-  filter: opacity(0);
+  filter: opacity(0); */
 }
 
 .Toggle_Message_Panel{
@@ -288,8 +286,8 @@
 }
 
 #Contact_Selector{
+  position: relative;
   display: flex;
-  /* position: relative; */
   height: var(--Contact_Selector_Height);
   width: 100%;
   background-color: rgba(255,255,255,0.75);
@@ -299,6 +297,7 @@
   align-items: center;
   align-content: center;
   transition: 0.2s;
+  z-index: 5000;
 }
 
 #Contact_Selector > h1{
@@ -404,7 +403,8 @@
   padding-right: 0.8rem;
   flex-wrap: wrap;
   text-overflow: ellipsis;
-  word-break: break-all;
+  /* word-break: break-all; */
+  word-wrap: normal;
 }
 
 .Recipient_Bubbles{
@@ -490,8 +490,94 @@
 #Message_Temporary_Spacer{
   display: inline-block;
   width: 100%;
-  /* background-color: red; */
   padding-bottom: 0.5rem;
+}
+
+#Contact_Suggestion_List{
+  display: flex;
+  --Top_Margin: 0.35rem;
+  position: absolute;
+  height: auto;
+  width: 14rem;
+  box-sizing: border-box;
+  top: calc(100% + var(--Top_Margin));
+  left: 2.5rem;
+  z-index: 5000;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  box-shadow: 0 0rem 5rem 0.1rem rgba(0,0,0,0.1);
+  background-color: white;
+  /* padding: 0.5rem; */
+}
+
+.Blue_Contact_Highlights{
+  --Margin: 0.2rem;
+  position: absolute;
+  height: calc(100% - 2 * var(--Margin));
+  width: calc(100% - 2 * var(--Margin));
+  top: var(--Margin);
+  left: var(--Margin);
+  border-radius: 0.4rem;
+  z-index: -1;
+}
+
+.Suggested_Contacts:hover > .Blue_Contact_Highlights{
+  background-color: rgb(63,134,246);
+}
+
+
+.Blue_Contact_Highlights_Activated{
+  background-color: rgb(63,134,246);
+}
+
+.Suggested_Contact_Names_White{
+  color: rgba(255,255,255,0.97);
+}
+
+.Suggested_Contacts{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 2.2rem;
+  align-items: center;
+  align-content: center;
+  border-radius: 0.35rem;
+  padding: 0.5rem;
+}
+
+.Suggested_Contacts:hover > .Suggested_Contact_Names{
+  color: rgba(255,255,255,0.97);
+}
+
+.Suggested_Contact_Initials{
+  display: flex;
+  --Diameter: 1.5rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  background-color: grey;
+  border-radius: 100%;
+  margin-left: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.7rem;
+}
+
+.Suggested_Contact_Names{
+  display: flex;
+  height: 1rem;
+  width: 10rem;
+  margin-left: 0.7rem;
+  font-size: 0.8rem;
+  align-items: center;
+  align-content: center;
+  color: rgb(120,120,120);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
 }
 
 :root{

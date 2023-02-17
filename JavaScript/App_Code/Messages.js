@@ -1,5 +1,6 @@
 
 var Long_Press_Timer;
+var Suggested_Contact_Index = 0;
 
 const Pinned_Chat_Component = (Name,Initials) => {
   return `
@@ -11,7 +12,7 @@ const Pinned_Chat_Component = (Name,Initials) => {
   `;
 };
 
-const New_Message_Component = (Contents) => {
+const New_Message_Sent_Component = (Contents) => {
   return `
   <div class="Message_Chunk Sender_Message_Chunk">
     <div class="Sender_Bubbles Message_Bubbles">
@@ -21,17 +22,39 @@ const New_Message_Component = (Contents) => {
   `;
 };
 
+const New_Message_Received_Component = (Contents) => {
+  return `
+  <div class="Message_Chunk Recipient_Message_Chunk">
+    <div class="Recipient_Bubbles Message_Bubbles">
+    ${Contents}
+    </div>
+  </div>
+  `;
+};
+
+const Create_New_Contact_Suggestion = (Initials,Name) => {
+  return `
+    <div class="Suggested_Contacts">
+    <div class="Suggested_Contact_Initials">${Initials}</div><div class="Suggested_Contact_Names">${Name}</div>
+    <div class="Blue_Contact_Highlights"></div>
+    </div>
+  `;
+};
+
+
 function Setup_Messages_App(){
   document.getElementById('Compose_Chat_Button').addEventListener('click',Show_Compose_Chat_Panel);
 
   let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
   for(let Chat_Row of Chat_Rows){
     Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
+    Chat_Row.addEventListener('click',Existing_Chat_Pressed);
   }
 
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
   for(let Pinned_Chat_Container of Pinned_Chat_Containers){
     Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
+    Pinned_Chat_Container.addEventListener('click',Existing_Chat_Pressed);
   }
   
   let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
@@ -66,6 +89,20 @@ function Setup_Messages_App(){
   var Messages_Bank = document.getElementById('Messages_Bank');
   Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
   Setup_Bubble_Auto_Scroll();
+  
+  let Message_Contact_Input = document.getElementById('Message_Contact_Input');
+  Message_Contact_Input.addEventListener('input',Live_Update_Compose_Window);
+  let Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
+  for(let Contact_Box of Suggested_Contacts){
+    Contact_Box.addEventListener('click',Recipient_Just_Selected);
+  }
+  
+  Message_Contact_Input.addEventListener('focus',Recipient_Field_Focussed);
+  Message_Contact_Input.addEventListener('blur',Recipient_Field_Not_Focussed);
+
+  
+  
+  
 }
 
 function Delete_Entire_Chat(){
@@ -201,7 +238,7 @@ function Send_Message(){
   const Message_Contents = Send_Message_Box.innerHTML;
   let Sender_Name = document.getElementById('Message_Contact_Input').value;  
   if((Message_Contents != '') & (Sender_Name != '')){
-    var New_Message = New_Message_Component(Message_Contents);
+    var New_Message = New_Message_Sent_Component(Message_Contents);
     var Messages_Bank = document.getElementById('Messages_Bank');
     let Padding_Element = document.getElementById('Message_Temporary_Spacer');
     Padding_Element.insertAdjacentHTML('beforebegin', New_Message);
@@ -212,9 +249,153 @@ function Send_Message(){
 }
 
 function Show_Compose_Chat_Panel(){
+  var Messages_Bank = document.getElementById('Messages_Bank');
+  var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+  for(let Message of Left_Over_Messages){
+    Message.remove();
+  }
+  let Recipient_Contact = document.getElementById('Message_Contact_Input');
+  Recipient_Contact.value = '';
   let Message_Panel = document.getElementById('Message_Panel');
   Message_Panel.classList.toggle('Toggle_Message_Panel');
 }
+
+function Existing_Chat_Pressed(){
+  let Message_Recipient = String(this.querySelector('label').innerHTML);
+  let Recipient_Contact = document.getElementById('Message_Contact_Input');
+  Recipient_Contact.value = Message_Recipient;
+  Populate_Compose_Chat_Window(Message_Recipient);
+}
+
+function Populate_Compose_Chat_Window(Message_Recipient){
+  var Messages_Bank = document.getElementById('Messages_Bank');
+  var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+  for(let Message of Left_Over_Messages){
+    Message.remove();
+  }
+  for(let Chat of Chat_Log.chats){
+    if(String(Chat.name) == Message_Recipient){
+      let Loaded_Messages = Chat.messages;
+      let Loaded_Message_Directions = Chat.message_direction;
+      for(Index = 0; Index < Loaded_Messages.length; Index++){
+        let Chat_Body = document.getElementById('Messages_Bank');
+          if(Loaded_Message_Directions[Index] == 'Sender'){
+            var New_Message = New_Message_Sent_Component(Loaded_Messages[Index]);
+          }else{
+            var New_Message = New_Message_Received_Component(Loaded_Messages[Index]);
+          }
+          var Messages_Bank = document.getElementById('Messages_Bank');
+          var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+          for(let Message of Left_Over_Messages){
+            Message.remove();
+          }
+          let Padding_Element = document.getElementById('Message_Temporary_Spacer');
+          Padding_Element.insertAdjacentHTML('beforebegin', New_Message);
+          Padding_Element.style.height = 0;
+          Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
+          Send_Message_Box.innerHTML = '';
+      }
+    }
+  }
+}
+
+function Live_Update_Compose_Window(){
+    let Current_Query = String(document.getElementById('Message_Contact_Input').value);
+    let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+    Contact_Suggestion_List.innerHTML = '';
+    for(let Chat of Chat_Log.chats){
+      if(String(Chat.name).toLowerCase().includes(Current_Query.toLowerCase()) & Current_Query != ""){
+        let Name_Portions = String(Chat.name).split(" ");
+        let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
+        Initials = Initials_Array.join("");
+        Initials = Initials.slice(0, 2);
+        let New_Contact_Suggestion  = Create_New_Contact_Suggestion(Initials,String(Chat.name));
+        Contact_Suggestion_List.innerHTML += New_Contact_Suggestion;
+      }
+    }
+    
+    let Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
+    for(let Contact_Box of Suggested_Contacts){
+      Contact_Box.addEventListener('click',Recipient_Field_Just_Filled);
+    }
+}
+
+function Recipient_Field_Just_Filled(){
+  let Selected_Recipient = String((this.getElementsByClassName('Suggested_Contact_Names')[0]).innerHTML);
+  document.getElementById('Message_Contact_Input').value = Selected_Recipient;
+  let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+  Contact_Suggestion_List.innerHTML = '';
+  Query_Corresponding_Messages();
+}
+
+function Recipient_Name_Just_Entered(event){
+  if(String(event.key) == "Enter"){
+    document.getElementById('Message_Contact_Input').blur();
+    let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+    Contact_Suggestion_List.innerHTML = '';
+    Query_Corresponding_Messages();
+  }
+}
+
+function Recipient_Field_Focussed(){
+  document.addEventListener('keydown',Recipient_Name_Just_Entered);
+  document.addEventListener('keydown',Arrow_Selection);
+}
+
+function Recipient_Field_Not_Focussed(){
+  document.removeEventListener('keydown',Recipient_Name_Just_Entered);
+  document.removeEventListener('keydown',Arrow_Selection);
+  Suggested_Contact_Index = 0;
+}
+
+function Query_Corresponding_Messages(){
+  Populate_Compose_Chat_Window(String(document.getElementById('Message_Contact_Input').value));
+}
+
+function Arrow_Selection(event){
+  // var Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
+  // 
+  // if(Suggested_Contacts.length != 0){
+  //   for(let Contact of Suggested_Contacts){
+  //     Contact.getElementsByClassName('Suggested_Contact_Names')[0].classList.remove('Suggested_Contact_Names_White');
+  //     Contact.getElementsByClassName('Blue_Contact_Highlights')[0].classList.remove('Blue_Contact_Highlights_Activated');
+  //   }
+  // 
+  //   var Key_Code = String(event.key);
+  //   if(["ArrowUp", "ArrowDown"].includes(Key_Code)){  
+  //       let Focussed_Contact = Suggested_Contacts[Suggested_Contact_Index];    
+  //       Focussed_Contact.getElementsByClassName('Suggested_Contact_Names')[0].classList.add('Suggested_Contact_Names_White');
+  //       Focussed_Contact.getElementsByClassName('Blue_Contact_Highlights')[0].classList.add('Blue_Contact_Highlights_Activated');
+  //       (Key_Code == 'ArrowDown') ? Suggested_Contact_Index = Suggested_Contact_Index + 1 : Suggested_Contact_Index = Suggested_Contact_Index - 1;
+  //       let Lower_Limit = 0;
+  //       let Upper_Limit = Suggested_Contacts.length - 1;
+  //       Suggested_Contact_Index = Math.max(Lower_Limit,Suggested_Contact_Index);
+  //       Suggested_Contact_Index = Math.min(Upper_Limit,Suggested_Contact_Index);
+  //   }  
+  // }  
+}
+
+
+let Chat_Log = {
+  "chats": [
+      {
+      "name": "Michael",
+      "messages": ["Hi! Thank you for taking the time to take a look at my portfolio! :)"],
+      "message_direction": ['Recipient']
+      },
+      {
+      "name": "Tom Nook",
+      "messages": ["Update: The brick bridge build has been completed."],
+      "message_direction": ['Recipient']
+      },
+      {
+      "name": "Starman",
+      "messages": ["We've landed on Mars! Over and out!"],
+      "message_direction": ['Recipient']
+      }
+  ]
+}
+
 
 function Hide_Compose_Window(event){
 
