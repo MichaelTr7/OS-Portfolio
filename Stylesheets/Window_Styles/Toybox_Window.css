@@ -1,14 +1,16 @@
 
 .Toybox_Window{
-  --Height: 21rem;
-  --Width: 21rem;
+  --Height: 27rem;
+  --Width: 35rem;
+  height: var(--Height);
+  width: var(--Width);
   top: calc(2.5rem);
   left: calc(50% - var(--Width)/2);
   z-index: 50;
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  display: none;
+  /* display: none; */
 }
 
 .Expand_Toybox_Window{
@@ -17,3 +19,51 @@
   height: var(--New_Height);
   width: var(--New_Width);
 }
+
+@font-face {
+  font-family: 'Dotted';
+  src: url('./Toybox_Window_Assets/Fonts/DOTCIRFUL Regular.otf');
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+#Toybox_Window_Body{
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 1fr;
+  height: calc(100% - 3rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#Highscore_Container{
+  display: flex;
+  color: rgba(105,94,156,0.5); 
+  font-size: 3rem;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: Dotted, sans-serif;
+}
+
+#Controller_Container{
+  background-image: url("./Toybox_Window_Assets/Game Boy Advance.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -329,7 +329,17 @@ function Recipient_Field_Just_Filled(){
 }
 
 function Recipient_Name_Just_Entered(event){
-  if(String(event.key) == "Enter"){
+  let Key = String(event.key);
+  if(Key == "Backspace"){
+    var Messages_Bank = document.getElementById('Messages_Bank');
+    var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+    for(let Message of Left_Over_Messages){
+      Message.remove();
+    }
+    document.getElementById('Message_Contact_Input').value = '';
+  }
+  
+  if(Key == "Enter"){
     document.getElementById('Message_Contact_Input').blur();
     let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
     Contact_Suggestion_List.innerHTML = '';
@@ -346,6 +356,13 @@ function Recipient_Field_Not_Focussed(){
   document.removeEventListener('keydown',Recipient_Name_Just_Entered);
   document.removeEventListener('keydown',Arrow_Selection);
   Suggested_Contact_Index = 0;
+  let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+  let Current_Contact = (document.getElementById('Message_Contact_Input').value);
+
+  // setTimeout(function () {
+  //   Contact_Suggestion_List.innerHTML = '';
+  // 
+  // }, 500);
 }
 
 function Query_Corresponding_Messages(){
@@ -353,6 +370,8 @@ function Query_Corresponding_Messages(){
 }
 
 function Arrow_Selection(event){
+  // var Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
+    console.log("test");
   // var Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
   // 
   // if(Suggested_Contacts.length != 0){
