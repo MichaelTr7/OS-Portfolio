@@ -29,6 +29,7 @@
 }
 
 #Toybox_Window_Body{
+  position: relative;
   display: grid;
   grid-template-rows: 1fr 6fr;
   grid-template-columns: 1fr;
@@ -47,18 +48,61 @@
 }
 
 #Controller_Container{
+  position: relative;
   background-image: url("./Toybox_Window_Assets/Game Boy Advance.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
+#Controller_Screen{
+  --Spacing: 0.5rem;
+  display: grid;
+  grid-gap: var(--Spacing);
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  --Height: 9rem;
+  --Width: 13.9rem;
+  height: var(--Height);
+  width: var(--Width);
+  top: 4.5rem;
+  left: calc(50% - var(--Width)/2);
+  border: 1px solid transparent;
+  padding: var(--Spacing);
+  box-sizing: border-box;
+}
+
+.Controller_Buttons{
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 -2px 0 2px rgba(0,0,0,0.2), inset 0 0.05px 0.2px 1px rgba(255,255,255,0.5);
+}
+
+#Controller_Green_Button{
+  background-color: rgba(92,200,100,1);
+  /* filter: saturate(10); */
+}
+  
+#Controller_Red_Button{
+  background-color: rgba(233,51,39,1);
+  /* filter: saturate(10); */
+}
+  
+#Controller_Yellow_Button{
+  background-color: rgba(235,197,66,1);
+  /* filter: saturate(10); */
+}
+  
+#Controller_Blue_Button{
+  background-color: rgba(40,96,198,1);
+  /* filter: saturate(10); */
+}
 
 
-
-
-
-
+.Light_Up_Button{
+  
+}
 
 
 
