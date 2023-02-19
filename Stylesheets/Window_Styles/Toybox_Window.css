@@ -41,10 +41,12 @@
 #Highscore_Container{
   display: flex;
   color: rgba(105,94,156,0.5); 
-  font-size: 3rem;
+  font-size: 2.3rem;
   justify-content: center;
   align-items: flex-end;
   font-family: Dotted, sans-serif;
+  height: 4rem;
+  overflow: hidden;
 }
 
 #Controller_Container{
@@ -76,36 +78,53 @@
 .Controller_Buttons{
   background-color: white;
   border-radius: 0.5rem;
-  box-shadow: inset 0 -2px 0 2px rgba(0,0,0,0.2), inset 0 0.05px 0.2px 1px rgba(255,255,255,0.5);
+  /* box-shadow: inset 0 -2px 0 2px rgba(0,0,0,0.2), inset 0 0.05px 0.2px 1px rgba(255,255,255,0.5); */
 }
 
 #Controller_Green_Button{
   background-color: rgba(92,200,100,1);
-  /* filter: saturate(10); */
+  filter: opacity(0.6);
 }
   
 #Controller_Red_Button{
   background-color: rgba(233,51,39,1);
-  /* filter: saturate(10); */
+  filter: opacity(0.6);
 }
   
 #Controller_Yellow_Button{
   background-color: rgba(235,197,66,1);
-  /* filter: saturate(10); */
+  filter: opacity(0.6);
 }
   
 #Controller_Blue_Button{
   background-color: rgba(40,96,198,1);
-  /* filter: saturate(10); */
+  filter: opacity(0.6);
 }
-
 
 .Light_Up_Button{
   
 }
 
+#Start_Memory_Game_Button{
+  position: absolute;
+  --Diameter: 4rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  border-radius: 100%;
+  font-size: 0.7rem;
+  border: 0.45rem solid rgb(61,66,63);
+  font-weight: bold;
+  top: calc(50% - 1rem - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.3);
+  background-color: rgb(184,184,182);
+}
 
-
+#Start_Memory_Game_Button:hover{ 
+  filter: brightness(1.5);
+  
+}
 
 
 
