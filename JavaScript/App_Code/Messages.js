@@ -403,9 +403,8 @@ function Recipient_Name_Just_Entered(event){
       for(let Message of Left_Over_Messages){
         Message.remove();
       }
-      
-      
-      
+      let Current_Recipient_Field = String(document.getElementById('Message_Contact_Input').value);
+      console.log(Current_Recipient_Field);
       // document.getElementById('Message_Contact_Input').value = '';
     }    
     document.getElementById('Message_Contact_Input').blur();
