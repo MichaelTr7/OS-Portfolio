@@ -36,7 +36,7 @@
   margin-top: 0.2rem;
   justify-content: space-around;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .Pinned_Chat_Containers{
@@ -83,7 +83,7 @@
   justify-content: center;
   align-items: center;
   color: rgba(0,0,0,0.3);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-bottom: 1rem;
 }
 
@@ -169,6 +169,7 @@
   flex-wrap: wrap;
   align-content: flex-start;
   padding: 0rem 1rem 1rem 1rem;
+  overflow: scroll;
 }
 
 .Recent_Chat_Boxes{

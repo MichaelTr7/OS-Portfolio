@@ -2,6 +2,15 @@
 var Long_Press_Timer;
 var Suggested_Contact_Index = 0;
 
+const Create_New_Recent_Chat = (Name,Initials) => {
+  return `
+  <div class="Recent_Chat_Boxes"> <div class="Chat_Bubbles">${Initials}</div> <label class="Name_Headers">${Name}</label> <label class="Chat_Previews"></label> <div class="Chat_Dividers"></div><div class="Swipe_Actions_Menu">
+    <button class="Pin_Buttons" type="button" name="button"></button>
+    <button class="Delete_Chat_Buttons" type="button" name="button"></button>
+  </div></div>
+  `;
+};
+
 const Pinned_Chat_Component = (Name,Initials) => {
   return `
   <div class="Pinned_Chat_Containers">
@@ -404,8 +413,41 @@ function Recipient_Name_Just_Entered(event){
         Message.remove();
       }
       let Current_Recipient_Field = String(document.getElementById('Message_Contact_Input').value);
-      console.log(Current_Recipient_Field);
-      // document.getElementById('Message_Contact_Input').value = '';
+      let Phone_Number = Current_Recipient_Field;
+      let Phone_Format_1 = /^\d{3}-\d{3}-\d{4}$/;
+      let Phone_Format_2 = /^\d{10}$/;
+      
+      let Format_1_Check = Phone_Format_1.test(Phone_Number);
+      let Format_2_Check = Phone_Format_2.test(Phone_Number);
+      let Phone_Check = Format_1_Check | Format_2_Check;
+      
+      if (Phone_Check) {
+        if(Format_2_Check){
+        Phone_Number = Current_Recipient_Field.substring(0, 3) + "-" + Current_Recipient_Field.substring(3, 6) + "-" + Current_Recipient_Field.substring(6, 10);
+        document.getElementById('Message_Contact_Input').value = Phone_Number;
+        
+        
+        }
+        let New_Recent_Contact = Create_New_Recent_Chat(String(Phone_Number),"#");
+        let Recents_Panel = document.getElementById('Recent_Chats_Container');
+        console.log(Recents_Panel);
+        Recents_Panel.innerHTML += New_Recent_Contact;
+        let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
+        for(let Button of Pin_Buttons){
+          Button.addEventListener('click',Pin_Chat);
+        }
+        let Delete_Chat_Buttons = document.getElementsByClassName('Delete_Chat_Buttons');
+        for(let Delete_Chat_Button of Delete_Chat_Buttons){
+          Delete_Chat_Button.addEventListener('click',Delete_Entire_Chat);
+        }
+        let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
+        for(let Chat_Row of Chat_Rows){
+          Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
+          Chat_Row.addEventListener('click',Existing_Chat_Pressed);
+        }
+      } else {
+        document.getElementById('Message_Contact_Input').value = '';
+      }
     }    
     document.getElementById('Message_Contact_Input').blur();
     let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
@@ -481,9 +523,6 @@ let Chat_Log = {
 function Hide_Compose_Window(event){
 
 }
-
-
-
 
 
 
