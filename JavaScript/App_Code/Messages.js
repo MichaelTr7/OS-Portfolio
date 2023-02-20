@@ -250,8 +250,8 @@ function Pin_Chat(){
       Delete_Buttons.addEventListener('mousedown',Unpin_Chat);
     }
     let Number_Of_Pinned_Messages = document.getElementsByClassName('Pinned_Chat_Containers').length;
-    if(Number_Of_Pinned_Messages >= 3){
-      document.getElementsByClassName('Pinned_Chat_Containers')[0].remove();
+    if(Number_Of_Pinned_Messages > 3){
+    document.getElementsByClassName('Pinned_Chat_Containers')[0].remove();
     }
     
     
@@ -304,13 +304,21 @@ function Send_Message(){
     Padding_Element.insertAdjacentHTML('beforebegin', New_Message);
     Padding_Element.style.height = 0;
     Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
-    Send_Message_Box.innerHTML = '';
+    Send_Message_Box.innerHTML = '';    
+    Update_Message(Sender_Name,Message_Contents,"Sender");
   }
-  console.log("Message Sent");
-  
-  
-  
-  
+}
+
+function Update_Message(Message_Recipient,Message_Content,Message_Direction){
+    console.log("Save Message");
+    let Active_Chats = Chat_Log.chats;
+    for(let Chat of Active_Chats){
+      if(String(Chat.name) == Message_Recipient){
+        let Current_Messages = Chat.messages;
+        Chat.messages.push(Message_Content);
+        Chat.message_direction.push(Message_Direction);        
+      }
+    }
 }
 
 function Show_Compose_Chat_Panel(){
@@ -349,20 +357,16 @@ function Populate_Compose_Chat_Window(Message_Recipient){
     Message.remove();
   }
   for(let Chat of Chat_Log.chats){
+    console.log(Chat_Log);
     if(String(Chat.name) == Message_Recipient){
       let Loaded_Messages = Chat.messages;
-      let Loaded_Message_Directions = Chat.message_direction;
+      let Loaded_Message_Directions = Chat.message_direction;      
       for(Index = 0; Index < Loaded_Messages.length; Index++){
         let Chat_Body = document.getElementById('Messages_Bank');
           if(Loaded_Message_Directions[Index] == 'Sender'){
             var New_Message = New_Message_Sent_Component(Loaded_Messages[Index]);
           }else{
             var New_Message = New_Message_Received_Component(Loaded_Messages[Index]);
-          }
-          var Messages_Bank = document.getElementById('Messages_Bank');
-          var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
-          for(let Message of Left_Over_Messages){
-            Message.remove();
           }
           let Padding_Element = document.getElementById('Message_Temporary_Spacer');
           Padding_Element.insertAdjacentHTML('beforebegin', New_Message);
