@@ -208,6 +208,8 @@ function Chat_Sliding(){
 }
 
 function Pin_Chat(){
+
+  
   let Target_Chat = String((((this.parentElement).parentElement).getElementsByTagName('label')[0]).innerHTML);
   let Name_Labels = document.getElementsByClassName('Name_Labels');
   let Pinned_Chat_Names = [];
@@ -225,10 +227,15 @@ function Pin_Chat(){
   }else{
     let Chat_Selection_Container = document.getElementById('Chat_Selection_Container');
     console.log("Pinning Chat");
+
+
     let Name_Portions = Target_Chat.split(" ");
     let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
     Initials = Initials_Array.join("");
     Initials = Initials.slice(0, 2);
+    if(parseInt(Initials)){
+      Initials = "#";
+    }
     var New_Pinned_Chat = Pinned_Chat_Component(Target_Chat,Initials);
 
     Chat_Selection_Container.innerHTML += New_Pinned_Chat;
@@ -242,6 +249,14 @@ function Pin_Chat(){
     for(let Delete_Buttons of Delete_Pin_Buttons){
       Delete_Buttons.addEventListener('mousedown',Unpin_Chat);
     }
+    let Number_Of_Pinned_Messages = document.getElementsByClassName('Pinned_Chat_Containers').length;
+    if(Number_Of_Pinned_Messages >= 3){
+      document.getElementsByClassName('Pinned_Chat_Containers')[0].remove();
+    }
+    
+    
+    
+    
   }
   document.getElementById('Compose_Chat_Button').click();
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
