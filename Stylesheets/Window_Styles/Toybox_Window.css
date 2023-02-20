@@ -4,13 +4,13 @@
   --Width: 35rem;
   height: var(--Height);
   width: var(--Width);
-  top: calc(2.5rem);
+  top: calc(7rem);
   left: calc(50% - var(--Width)/2);
   z-index: 50;
   filter: opacity(1);
   transition: 0.2s;
   transition-property: height, width;
-  /* display: none; */
+  display: none;
 }
 
 .Expand_Toybox_Window{
@@ -119,12 +119,15 @@
   box-sizing: border-box;
   color: rgba(0,0,0,0.3);
   background-color: rgb(184,184,182);
+  pointer-events: all;
+  transition: 0.1s;
 }
 
 #Start_Memory_Game_Button:hover{ 
-  filter: brightness(1.5);
-  
+  filter: brightness(1.2);
 }
+
+
 
 
 

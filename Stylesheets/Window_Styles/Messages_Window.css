@@ -12,7 +12,7 @@
   transition: 0.2s;
   transition-property: height, width;
   overflow: hidden;
-  display: none;
+  /* display: none; */
 }
 
 .Expand_Messages_Window{
@@ -276,9 +276,9 @@
   border-radius: 0.7rem;
   overflow: hidden;
   /* Here */
-  /* transform: translateY(120%) scale(0.5);
+  transform: translateY(120%) scale(0.5);
   transition: 0.2s ease;
-  filter: opacity(0); */
+  filter: opacity(0);
 }
 
 .Toggle_Message_Panel{

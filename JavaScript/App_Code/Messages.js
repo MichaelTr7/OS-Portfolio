@@ -99,10 +99,22 @@ function Setup_Messages_App(){
   
   Message_Contact_Input.addEventListener('focus',Recipient_Field_Focussed);
   Message_Contact_Input.addEventListener('blur',Recipient_Field_Not_Focussed);
+  
+  document.addEventListener('keydown',Resolve_Active_Components);
+  document.getElementById('Messages_Bank').addEventListener('click',Launch_Escape);
+}
 
-  
-  
-  
+function Launch_Escape(){
+  var Messages_Bank = document.getElementById('Messages_Bank');
+  var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+  if(Left_Over_Messages.length == 0){
+  for(let Message of Left_Over_Messages){
+    Message.remove();
+  }
+  document.getElementById('Message_Contact_Input').value = '';
+  let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+  Contact_Suggestion_List.innerHTML = '';
+  }
 }
 
 function Delete_Entire_Chat(){
@@ -246,6 +258,9 @@ function Send_Message(){
     Messages_Bank.scrollTop = Messages_Bank.scrollHeight;
     Send_Message_Box.innerHTML = '';
   }
+  console.log("Message Sent");
+  
+  
 }
 
 function Show_Compose_Chat_Panel(){
@@ -329,6 +344,8 @@ function Recipient_Field_Just_Filled(){
 }
 
 function Recipient_Name_Just_Entered(event){
+  let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+  Contact_Suggestion_List.innerHTML = '';
   let Key = String(event.key);
   if(Key == "Backspace"){
     var Messages_Bank = document.getElementById('Messages_Bank');
@@ -336,15 +353,30 @@ function Recipient_Name_Just_Entered(event){
     for(let Message of Left_Over_Messages){
       Message.remove();
     }
-    document.getElementById('Message_Contact_Input').value = '';
+    // document.getElementById('Message_Contact_Input').value = '';
   }
-  
+  if(Key == "Enter"){
+    let Recipient = String(document.getElementById('Message_Contact_Input').value);
+    let Chat_Names = [];
+    for(let Chat of Chat_Log.chats){
+      Chat_Names.push(String(Chat.name));
+    }
+    if(!Chat_Names.includes(Recipient)){
+      var Messages_Bank = document.getElementById('Messages_Bank');
+      var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+      for(let Message of Left_Over_Messages){
+        Message.remove();
+      }
+      document.getElementById('Message_Contact_Input').value = '';
+    }    
+  }
   if(Key == "Enter"){
     document.getElementById('Message_Contact_Input').blur();
     let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
     Contact_Suggestion_List.innerHTML = '';
     Query_Corresponding_Messages();
   }
+  
 }
 
 function Recipient_Field_Focussed(){
@@ -358,11 +390,6 @@ function Recipient_Field_Not_Focussed(){
   Suggested_Contact_Index = 0;
   let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
   let Current_Contact = (document.getElementById('Message_Contact_Input').value);
-
-  // setTimeout(function () {
-  //   Contact_Suggestion_List.innerHTML = '';
-  // 
-  // }, 500);
 }
 
 function Query_Corresponding_Messages(){
@@ -370,30 +397,22 @@ function Query_Corresponding_Messages(){
 }
 
 function Arrow_Selection(event){
-  // var Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
-    console.log("test");
-  // var Suggested_Contacts = document.getElementsByClassName('Suggested_Contacts');
-  // 
-  // if(Suggested_Contacts.length != 0){
-  //   for(let Contact of Suggested_Contacts){
-  //     Contact.getElementsByClassName('Suggested_Contact_Names')[0].classList.remove('Suggested_Contact_Names_White');
-  //     Contact.getElementsByClassName('Blue_Contact_Highlights')[0].classList.remove('Blue_Contact_Highlights_Activated');
-  //   }
-  // 
-  //   var Key_Code = String(event.key);
-  //   if(["ArrowUp", "ArrowDown"].includes(Key_Code)){  
-  //       let Focussed_Contact = Suggested_Contacts[Suggested_Contact_Index];    
-  //       Focussed_Contact.getElementsByClassName('Suggested_Contact_Names')[0].classList.add('Suggested_Contact_Names_White');
-  //       Focussed_Contact.getElementsByClassName('Blue_Contact_Highlights')[0].classList.add('Blue_Contact_Highlights_Activated');
-  //       (Key_Code == 'ArrowDown') ? Suggested_Contact_Index = Suggested_Contact_Index + 1 : Suggested_Contact_Index = Suggested_Contact_Index - 1;
-  //       let Lower_Limit = 0;
-  //       let Upper_Limit = Suggested_Contacts.length - 1;
-  //       Suggested_Contact_Index = Math.max(Lower_Limit,Suggested_Contact_Index);
-  //       Suggested_Contact_Index = Math.min(Upper_Limit,Suggested_Contact_Index);
-  //   }  
-  // }  
+
 }
 
+function Resolve_Active_Components(event){
+  let Key = event.key;  
+  if(Key == "Escape"){
+    var Messages_Bank = document.getElementById('Messages_Bank');
+    var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
+    for(let Message of Left_Over_Messages){
+      Message.remove();
+    }
+    document.getElementById('Message_Contact_Input').value = '';
+    let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
+    Contact_Suggestion_List.innerHTML = '';
+  }
+}
 
 let Chat_Log = {
   "chats": [
@@ -414,7 +433,6 @@ let Chat_Log = {
       }
   ]
 }
-
 
 function Hide_Compose_Window(event){
 
