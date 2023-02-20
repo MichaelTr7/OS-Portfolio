@@ -53,7 +53,7 @@ function Setup_Messages_App(){
 
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
   for(let Pinned_Chat_Container of Pinned_Chat_Containers){
-    Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
+    // Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
     Pinned_Chat_Container.addEventListener('click',Existing_Chat_Pressed);
   }
   
@@ -102,6 +102,11 @@ function Setup_Messages_App(){
   
   document.addEventListener('keydown',Resolve_Active_Components);
   document.getElementById('Messages_Bank').addEventListener('click',Launch_Escape);
+  document.getElementById('Contact_Selector').addEventListener('click',Focus_On_Recipient_Field);
+}
+
+function Focus_On_Recipient_Field(){
+  document.getElementById('Message_Contact_Input').focus();
 }
 
 function Launch_Escape(){
@@ -119,6 +124,7 @@ function Launch_Escape(){
 
 function Delete_Entire_Chat(){
   console.log("Delete Entire Chat");
+  Show_Compose_Chat_Panel();
   let Chat_Row_To_Delete = (this.parentElement).parentElement;
   let Chat_Name_To_Delete = String(Chat_Row_To_Delete.querySelector("label").innerHTML);
   
@@ -135,8 +141,13 @@ function Unpin_Chat(){
   (this.parentElement).remove();
 }
 
+var Long_Press_Duration = 300;
+
+var Start_Time = new Date();
+
+
 function Bubble_Pressed(){
-  let Long_Press_Duration = 300;
+  Start_Time = new Date();
   var Selected_Bubble = this;
   Long_Press_Timer = setTimeout(function () {
     Chat_Bubble_Long_Pressed(Selected_Bubble);
@@ -144,6 +155,11 @@ function Bubble_Pressed(){
 }
 
 function Bubble_Released(){
+  var End_Time = new Date();
+  var Elapsed_Time = End_Time.getTime() - Start_Time.getTime();
+  if(Elapsed_Time < Long_Press_Duration){
+    Show_Compose_Chat_Panel();
+  }
   clearTimeout(Long_Press_Timer); 
 }
 
@@ -205,6 +221,7 @@ function Pin_Chat(){
     Initials = Initials_Array.join("");
     Initials = Initials.slice(0, 2);
     var New_Pinned_Chat = Pinned_Chat_Component(Target_Chat,Initials);
+
     Chat_Selection_Container.innerHTML += New_Pinned_Chat;
     let Pinned_Chats = document.getElementsByClassName('Pinned_Chats');
     for(let Pinned_Chat of Pinned_Chats){
@@ -216,8 +233,15 @@ function Pin_Chat(){
     for(let Delete_Buttons of Delete_Pin_Buttons){
       Delete_Buttons.addEventListener('mousedown',Unpin_Chat);
     }
-    
   }
+  document.getElementById('Compose_Chat_Button').click();
+  let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
+  for(let Pinned_Chat_Container of Pinned_Chat_Containers){
+    // Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
+    Pinned_Chat_Container.addEventListener('click',Existing_Chat_Pressed);
+  }
+  
+  
 }
 
 function Setup_Bubble_Auto_Scroll(){
@@ -261,9 +285,12 @@ function Send_Message(){
   console.log("Message Sent");
   
   
+  
+  
 }
 
 function Show_Compose_Chat_Panel(){
+
   var Messages_Bank = document.getElementById('Messages_Bank');
   var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
   for(let Message of Left_Over_Messages){
@@ -273,6 +300,15 @@ function Show_Compose_Chat_Panel(){
   Recipient_Contact.value = '';
   let Message_Panel = document.getElementById('Message_Panel');
   Message_Panel.classList.toggle('Toggle_Message_Panel');
+  // document.getElementById('Message_Contact_Input').click();
+  if(Message_Panel.classList.contains('Toggle_Message_Panel')){
+    setTimeout(function () {
+      if(document.getElementById('Message_Contact_Input').value == ''){
+      document.getElementById('Contact_Selector').click();
+      }
+    }, 300);
+  }
+
 }
 
 function Existing_Chat_Pressed(){
@@ -282,7 +318,7 @@ function Existing_Chat_Pressed(){
   Populate_Compose_Chat_Window(Message_Recipient);
 }
 
-function Populate_Compose_Chat_Window(Message_Recipient){
+function Populate_Compose_Chat_Window(Message_Recipient){  
   var Messages_Bank = document.getElementById('Messages_Bank');
   var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
   for(let Message of Left_Over_Messages){
@@ -367,10 +403,11 @@ function Recipient_Name_Just_Entered(event){
       for(let Message of Left_Over_Messages){
         Message.remove();
       }
-      document.getElementById('Message_Contact_Input').value = '';
+      
+      
+      
+      // document.getElementById('Message_Contact_Input').value = '';
     }    
-  }
-  if(Key == "Enter"){
     document.getElementById('Message_Contact_Input').blur();
     let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
     Contact_Suggestion_List.innerHTML = '';
@@ -402,16 +439,24 @@ function Arrow_Selection(event){
 
 function Resolve_Active_Components(event){
   let Key = event.key;  
+  if(Key == "Escape" & document.getElementById('Message_Contact_Input').value == ''){
+    document.getElementById('Message_Panel');
+    Message_Panel.classList.toggle('Toggle_Message_Panel');
+  }  
   if(Key == "Escape"){
     var Messages_Bank = document.getElementById('Messages_Bank');
     var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
-    for(let Message of Left_Over_Messages){
-      Message.remove();
+    for(let Message of Messages_Bank.children){
+      if(Message.classList.contains('Message_Chunk')){
+        Message.remove();
+      }
     }
+    Messages_Bank.innerHTML = '<div id="Message_Temporary_Spacer"></div>';
     document.getElementById('Message_Contact_Input').value = '';
     let Contact_Suggestions_Container = document.getElementById('Contact_Suggestion_List');
     Contact_Suggestion_List.innerHTML = '';
   }
+
 }
 
 let Chat_Log = {

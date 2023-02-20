@@ -279,6 +279,8 @@
   transform: translateY(120%) scale(0.5);
   transition: 0.2s ease;
   filter: opacity(0);
+  background-color: rgba(180,180,180,1);
+  /* background-color: transparent; */
 }
 
 .Toggle_Message_Panel{
@@ -345,7 +347,7 @@
   position: absolute;
   height: calc(100% - var(--Contact_Selector_Height));
   width: 100%;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,1);
   backdrop-filter: blur(2rem);
   -webkit-backdrop-filter: blur(2rem);
   border-radius: 0 0 0.7rem 0.7rem;
@@ -388,6 +390,9 @@
   overflow-x: hidden;
   padding-bottom: 3.5rem;
   scroll-behavior: smooth;
+  background-color: transparent;
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
 }
 
 .Message_Bubbles{
