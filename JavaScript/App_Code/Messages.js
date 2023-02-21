@@ -52,6 +52,7 @@ const Create_New_Contact_Suggestion = (Initials,Name) => {
 
 
 function Setup_Messages_App(){
+  document.getElementById('Back_Button').addEventListener('click',Retract_Messages_Compose_Panel);
   document.getElementById('Compose_Chat_Button').addEventListener('click',Show_Compose_Chat_Panel);
 
   let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
@@ -62,7 +63,6 @@ function Setup_Messages_App(){
 
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
   for(let Pinned_Chat_Container of Pinned_Chat_Containers){
-    // Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
     Pinned_Chat_Container.addEventListener('click',Existing_Chat_Pressed);
   }
   
@@ -114,6 +114,10 @@ function Setup_Messages_App(){
   document.getElementById('Contact_Selector').addEventListener('click',Focus_On_Recipient_Field);
 }
 
+function Retract_Messages_Compose_Panel(){
+  document.getElementById('Compose_Chat_Button').click();
+}
+
 function Focus_On_Recipient_Field(){
   document.getElementById('Message_Contact_Input').focus();
 }
@@ -159,9 +163,7 @@ function Unpin_Chat(){
 }
 
 var Long_Press_Duration = 300;
-
 var Start_Time = new Date();
-
 
 function Bubble_Pressed(){
   Start_Time = new Date();
@@ -268,7 +270,6 @@ function Pin_Chat(){
   document.getElementById('Compose_Chat_Button').click();
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
   for(let Pinned_Chat_Container of Pinned_Chat_Containers){
-    // Pinned_Chat_Container.addEventListener('click',Show_Compose_Chat_Panel);
     Pinned_Chat_Container.addEventListener('click',Existing_Chat_Pressed);
   }
   
@@ -301,44 +302,45 @@ function User_Typing(){
 
 function Send_Message(){
   console.log("Send Message");
-  let Message_Recipient = document.getElementById('Message_Contact_Input').value; 
-  let Displayed_Recent_Chats = document.getElementsByClassName('Recent_Chat_Boxes');
-  let Displayed_Chat_Names = [];
-  for(let Chat of Displayed_Recent_Chats){
-    Displayed_Chat_Names.push(String(Chat.getElementsByClassName('Name_Headers')[0].innerHTML));
-  }
-  
-  if(!Displayed_Chat_Names.includes(Message_Recipient)){
-    let Name_Portions = String(Message_Recipient).split(" ");
-    let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
-    Initials = Initials_Array.join("");
-    Initials = Initials.slice(0, 2);
-    if(parseInt(Initials)){
-      Initials = "#";
-    }
-    let New_Recent_Contact = Create_New_Recent_Chat(Message_Recipient,Initials);
-    let Recents_Panel = document.getElementById('Recent_Chats_Container');
-    Recents_Panel.innerHTML += New_Recent_Contact;
-    let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
-    for(let Button of Pin_Buttons){
-      Button.addEventListener('click',Pin_Chat);
-    }
-    let Delete_Chat_Buttons = document.getElementsByClassName('Delete_Chat_Buttons');
-    for(let Delete_Chat_Button of Delete_Chat_Buttons){
-      Delete_Chat_Button.addEventListener('click',Delete_Entire_Chat);
-    }
-    let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
-    for(let Chat_Row of Chat_Rows){
-      Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
-      Chat_Row.addEventListener('click',Existing_Chat_Pressed);
-    }
-  }
-  
-  
   let Send_Message_Box = document.getElementById('Send_Message_Box');
   const Message_Contents = Send_Message_Box.innerHTML;
   let Sender_Name = document.getElementById('Message_Contact_Input').value;  
   if((Message_Contents != '') & (Sender_Name != '')){
+    let Message_Recipient = document.getElementById('Message_Contact_Input').value; 
+    let Displayed_Recent_Chats = document.getElementsByClassName('Recent_Chat_Boxes');
+    let Displayed_Chat_Names = [];
+    for(let Chat of Displayed_Recent_Chats){
+      Displayed_Chat_Names.push(String(Chat.getElementsByClassName('Name_Headers')[0].innerHTML));
+    }
+    
+    if(!Displayed_Chat_Names.includes(Message_Recipient)){
+      let Name_Portions = String(Message_Recipient).split(" ");
+      let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
+      Initials = Initials_Array.join("");
+      Initials = Initials.slice(0, 2);
+      if(parseInt(Initials)){
+        Initials = "#";
+      }
+      let New_Recent_Contact = Create_New_Recent_Chat(Message_Recipient,Initials);
+      let Recents_Panel = document.getElementById('Recent_Chats_Container');
+      Recents_Panel.innerHTML += New_Recent_Contact;
+      let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
+      for(let Button of Pin_Buttons){
+        Button.addEventListener('click',Pin_Chat);
+      }
+      let Delete_Chat_Buttons = document.getElementsByClassName('Delete_Chat_Buttons');
+      for(let Delete_Chat_Button of Delete_Chat_Buttons){
+        Delete_Chat_Button.addEventListener('click',Delete_Entire_Chat);
+      }
+      let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
+      for(let Chat_Row of Chat_Rows){
+        Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
+        Chat_Row.addEventListener('click',Existing_Chat_Pressed);
+      }
+    }
+    
+    
+    
     var New_Message = New_Message_Sent_Component(Message_Contents);
     var Messages_Bank = document.getElementById('Messages_Bank');
     let Padding_Element = document.getElementById('Message_Temporary_Spacer');
@@ -372,7 +374,12 @@ function Update_Message(Message_Recipient,Message_Content,Message_Direction){
 }
 
 function Show_Compose_Chat_Panel(){
-
+  let Compose_Panel = document.getElementsByClassName('Message_Panel')[0];
+  if(!Compose_Panel.classList.contains("Toggle_Message_Panel")){
+    document.getElementsByClassName("Back_Button")[0].classList.add('Show_Back_Button');
+  }else{
+    document.getElementsByClassName("Back_Button")[0].classList.remove('Show_Back_Button');
+  }
   var Messages_Bank = document.getElementById('Messages_Bank');
   var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
   for(let Message of Left_Over_Messages){
@@ -382,7 +389,6 @@ function Show_Compose_Chat_Panel(){
   Recipient_Contact.value = '';
   let Message_Panel = document.getElementById('Message_Panel');
   Message_Panel.classList.toggle('Toggle_Message_Panel');
-  // document.getElementById('Message_Contact_Input').click();
   if(Message_Panel.classList.contains('Toggle_Message_Panel')){
     setTimeout(function () {
       if(document.getElementById('Message_Contact_Input').value == ''){
@@ -405,9 +411,7 @@ function Populate_Compose_Chat_Window(Message_Recipient){
   let Shown_Chat_Names = [];
   for(let Chat_Name of Shown_Chats){
     Shown_Chat_Names.push(Chat_Name.innerHTML);
-    
   }
-  
   if(!Shown_Chat_Names.includes(Message_Recipient)){
     for(let Chat of Chat_Log.chats){
       if(String(Chat.name) == String(Message_Recipient)){
@@ -416,7 +420,6 @@ function Populate_Compose_Chat_Window(Message_Recipient){
       }
     }
   }
-  // let New_Recent_Contact = Create_New_Recent_Chat(String(Phone_Number),"#");  
   var Messages_Bank = document.getElementById('Messages_Bank');
   var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
   for(let Message of Left_Over_Messages){
@@ -485,7 +488,6 @@ function Recipient_Name_Just_Entered(event){
     for(let Message of Left_Over_Messages){
       Message.remove();
     }
-    // document.getElementById('Message_Contact_Input').value = '';
   }
   if(Key == "Enter"){
     let Recipient = String(document.getElementById('Message_Contact_Input').value);
@@ -525,7 +527,6 @@ function Recipient_Name_Just_Entered(event){
         Chat_Log.chats.push(New_Chat);
         
         let Recents_Panel = document.getElementById('Recent_Chats_Container');
-        // Recents_Panel.innerHTML += New_Recent_Contact;
         let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
         for(let Button of Pin_Buttons){
           Button.addEventListener('click',Pin_Chat);

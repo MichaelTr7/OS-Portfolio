@@ -12,7 +12,7 @@
   transition: 0.2s;
   transition-property: height, width;
   overflow: hidden;
-  /* display: none; */
+  display: none;
 }
 
 .Expand_Messages_Window{
@@ -584,8 +584,36 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
 }
+
+.Back_Button{
+  display: flex;
+  position: absolute;
+  height: 1.3rem;
+  width: 3rem;
+  top: 1rem;
+  left: 5.5rem;
+  border-radius: 1000rem;
+  border: none;
+  font-size: 0.7rem;
+  color: rgba(0,0,0,0.2);
+  background-color: transparent;
+  border: 0.12rem solid rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  filter: opacity(0);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.Show_Back_Button{
+  filter: opacity(1);
+  pointer-events: all;
+}
+
 
 :root{
     --Message_Bubble_Margins: 1rem;
