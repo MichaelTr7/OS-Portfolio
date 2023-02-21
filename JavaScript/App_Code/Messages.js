@@ -141,9 +141,17 @@ function Delete_Entire_Chat(){
   for(let Name of Name_Labels){
     if(String(Name.innerHTML) == Chat_Name_To_Delete){
       Name.parentElement.remove();
+      for(let Chat of Chat_Log.chats){
+        console.log();
+        if(String(Chat.name) == String(Name.innerHTML)){
+          Chat.messages = [];
+          Chat.message_direction = [];
+        }
+      }
     }
   }
   Chat_Row_To_Delete.remove();  
+  
 }
 
 function Unpin_Chat(){
@@ -256,7 +264,6 @@ function Pin_Chat(){
     
     
     
-    
   }
   document.getElementById('Compose_Chat_Button').click();
   let Pinned_Chat_Containers = document.getElementsByClassName('Pinned_Chat_Containers');
@@ -294,6 +301,40 @@ function User_Typing(){
 
 function Send_Message(){
   console.log("Send Message");
+  let Message_Recipient = document.getElementById('Message_Contact_Input').value; 
+  let Displayed_Recent_Chats = document.getElementsByClassName('Recent_Chat_Boxes');
+  let Displayed_Chat_Names = [];
+  for(let Chat of Displayed_Recent_Chats){
+    Displayed_Chat_Names.push(String(Chat.getElementsByClassName('Name_Headers')[0].innerHTML));
+  }
+  
+  if(!Displayed_Chat_Names.includes(Message_Recipient)){
+    let Name_Portions = String(Message_Recipient).split(" ");
+    let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
+    Initials = Initials_Array.join("");
+    Initials = Initials.slice(0, 2);
+    if(parseInt(Initials)){
+      Initials = "#";
+    }
+    let New_Recent_Contact = Create_New_Recent_Chat(Message_Recipient,Initials);
+    let Recents_Panel = document.getElementById('Recent_Chats_Container');
+    Recents_Panel.innerHTML += New_Recent_Contact;
+    let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
+    for(let Button of Pin_Buttons){
+      Button.addEventListener('click',Pin_Chat);
+    }
+    let Delete_Chat_Buttons = document.getElementsByClassName('Delete_Chat_Buttons');
+    for(let Delete_Chat_Button of Delete_Chat_Buttons){
+      Delete_Chat_Button.addEventListener('click',Delete_Entire_Chat);
+    }
+    let Chat_Rows = document.getElementsByClassName('Recent_Chat_Boxes');
+    for(let Chat_Row of Chat_Rows){
+      Chat_Row.addEventListener('click',Show_Compose_Chat_Panel);
+      Chat_Row.addEventListener('click',Existing_Chat_Pressed);
+    }
+  }
+  
+  
   let Send_Message_Box = document.getElementById('Send_Message_Box');
   const Message_Contents = Send_Message_Box.innerHTML;
   let Sender_Name = document.getElementById('Message_Contact_Input').value;  
@@ -310,6 +351,15 @@ function Send_Message(){
 }
 
 function Update_Message(Message_Recipient,Message_Content,Message_Direction){
+    let Recent_Chat_Boxes = document.getElementsByClassName('Recent_Chat_Boxes');
+    for(let Chat of Recent_Chat_Boxes){
+      if(String(Chat.getElementsByClassName('Name_Headers')[0].innerHTML) == Message_Recipient){
+        Chat.getElementsByClassName('Chat_Previews')[0].innerHTML = '';
+        Chat.getElementsByClassName('Chat_Previews')[0].innerHTML = Message_Content;
+      }
+    }
+  
+  
     console.log("Save Message");
     let Active_Chats = Chat_Log.chats;
     for(let Chat of Active_Chats){
@@ -350,14 +400,29 @@ function Existing_Chat_Pressed(){
   Populate_Compose_Chat_Window(Message_Recipient);
 }
 
-function Populate_Compose_Chat_Window(Message_Recipient){  
+function Populate_Compose_Chat_Window(Message_Recipient){ 
+  let Shown_Chats = document.getElementsByClassName('Name_Headers');
+  let Shown_Chat_Names = [];
+  for(let Chat_Name of Shown_Chats){
+    Shown_Chat_Names.push(Chat_Name.innerHTML);
+    
+  }
+  
+  if(!Shown_Chat_Names.includes(Message_Recipient)){
+    for(let Chat of Chat_Log.chats){
+      if(String(Chat.name) == String(Message_Recipient)){
+        Chat.messages = [];
+        Chat.message_direction = [];
+      }
+    }
+  }
+  // let New_Recent_Contact = Create_New_Recent_Chat(String(Phone_Number),"#");  
   var Messages_Bank = document.getElementById('Messages_Bank');
   var Left_Over_Messages = Messages_Bank.getElementsByClassName('Message_Chunk');
   for(let Message of Left_Over_Messages){
     Message.remove();
   }
   for(let Chat of Chat_Log.chats){
-    console.log(Chat_Log);
     if(String(Chat.name) == Message_Recipient){
       let Loaded_Messages = Chat.messages;
       let Loaded_Message_Directions = Chat.message_direction;      
@@ -388,6 +453,9 @@ function Live_Update_Compose_Window(){
         let Initials_Array = Name_Portions.map(Name_Part => Name_Part[0]);
         Initials = Initials_Array.join("");
         Initials = Initials.slice(0, 2);
+        if(parseInt(Initials)){
+          Initials = "#";
+        }
         let New_Contact_Suggestion  = Create_New_Contact_Suggestion(Initials,String(Chat.name));
         Contact_Suggestion_List.innerHTML += New_Contact_Suggestion;
       }
@@ -448,9 +516,16 @@ function Recipient_Name_Just_Entered(event){
         
         }
         let New_Recent_Contact = Create_New_Recent_Chat(String(Phone_Number),"#");
+        let New_Chat = {
+          name: String(Phone_Number),
+          messages: [],
+          message_direction: []
+        };
+        
+        Chat_Log.chats.push(New_Chat);
+        
         let Recents_Panel = document.getElementById('Recent_Chats_Container');
-        console.log(Recents_Panel);
-        Recents_Panel.innerHTML += New_Recent_Contact;
+        // Recents_Panel.innerHTML += New_Recent_Contact;
         let Pin_Buttons = document.getElementsByClassName('Pin_Buttons');
         for(let Button of Pin_Buttons){
           Button.addEventListener('click',Pin_Chat);
