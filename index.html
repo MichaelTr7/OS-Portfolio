@@ -607,12 +607,20 @@
       <div id="Highscore_Container">HIGHSCORE: 0 &nbsp;&nbsp; SCORE: 0 </div>
       <div id="Controller_Container">
         <div id="Controller_Screen">
-          <div id="Controller_Green_Button" class="Controller_Buttons"></div>
-          <div id="Controller_Red_Button" class="Controller_Buttons"></div>
-          <div id="Controller_Yellow_Button" class="Controller_Buttons"></div>
-          <div id="Controller_Blue_Button" class="Controller_Buttons"></div>
+          <div id="Controller_Green_Button" class="Controller_Buttons Controller_Green_Button" data-colour="Green"></div>
+          <div id="Controller_Red_Button" class="Controller_Buttons Controller_Red_Button" data-colour="Red"></div>
+          <div id="Controller_Yellow_Button" class="Controller_Buttons Controller_Yellow_Button" data-colour="Yellow"></div>
+          <div id="Controller_Blue_Button" class="Controller_Buttons Controller_Blue_Button" data-colour="Blue"></div>
+          <div id="Game_Over_Panel" class="Game_Over_Panel">
+          <div id="Game_Over_Label_1">GAME</div>
+          <div id="Game_Over_Label_2">OVER</div>
+          </div>    
+        
         </div> 
+        
         <button id="Start_Memory_Game_Button" class="Start_Memory_Game_Button" type="button" name="button">Start Game</button> 
+        
+       
       </div>
       
       
@@ -1068,6 +1076,8 @@
             </div>          
           </div>
           <div id="Heart_Monitor_Screen">
+            <div id="Heart_Container"></div>
+            
             <div class="Grid_Squares"></div>             
             <div class="Grid_Squares"></div>             
             <div class="Grid_Squares"></div>             
@@ -1092,7 +1102,6 @@
             <div class="Grid_Squares"></div>             
             <div class="Grid_Squares"></div>             
             <div class="Grid_Squares"></div>             
-
           </div>
         </div>
         <div class="Volunteer_Boxes">

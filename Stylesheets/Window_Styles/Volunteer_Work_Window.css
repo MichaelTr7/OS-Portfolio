@@ -11,7 +11,7 @@
     filter: opacity(1);
     transition: 0.2s;
     transition-property: height, width;
-    display: none;
+    /* display: none; */
 }
 
 #Heart_Monitor_Colour_Control_Knob_Backdrop{
@@ -140,6 +140,7 @@
 }
 
 #Heart_Monitor_Screen{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -191,7 +192,16 @@
   font-size: 0.82rem;
 }
 
-
+#Heart_Container{
+  --Size: 8rem;
+  position: absolute;
+  left: -0.5rem;
+  margin-left: 1rem;
+  height: var(--Size);
+  width: var(--Size);
+  top: calc(50% - var(--Size)/2);
+  background-color: rgba(255,255,255,0.2);
+}
 
 
 
