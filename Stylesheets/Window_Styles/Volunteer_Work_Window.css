@@ -194,10 +194,11 @@
   --Size: 8rem;
   position: absolute;
   left: -0.45rem;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   height: var(--Size);
   width: var(--Size);
   top: calc(50% - var(--Size)/2);
+  left: calc(50% - var(--Size)/2);
   font-size: 8rem;
   justify-content: center;
   align-items: center;
@@ -248,10 +249,10 @@
    top: calc(50% - var(--Height)/2);
    left: 4.5rem;
    /* background-color: rgba(255,255,255,0.2); */
-   background-image: url('../Window_Styles/Volunteer_Work_Window_Assets/Waves.svg');
-   background-size: 30%;
+   /* background-image: url('../Window_Styles/Volunteer_Work_Window_Assets/Waves.svg'); */
+   /* background-size: 30%;
    background-repeat: repeat-x;
-   background-position: 0% 50%;
+   background-position: 0% 50%; */
    /* animation: Scroll 10s linear infinite; */
 }
 

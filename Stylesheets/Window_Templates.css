@@ -26,7 +26,6 @@
   pointer-events: none;
   background-color: rgba(0,0,0,0);
   background-color: rgba(225,225,225,0.7);
-
   -webkit-backdrop-filter: blur(5rem);
   backdrop-filter: blur(5rem);
 }

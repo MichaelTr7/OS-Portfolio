@@ -3,10 +3,22 @@ function Setup_Volunteer_Work_App(){
   // console.log("Setup Volunteer Work App:");
   document.getElementById('Heart_Monitor_Colour_Control_Knob_Backdrop').addEventListener('mousedown',Change_Heart_Colour);
   document.getElementById('Heart_Object').addEventListener('mousedown',Change_Heart_Colour);  
-  document.getElementById('Heart_Container').classList.add('Heart_Pumping_Animation');
+  // document.getElementById('Heart_Container').classList.add('Heart_Pumping_Animation');
   document.getElementById('Heart_Knob_Spinner').classList.add('Spin_Knob');
   document.getElementById('Heart_Monitor_Speed_Control_Knob_Backdrop').addEventListener('mousedown',Change_Heart_Beat_Rate);
+  document.getElementById('Volunteer_Work_Icon').addEventListener('click',Start_Heart_Animation);
+  document.getElementById('Volunteer_Work_Minimize_Button').addEventListener('mousedown',Stop_Heart_Animation);
+  document.getElementById('Volunteer_Work_Close_Button').addEventListener('mousedown',Stop_Heart_Animation);
+
   Setup_Pulse_Graph();
+}
+
+function Start_Heart_Animation(){
+  document.getElementById('Heart_Container').classList.add('Heart_Pumping_Animation');
+}
+
+function Stop_Heart_Animation(){
+  document.getElementById('Heart_Container').classList.remove('Heart_Pumping_Animation');
 }
 
 function Change_Heart_Colour(){
@@ -65,10 +77,7 @@ function Change_Heart_Beat_Rate(){
 }
 
 function Setup_Pulse_Graph(){
-
-
-
-
+  
 }
 
 
