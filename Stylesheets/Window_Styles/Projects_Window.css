@@ -12,29 +12,9 @@
   height: var(--New_Height);
   min-height: 28rem;
   overflow: hidden;
-  will-change: transform;
+  will-change: top, left;
   transition: all 0.001s linear;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  filter: none;
-  background-color: rgb(189	164	220);
-  /* display: none; */
 }
-
-.Projects_Window > *{
-  filter: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-
-/* ::-webkit-scrollbar {
-    width: 0;
-}
- 
-::-webkit-scrollbar-thumb {
-  background-color: transparent;
-} */
 
 .Projects_Window {
   -ms-overflow-style: none;
