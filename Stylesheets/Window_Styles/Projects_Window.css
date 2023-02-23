@@ -14,8 +14,19 @@
   overflow: hidden;
   will-change: transform;
   transition: all 0.001s linear;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  filter: none;
+  background-color: rgb(189	164	220);
   /* display: none; */
 }
+
+.Projects_Window > *{
+  filter: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 
 /* ::-webkit-scrollbar {
     width: 0;
