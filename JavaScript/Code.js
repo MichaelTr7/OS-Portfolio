@@ -14,12 +14,12 @@ window.onload = function(){
   }  
   
   let Progress_Bar = document.getElementById('Progress_Bar');
-  Progress_Bar.style.setProperty('--Progress_Percentage','20%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
   Setup_Control_Centre();
-  Progress_Bar.style.setProperty('--Progress_Percentage','25%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
   Setup_Spectrum_Analyzer();
   Setup_Window_Functionality();
-  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','35%');
   Setup_Window_Layering();
   Setup_Window_Controls();
   Progress_Bar.style.setProperty('--Progress_Percentage','35%');
