@@ -50,8 +50,6 @@ function Change_Heart_Colour(){
   document.getElementById('Heart_Object').addEventListener('mousedown',Change_Heart_Colour);
 }
 
-
-
 function Change_Heart_Beat_Rate(){
   console.log("Change Heartbeat Rate");
   let Multiplier_Knob = document.getElementById('Heart_Monitor_Speed_Control_Knob');

@@ -238,7 +238,16 @@
     100%{transform: scale(1); filter: opacity(1) saturate(1.2);;}
 }
 
-
+#Heart_Pulse_Graph{
+  position: absolute;
+  --Height: 8rem; 
+  height: var(--Height);
+  width: calc(100% - 5rem);
+  background-color: rgba(255,255,255,0.2);
+  top: calc(50% - var(--Height)/2);
+  left: 4.5rem;
+  
+}
 
 
 
