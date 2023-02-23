@@ -82,10 +82,6 @@
   left: calc(100% - 0.6rem);
 }
 
-#Heart_Monitor_Colour_Control_Knob_Ticker{
-  
-}
-
 #Heart_Monitor_Speed_Control_Knob{
   display: flex;
   justify-content: center;
@@ -193,15 +189,74 @@
 }
 
 #Heart_Container{
+  display: flex;
   --Size: 8rem;
   position: absolute;
-  left: -0.5rem;
+  left: -0.45rem;
   margin-left: 1rem;
   height: var(--Size);
   width: var(--Size);
   top: calc(50% - var(--Size)/2);
-  background-color: rgba(255,255,255,0.2);
+  font-size: 8rem;
+  justify-content: center;
+  align-items: center;
+  color: pink; 
 }
+
+#Heart_Monitor_Colour_Control_Knob_Ticker{
+  position: absolute;
+  --Diameter: 0.1rem;
+  height: var(--Diameter);
+  width: calc(5*var(--Diameter));
+  background-color: white;
+  border-radius: 10000rem;
+  left: 0;
+  background-color: grey;
+  top: calc(50% - var(--Diameter)/2);
+}
+
+.Spin_Knob{
+  --Angle: 0deg;
+  transform: rotateZ(var(--Angle));
+}
+
+#Heart_Knob_Spinner{
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  transition: 0.15s;
+}
+
+.Heart_Pumping_Animation{
+  --Heart_Rate: 1s;
+  animation: Heart_Pumping_Keyframes var(--Heart_Rate) ease infinite;
+}
+
+@keyframes Heart_Pumping_Keyframes {
+    0%{transform: scale(1); filter: opacity(1) saturate(1.2);;}
+    50%{transform: scale(0.8); filter: opacity(0.8) saturate(1);;}
+    100%{transform: scale(1); filter: opacity(1) saturate(1.2);;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
