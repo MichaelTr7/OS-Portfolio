@@ -1,4 +1,9 @@
 
+
+:root{
+  --Loading_Icon_Size: 6rem;
+}
+
 #Loading_Window{
   /* display: none; */
   position: fixed;
@@ -10,7 +15,7 @@
 
 .OS_Loaded_Animation{
   animation: Loaded_Page_Keyframes 0.5s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 1.2s;
 }
 
 @keyframes Loaded_Page_Keyframes {
@@ -20,14 +25,13 @@
 }
 
 #Loading_Icon{
-  position: relative;
-  --Size: 6rem;
-  height: var(--Size);
-  width: var(--Size);
+  position: absolute;
+  height: var(--Loading_Icon_Size);
+  width: var(--Loading_Icon_Size);
   border: 0.25rem solid white;
   box-sizing: border-box;
-  top: calc(40% - var(--Size)/2);
-  left: calc(50% - var(--Size)/2);
+  top: calc(37% - var(--Loading_Icon_Size)/2);
+  left: calc(50% - var(--Loading_Icon_Size)/2);
   background-image: url('../../Assets/Circle_Image.svg');
   background-size: cover;
   border-radius: 100%;
@@ -35,7 +39,7 @@
   transform: scale(0);
   filter: opacity(0);
   animation: Grow_Icon_Keyframes 1s ease forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 @keyframes Grow_Icon_Keyframes {
@@ -43,15 +47,38 @@
   to{transform: scale(1); filter: opacity(1);}
 }
 
-
-#Loading_Symbol{
-  --Diameter: 2rem; 
-  background-color: white;
-  height: ;
-  width: ;
+#Progress_Bar{
+  position: absolute;
+  --Height: 0.4rem;
+  --Width: 10rem;
+  --Top_Margin: 3.5rem;
+  margin-top: 2rem;
+  background-color: black;
+  height: var(--Height);
+  width: var(--Width);
+  top: calc(37% + var(--Height)/2 + var(--Top_Margin));
+  left: calc(50% - var(--Width)/2);
+  border-radius: 1000rem;
+  transform: scaleX(0);
+  filter: opacity(1);
+  animation: Expand_Progress_Bar_Frames 1s ease forwards;
+  animation-delay: 0.2s;
+  border: 0.05rem solid rgba(255,255,255,0.8);
+  box-sizing: border-box;
+  background-image: linear-gradient(to left, transparent 50%, rgba(255,255,255,1) 50%);
+  background-size: 200% 100%;
+  --Progress_Percentage: 0%;
+  background-position: calc(100% - var(--Progress_Percentage)) 50%;
+  transition: 1s;
 }
 
 
+
+@keyframes Expand_Progress_Bar_Frames {
+  0%{transform: scaleX(0); filter: opacity(1);}
+  20%{transform: scaleX(0); filter: opacity(1);}
+  100%{transform: scaleX(1); filter: opacity(1);}
+}
 
 
 

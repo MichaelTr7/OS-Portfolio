@@ -25,8 +25,15 @@ function Setup_Window_Controls(){
   
   setTimeout(function () {
     console.log("Done");
-    
-  }, 500);
+    let Progress_Bar = document.getElementById('Progress_Bar');
+    Progress_Bar.style.setProperty('--Progress_Percentage','100%');
+    document.getElementById('Loading_Window').classList.add('OS_Loaded_Animation');
+  }, 20);
+  
+  setTimeout(function () {
+    document.getElementById('Loading_Window').remove();
+  }, 2000);
+  
   
   var App_Icons = document.getElementsByClassName('App_Icons');
   for(Index=0; Index < App_Icons.length; Index++){
