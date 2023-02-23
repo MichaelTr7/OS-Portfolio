@@ -14,8 +14,9 @@ function Setup_Window_Controls(){
     Maximize_Buttons[Index].parentElement.addEventListener('click',Maximize_Window);  
   }
   
-  let Window_Whitelist = ["Projects_Window"];
-  
+  // let Window_Whitelist = ["Projects_Window"];
+  let Window_Whitelist = ["Courses_Window"];
+
   for(let Button of Minimize_Buttons){
     let Window_ID = Button.parentElement.parentElement.parentElement.id;
     if(!Window_Whitelist.includes(Window_ID)){
