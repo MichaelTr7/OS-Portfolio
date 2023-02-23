@@ -32,13 +32,15 @@
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Acknowledgements_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Volunteer_Work_Window.css">
     <link rel="stylesheet" href="./Stylesheets/Window_Styles/Mail_Window.css">
-    <link rel="stylesheet" href="./Stylesheets/Window_Styles/Links_Window.css">    
+    <link rel="stylesheet" href="./Stylesheets/Window_Styles/Links_Window.css">
+    <link rel="stylesheet" href="./Stylesheets/Window_Styles/Loading_Window.css">        
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!--Linking scripts-->
     <!--Adding P5.js libraries/modules-->
     <script src = "./p5/p5.js"></script>
-    <script src = "./p5/addons/p5.sound.js"></script>    
+    <script src = "./p5/addons/p5.sound.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="./three.js-master/build/three.js"></script> -->
     <!-- <script src="https://cdn.rawgit.com/mrdoob/three.js/r129/examples/js/loaders/STLLoader.js"></script> -->
     <script src="./JavaScript/Code.js" type="text/javascript"></script>
@@ -86,6 +88,13 @@
 <!-- BACKGROUND/WALLPAPER -->
 <!-- *********************************************************************** -->
 <div id ="Background"></div>
+<div id="Loading_Window">
+  <div id="Loading_Icon"></div>
+  <div id="Loading_Symbol"></div>
+
+
+</div>
+
 
 <!-- *********************************************************************** -->
 <!-- MENU BAR -->
@@ -1154,12 +1163,14 @@
             <div class="Grid_Squares"></div>             
             <div class="Grid_Squares"></div>    
             
-            <div id="Heart_Pulse_Graph">
+              
+              <div id="Heart_Pulse_Graph_Container">
+        
+
+              </div>
+
               
               
-              
-              
-            </div>
             
             
                      

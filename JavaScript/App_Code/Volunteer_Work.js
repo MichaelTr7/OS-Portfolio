@@ -6,7 +6,7 @@ function Setup_Volunteer_Work_App(){
   document.getElementById('Heart_Container').classList.add('Heart_Pumping_Animation');
   document.getElementById('Heart_Knob_Spinner').classList.add('Spin_Knob');
   document.getElementById('Heart_Monitor_Speed_Control_Knob_Backdrop').addEventListener('mousedown',Change_Heart_Beat_Rate);
-  
+  Setup_Pulse_Graph();
 }
 
 function Change_Heart_Colour(){
@@ -54,19 +54,24 @@ function Change_Heart_Beat_Rate(){
   console.log("Change Heartbeat Rate");
   let Multiplier_Knob = document.getElementById('Heart_Monitor_Speed_Control_Knob');
   let Current_Speed = String(Multiplier_Knob.innerHTML);
-
   let Next_Speed_Lookup = {
     "x1":{"speed":"0.5s", "label": "x2"},
     "x2":{"speed":"0.3s", "label": "x3"},
     "x3":{"speed":"1s", "label": "x1"}
   }
-  
   Multiplier_Knob.innerHTML = (Next_Speed_Lookup[Current_Speed]).label;
   let Heart = document.getElementById('Heart_Container');
-  
   Heart.style.setProperty('--Heart_Rate',(Next_Speed_Lookup[Current_Speed]).speed);
-  
-  
-  
 }
+
+function Setup_Pulse_Graph(){
+
+
+
+
+}
+
+
+
+
 

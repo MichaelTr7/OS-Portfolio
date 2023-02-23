@@ -14,7 +14,7 @@
   overflow: hidden;
   will-change: transform;
   transition: all 0.001s linear;
-  display: none;
+  /* display: none; */
 }
 
 /* ::-webkit-scrollbar {

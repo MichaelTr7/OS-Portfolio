@@ -11,7 +11,7 @@
   transition: 0.2s;
   transition-property: height, width;
   overflow: hidden;
-  display: none;
+  /* display: none; */
 }
 
 .Expand_Messages_Window{

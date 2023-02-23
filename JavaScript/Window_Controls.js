@@ -13,6 +13,21 @@ function Setup_Window_Controls(){
     Minimize_Buttons[Index].parentElement.addEventListener('click',Minimize_Window);
     Maximize_Buttons[Index].parentElement.addEventListener('click',Maximize_Window);  
   }
+  
+  let Window_Whitelist = ["Projects_Window"];
+  
+  for(let Button of Minimize_Buttons){
+    let Window_ID = Button.parentElement.parentElement.parentElement.id;
+    if(!Window_Whitelist.includes(Window_ID)){
+      Button.parentElement.click();
+    }
+  }
+  
+  setTimeout(function () {
+    console.log("Done");
+    
+  }, 500);
+  
   var App_Icons = document.getElementsByClassName('App_Icons');
   for(Index=0; Index < App_Icons.length; Index++){
     App_Icons[Index].addEventListener('click',Toggle_Window);
@@ -23,6 +38,12 @@ function Setup_Window_Controls(){
   for(Index=0; Index < Window_Bodies.length; Index++){
     Window_Bodies[Index].addEventListener("hover",Prevent_Dragging_On_Child_Elements);
   }
+  
+  // let Minimize_Buttons = document.getElementsByClassName('Minimize_Toggles');
+
+
+  
+  
 }
 
 function Close_Window(){

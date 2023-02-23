@@ -22,10 +22,11 @@ function Setup_Window_Functionality(){
     Setup_Draggable_Element(Application_Windows[Index]);
   }
   // Randomize_Windows();
+
 }
 
 function Randomize_Windows(){
-  var All_Windows = document.getElementsByClassName('Window_Templates');
+  var All_Windows = document.getElementsByClassName('Window_Templates');  
   var Dock_Height = document.getElementById("Dock").getBoundingClientRect().height;
   var Menu_Bar_Height = 32;
   var Minimum_Margin = 20;

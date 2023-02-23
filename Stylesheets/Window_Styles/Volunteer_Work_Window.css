@@ -12,6 +12,7 @@
     transition: 0.2s;
     transition-property: height, width;
     /* display: none; */
+    /* display: inline; */
 }
 
 #Heart_Monitor_Colour_Control_Knob_Backdrop{
@@ -201,6 +202,7 @@
   justify-content: center;
   align-items: center;
   color: pink; 
+  z-index: 5000;
 }
 
 #Heart_Monitor_Colour_Control_Knob_Ticker{
@@ -234,23 +236,35 @@
 
 @keyframes Heart_Pumping_Keyframes {
     0%{transform: scale(1); filter: opacity(1) saturate(1.2);;}
-    50%{transform: scale(0.8); filter: opacity(0.8) saturate(1);;}
+    50%{transform: scale(0.8); filter: opacity(1) saturate(1);;}
     100%{transform: scale(1); filter: opacity(1) saturate(1.2);;}
 }
 
-#Heart_Pulse_Graph{
+#Heart_Pulse_Graph_Container{
   position: absolute;
-  --Height: 8rem; 
-  height: var(--Height);
-  width: calc(100% - 5rem);
-  background-color: rgba(255,255,255,0.2);
-  top: calc(50% - var(--Height)/2);
-  left: 4.5rem;
-  
+   --Height: 8rem; 
+   height: var(--Height);
+   width: calc(100% - 5rem);
+   top: calc(50% - var(--Height)/2);
+   left: 4.5rem;
+   /* background-color: rgba(255,255,255,0.2); */
+   background-image: url('../Window_Styles/Volunteer_Work_Window_Assets/Waves.svg');
+   background-size: 30%;
+   background-repeat: repeat-x;
+   background-position: 0% 50%;
+   /* animation: Scroll 10s linear infinite; */
 }
 
 
 
+@keyframes Scroll {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
 
 
 

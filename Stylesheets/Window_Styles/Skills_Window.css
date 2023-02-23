@@ -10,7 +10,7 @@
     transition-property: height, width;
     height: var(--Height);
     width: var(--Width);
-    display: none;
+    /* display: none; */
 }
 
 .Expand_Skills_Window{

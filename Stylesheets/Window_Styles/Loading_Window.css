@@ -1,0 +1,62 @@
+
+#Loading_Window{
+  /* display: none; */
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 10000;
+}
+
+.OS_Loaded_Animation{
+  animation: Loaded_Page_Keyframes 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes Loaded_Page_Keyframes {
+  0%{filter: opacity(1); transform: translateY(0vh);}
+  99%{filter: opacity(0); transform: translateY(0vh);}
+  100%{filter: opacity(0); transform: translateY(100vh);}
+}
+
+#Loading_Icon{
+  position: relative;
+  --Size: 6rem;
+  height: var(--Size);
+  width: var(--Size);
+  border: 0.25rem solid white;
+  box-sizing: border-box;
+  top: calc(40% - var(--Size)/2);
+  left: calc(50% - var(--Size)/2);
+  background-image: url('../../Assets/Circle_Image.svg');
+  background-size: cover;
+  border-radius: 100%;
+  box-shadow: inset 0 0.15rem 0.2rem 0.05rem rgba(0,0,0,0.2);
+  transform: scale(0);
+  filter: opacity(0);
+  animation: Grow_Icon_Keyframes 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes Grow_Icon_Keyframes {
+  from{transform: scale(0); filter: opacity(0);}
+  to{transform: scale(1); filter: opacity(1);}
+}
+
+
+#Loading_Symbol{
+  --Diameter: 2rem; 
+  background-color: white;
+  height: ;
+  width: ;
+}
+
+
+
+
+
+
+
+
+
+
