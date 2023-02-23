@@ -133,7 +133,7 @@
 #Toybox_Icon{
   background-image: url("./Assets/Toybox_Icon_V2.svg");
   -webkit-transform: translate3d(0,0,0);
-  filter: hue-rotate(230deg);
+  /* filter: hue-rotate(230deg); */
   background-size: 105%;
 }
 

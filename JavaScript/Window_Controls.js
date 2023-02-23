@@ -14,7 +14,7 @@ function Setup_Window_Controls(){
     Maximize_Buttons[Index].parentElement.addEventListener('click',Maximize_Window);  
   }
   
-  let Window_Whitelist = ["Volunteer_Work_Window"];
+  let Window_Whitelist = ["Projects_Window"];
   
   for(let Button of Minimize_Buttons){
     let Window_ID = Button.parentElement.parentElement.parentElement.id;
@@ -48,10 +48,14 @@ function Setup_Window_Controls(){
   
   // let Minimize_Buttons = document.getElementsByClassName('Minimize_Toggles');
 
+}
 
+function Synchronize_Time(){
+  
   
   
 }
+
 
 function Close_Window(){
   // console.log("Close Window ...");

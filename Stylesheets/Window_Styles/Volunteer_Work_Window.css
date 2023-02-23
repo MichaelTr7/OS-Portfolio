@@ -194,7 +194,6 @@
   --Size: 8rem;
   position: absolute;
   left: -0.45rem;
-  /* margin-left: 1rem; */
   height: var(--Size);
   width: var(--Size);
   top: calc(50% - var(--Size)/2);
