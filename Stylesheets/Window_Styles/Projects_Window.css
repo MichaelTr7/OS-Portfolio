@@ -12,8 +12,6 @@
   height: var(--New_Height);
   min-height: 28rem;
   overflow: hidden;
-  will-change: top, left;
-  transition: all 0.001s linear;
 }
 
 .Projects_Window {
