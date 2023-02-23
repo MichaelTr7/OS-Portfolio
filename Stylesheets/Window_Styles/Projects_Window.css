@@ -106,41 +106,41 @@
 }
 
 #Icon_1{
-  background-image: url('./Project_Window_Assets/Mult_e_Tool_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Mult_e_Tool_Icon.webp');
 }
 
 #Icon_2{
-  background-image: url('./Project_Window_Assets/Icon_Converter_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Icon_Converter_Icon.webp');
 }
 
 #Icon_3{
-  background-image: url('./Project_Window_Assets/GPA_Grapher_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/GPA_Grapher_Icon.webp');
   background-size: 80%;
   background-color: rgb(55,55,55);
 }
 
 #Icon_4{
-  background-image: url('./Project_Window_Assets/Folder_Painter_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Folder_Painter_Icon.webp');
 }
 
 #Icon_5{
-  background-image: url('./Project_Window_Assets/Audio_Dock_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Audio_Dock_Icon.webp');
 }
 
 #Icon_6{
-  background-image: url('./Project_Window_Assets/Routine_Square_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Routine_Square_Icon.webp');
 }
 
 #Icon_7{
-  background-image: url('./Project_Window_Assets/ImTune_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/ImTune_Icon.webp');
 }
 
 #Icon_8{
-  background-image: url('./Project_Window_Assets/Simple_Connect_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Simple_Connect_Icon.webp');
 }
 
 #Icon_9, #Icon_10, #Icon_11, #Icon_12{
-  background-image: url('./Project_Window_Assets/Gear_Icon.png');
+  background-image: url('./Project_Window_Assets/Icons/Gear_Icon.webp');
   filter: opacity(0.95);
 }
 
@@ -221,20 +221,20 @@
   float: right;
   height: 100%;
   width: 40%;
-  background-image: url('./Project_Window_Assets/Chrome_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Chrome_Icon.svg');
   background-repeat: no-repeat;
   background-size: 60%;
   background-position: center;
 }
 
 #Launch_Icon_2{
-  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
   filter: opacity(0.8);
 }
 
 #Launch_Icon_3A,#Launch_Icon_3B{
   position: absolute;
-  background-image: url('./Project_Window_Assets/Windows_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Windows_Icon.svg');
   height: calc(100% - 0.7rem);
   width: 100%;
   background-size: 42%;
@@ -242,7 +242,7 @@
 }
 
 #Launch_Icon_3B{
-  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
 }
 
 #Icon_3_Download_Button{
@@ -262,28 +262,28 @@
 }
 
 #Launch_Icon_4{
-  background-image: url('./Project_Window_Assets/Code_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Code_Icon.svg');
   filter: opacity(0.8);
 }
 
 #Launch_Icon_5{
-  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
   filter: opacity(0.8);
 }
 
 #Launch_Icon_6{
-  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
   filter: opacity(0.8);
 }
 
 #Launch_Icon_7{
-  background-image: url('./Project_Window_Assets/Code_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Code_Icon.svg');
   filter: opacity(0.8);
 }
 
 #Launch_Icon_8A,#Launch_Icon_8B{
   position: absolute;
-  background-image: url('./Project_Window_Assets/Chrome_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Chrome_Icon.svg');
   height: calc(100% - 0.7rem);
   width: 100%;
   background-size: 42%;
@@ -291,7 +291,7 @@
 }
 
 #Launch_Icon_8B{
-  background-image: url('./Project_Window_Assets/Finder_Icon.svg');
+  background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
 }
 
 #Icon_8_Download_Button{
@@ -317,21 +317,21 @@
 }
 
 #Project_Preview_1{
-  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.png');
+  background-image: url('./Project_Window_Assets/Mult_e_Tool_Preview.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #Project_Preview_2{
-  background-image: url('./Project_Window_Assets/Icon_Converter_Preview.png');
+  background-image: url('./Project_Window_Assets/Icon_Converter_Preview.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #Project_Preview_3{
-  background-image: url('./Project_Window_Assets/GPA_Grapher_Preview.png');
+  background-image: url('./Project_Window_Assets/GPA_Grapher_Preview.webp');
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: center;
@@ -339,14 +339,14 @@
 }
 
 #Project_Preview_4{
-  background-image: url('./Project_Window_Assets/Folder_Painter_Preview_2.png');
+  background-image: url('./Project_Window_Assets/Folder_Painter_Preview_2.webp');
   background-repeat: no-repeat;
   background-size: 145%;
   background-position: center;
 }
 
 #Project_Preview_5{
-  background-image: url('./Project_Window_Assets/Audio_Dock_Preview.png');
+  background-image: url('./Project_Window_Assets/Audio_Dock_Preview.webp');
   background-color: #141E43;
   background-repeat: no-repeat;
   background-size: cover;
@@ -354,7 +354,7 @@
 }
 
 #Project_Preview_6{
-  background-image: url('./Project_Window_Assets/Routine_Square_Preview.png');
+  background-image: url('./Project_Window_Assets/Routine_Square_Preview.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -362,7 +362,7 @@
 }
 
 #Project_Preview_7{
-  background-image: url('./Project_Window_Assets/ImTune_Preview.png');
+  background-image: url('./Project_Window_Assets/ImTune_Preview.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -370,7 +370,7 @@
 }
 
 #Project_Preview_8{
-  background-image: url('./Project_Window_Assets/Connect4_Preview.png');
+  background-image: url('./Project_Window_Assets/Connect4_Preview.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-size: 115%;
@@ -379,7 +379,7 @@
 }
 
 #Project_Preview_9{
-  background-image: url('./Project_Window_Assets/Fuse_And_Sound_Module_Preview.png');
+  background-image: url('./Project_Window_Assets/Fuse_And_Sound_Module_Preview.webp');
   background-repeat: no-repeat;
   background-size: 140%;
   background-position: center;
@@ -397,7 +397,7 @@
 }
 
 #Project_Preview_11{
-  background-image: url('./Project_Window_Assets/Arduino_Mega_Shield_Preview.png');
+  background-image: url('./Project_Window_Assets/Arduino_Mega_Shield_Preview.webp');
   background-repeat: no-repeat;
   background-size: 105%;
   background-position: center;
