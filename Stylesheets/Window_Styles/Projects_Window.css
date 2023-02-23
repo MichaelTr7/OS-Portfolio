@@ -2,7 +2,7 @@
 .Projects_Window{  
   --Width: 35rem;
   width: var(--Width);
-  top: calc(2 * 3rem + 2.5rem);
+  top: calc(1 * 3rem + 2.5rem);
   left: calc(50% - var(--Width)/2);
   z-index: 52;
   filter: opacity(1);
