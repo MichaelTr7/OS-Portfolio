@@ -14,17 +14,18 @@ window.onload = function(){
   }  
   
   let Progress_Bar = document.getElementById('Progress_Bar');
+  Progress_Bar.style.setProperty('--Progress_Percentage','20%');
   Setup_Control_Centre();
-  Progress_Bar.style.setProperty('--Progress_Percentage','5%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','25%');
   Setup_Spectrum_Analyzer();
   Setup_Window_Functionality();
-  Progress_Bar.style.setProperty('--Progress_Percentage','15%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
   Setup_Window_Layering();
   Setup_Window_Controls();
-  Progress_Bar.style.setProperty('--Progress_Percentage','25%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','35%');
   Setup_Certifications_App();
   Setup_Courses_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','35%');
+  Progress_Bar.style.setProperty('--Progress_Percentage','40%');
   Setup_Education_App();
   Setup_Links_App();
   Progress_Bar.style.setProperty('--Progress_Percentage','45%');
