@@ -141,7 +141,7 @@
 
 #Icon_9, #Icon_10, #Icon_11, #Icon_12{
   background-image: url('./Project_Window_Assets/Icons/Gear_Icon.webp');
-  filter: opacity(0.95);
+  /* filter: opacity(0.95); */
 }
 
 
@@ -229,7 +229,7 @@
 
 #Launch_Icon_2{
   background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_3A,#Launch_Icon_3B{
@@ -238,7 +238,7 @@
   height: calc(100% - 0.7rem);
   width: 100%;
   background-size: 42%;
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_3B{
@@ -263,22 +263,22 @@
 
 #Launch_Icon_4{
   background-image: url('./Project_Window_Assets/Icons/Code_Icon.svg');
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_5{
   background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_6{
   background-image: url('./Project_Window_Assets/Icons/Finder_Icon.svg');
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_7{
   background-image: url('./Project_Window_Assets/Icons/Code_Icon.svg');
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_8A,#Launch_Icon_8B{
@@ -287,7 +287,7 @@
   height: calc(100% - 0.7rem);
   width: 100%;
   background-size: 42%;
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
 }
 
 #Launch_Icon_8B{
@@ -358,7 +358,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
 }
 
 #Project_Preview_7{
@@ -375,7 +375,7 @@
   background-size: cover;
   background-size: 115%;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
 }
 
 #Project_Preview_9{
@@ -383,7 +383,7 @@
   background-repeat: no-repeat;
   background-size: 140%;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
   background-color: black;
 }
 
@@ -392,7 +392,7 @@
   background-repeat: no-repeat;
   background-size: 105%;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
   background-color: black;
 }
 
@@ -401,7 +401,7 @@
   background-repeat: no-repeat;
   background-size: 105%;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
   background-color: black;
 }
 
@@ -410,7 +410,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  filter: saturate(1.1) brightness(1.05);
+  /* filter: saturate(1.1) brightness(1.05); */
   background-color: black;
 }
 
