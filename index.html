@@ -5,6 +5,25 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta charset="utf-8">
     <title>OS Portfolio</title>
+    
+    <link rel="icon" type="image/ico" href="./favicon.ico">
+    <link rel="shortcut icon" href="./Assets/Favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/Favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./Assets/Favicons/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./Assets/Favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./Assets/Favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./Assets/Favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./Assets/Favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./Assets/Favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./Assets/Favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./Assets/Favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./Assets/Favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./Assets/Favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/Favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="228x228" href="./Assets/Favicons/apple-touch-icon-228x228.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="./Assets/Favicons/apple-touch-icon-1024x1024.png">
+
     <link rel="stylesheet" href="./Stylesheets/Window.css">
     <link rel="stylesheet" href="./Stylesheets/Colours.css">
     <link rel="stylesheet" href="./Stylesheets/Menu_Bar.css">
@@ -38,8 +57,8 @@
 
     <!--Linking scripts-->
     <!--Adding P5.js libraries/modules-->
-    <script src = "./p5/p5.js"></script>
-    <script src = "./p5/addons/p5.sound.js"></script>
+    <script src = "./Libraries/p5/p5.js"></script>
+    <script src = "./Libraries/p5/addons/p5.sound.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="./three.js-master/build/three.js"></script> -->
     <!-- <script src="https://cdn.rawgit.com/mrdoob/three.js/r129/examples/js/loaders/STLLoader.js"></script> -->
@@ -91,6 +110,11 @@
 <div id="Loading_Window">
   <div id="Loading_Icon"> </div>
   <div id="Progress_Bar"></div>
+  <div id="Loading_Circle">
+    <div id="Inner_Loading_Circle"></div>
+    <div id="Loading_Circle_Perimeter_Head"> </div>
+  </div>
+
 </div>
 
 <!-- *********************************************************************** -->

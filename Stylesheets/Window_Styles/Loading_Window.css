@@ -2,6 +2,7 @@
 
 :root{
   --Loading_Icon_Size: 6rem;
+  --Progress_Circle_Thickness: 0.25rem;
 }
 
 #Loading_Window{
@@ -70,9 +71,8 @@
   --Progress_Percentage: 0%;
   background-position: calc(100% - var(--Progress_Percentage)) 50%;
   transition: 1s;
+  display: none;
 }
-
-
 
 @keyframes Expand_Progress_Bar_Frames {
   0%{transform: scaleX(0); filter: opacity(1);}
@@ -80,6 +80,47 @@
   100%{transform: scaleX(1); filter: opacity(1);}
 }
 
+#Loading_Circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  --Diameter: 1.7rem;
+  --Top_Margin: 3.5rem;
+  margin-top: 2rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(37% + var(--Diameter)/2 + var(--Top_Margin));
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  background: conic-gradient(rgba(255,255,255,0) 15%, white 60%, white 100%);
+  background-size: cover;
+  background-position: center;
+  animation: Spinning_Frames 1s linear forwards infinite;
+}
+
+#Inner_Loading_Circle{
+  --Diameter: calc(100% - 2*var(--Progress_Circle_Thickness));
+  height: var(--Diameter);
+  width: var(--Diameter);
+  background-color: black;
+  border-radius: 100%;
+}
+
+#Loading_Circle_Perimeter_Head{
+  position: absolute;
+  height: var(--Progress_Circle_Thickness);
+  width: var(--Progress_Circle_Thickness);
+  background-color: rgba(255,255,255,1);
+  top: 0;
+  border-radius: 100%;
+}
+
+
+@keyframes Spinning_Frames {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
 
 
 
