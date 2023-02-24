@@ -24,31 +24,18 @@ function Setup_Window_Controls(){
     }
   }
   
-  setTimeout(function () {
-    console.log("Done");
-    let Progress_Bar = document.getElementById('Progress_Bar');
-    Progress_Bar.style.setProperty('--Progress_Percentage','100%');
-    document.getElementById('Loading_Window').classList.add('OS_Loaded_Animation');
-  }, 20);
-  
-  setTimeout(function () {
-    document.getElementById('Loading_Window').remove();
-  }, 2000);
-  
+  Setup_Operating_System();
   
   var App_Icons = document.getElementsByClassName('App_Icons');
   for(Index=0; Index < App_Icons.length; Index++){
     App_Icons[Index].addEventListener('click',Toggle_Window);
   }
-  // document.addEventListener("keydown",Hot_Key_Pressed);
   
   var Window_Bodies = document.getElementsByClassName('Window_Bodies');
   for(Index=0; Index < Window_Bodies.length; Index++){
     Window_Bodies[Index].addEventListener("hover",Prevent_Dragging_On_Child_Elements);
   }
   
-  // let Minimize_Buttons = document.getElementsByClassName('Minimize_Toggles');
-
 }
 
 function Synchronize_Time(){
@@ -150,18 +137,43 @@ function Prevent_Dragging_On_Child_Elements(e){
 }
 
 
-
-
-
 function Hot_Key_Pressed(e){
   let Typed_Letter = String(e.key).toLowerCase();
   console.log(Typed_Letter);
 }
 
 
+async function Setup_Operating_System() {
+  await Minimize_All_Windows();
+  Load_OS();
+}
 
+function Minimize_All_Windows() {
+  return new Promise(function(resolve, reject) {
+    // This function takes some time to complete
+    setTimeout(function() {
+      let Window_Whitelist = ["Projects_Window"];
+      // let Window_Whitelist = ["Courses_Window"];
+      let Minimize_Buttons = document.getElementsByClassName('Minimize_Toggles');
 
+      for(let Button of Minimize_Buttons){
+        let Window_ID = Button.parentElement.parentElement.parentElement.id;
+        if(!Window_Whitelist.includes(Window_ID)){
+          Button.parentElement.click();
+        }
+      }
+      resolve();
+    }, 0);
+  });
+}
 
+function Load_OS() {
+    let Loading_Window = document.getElementById('Loading_Window');
+    Loading_Window.classList.add('OS_Loaded_Animation');
+    setTimeout(function () {
+      Loading_Window.remove();
+    }, 2000);
+}
 
 
 

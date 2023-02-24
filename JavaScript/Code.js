@@ -13,31 +13,21 @@ window.onload = function(){
     Application_Windows[Index].addEventListener('click',Unfocus_Cards);
   }  
   
-  let Progress_Bar = document.getElementById('Progress_Bar');
-  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
   Setup_Control_Centre();
-  Progress_Bar.style.setProperty('--Progress_Percentage','30%');
   Setup_Spectrum_Analyzer();
   Setup_Window_Functionality();
-  Progress_Bar.style.setProperty('--Progress_Percentage','35%');
   Setup_Window_Layering();
   Setup_Window_Controls();
-  Progress_Bar.style.setProperty('--Progress_Percentage','35%');
   Setup_Certifications_App();
   Setup_Courses_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','40%');
   Setup_Education_App();
   Setup_Links_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','45%');
   Setup_Mail_App();
   Setup_Messages_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','55%');
   Setup_Projects_App();
   Setup_Skills_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','65%');
   Setup_Toybox_App();
   Setup_Volunteer_Work_App();
-  Progress_Bar.style.setProperty('--Progress_Percentage','75%');
   
   
   let Button_Identifier = String(this.id);
