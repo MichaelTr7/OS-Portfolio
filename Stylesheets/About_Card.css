@@ -21,7 +21,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: 50%;
+  /* font-size: 50%; */
   font-weight: bold;
   color: rgba(0,0,0,0.3);
   /* box-shadow: inset 0 -0.1rem 0.5rem 0 rgba(0,0,0,0.2); */
@@ -86,12 +86,9 @@
 .About_Card{
   position: absolute;
   color: black;
-  --Height: 18em;
-  --Width: 32em;
-  height: var(--Height);
-  width: var(--Width);  
-  top: calc(50% - var(--Height)/2 - 1.5em);
-  left: calc(50% - var(--Width)/2);
+  top: 2.5rem;
+  left: 0.5rem;
+  /* left: calc(50% - var(--Width)/2); */
   background-color: rgba(255,255,255,0.4);
   border-radius: 0.5em;
   z-index: 105;
@@ -100,12 +97,16 @@
   box-shadow: 0em 0.1em 0.5em 0.01em rgba(0,0,0,0.1);
   transform: scale(0);
   transition: 0.1s ease;
-  font-size: min(2vw,20px);
+  font-size: 0.8rem;
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr 0.25fr;
   grid-template-rows: 2fr 0.5fr repeat(10,1fr) 4fr;
   color: rgb(65,65,65);
   will-change: opacity, transform;
+  --Height: 12.6rem;
+  --Width: 22.4rem;
+  height: var(--Height);
+  width: var(--Width);  
 } 
 
 .Show_About_Card{
@@ -152,7 +153,7 @@
   display: flex;
   align-items: flex-end;
   grid-column: 2 / span 3;
-  font-size: 1.3em;
+  font-size: 1rem;
 }
 
 #Image_Container{
@@ -168,8 +169,8 @@
   display: flex;
   position: relative;
   background-color: gray;
-  height: min(20vw,10em);
-  width: min(20vw,10em); 
+  height: 6rem;
+  width: 6rem;
   border-radius: 100%;
   border: 0.32em solid rgba(220,220,220,1);
   box-sizing: border-box;
@@ -177,13 +178,15 @@
   background-image: url("./Assets/Circle_Image.svg");
   background-position: center;
   background-size: cover;
+  margin-top: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 .Detail_Buttons{
   display: flex;
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.7em;
+  font-size: 0.4rem;
   border-radius: 0.35em;
   margin-right: 1em;
   left: 0;

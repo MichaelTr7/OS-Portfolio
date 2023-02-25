@@ -29,10 +29,10 @@ body::-webkit-scrollbar {
 }
 
 .Close_Window{
+  display: none;
   pointer-events: none;
-  opacity: 0;
+  /* opacity: 0; */
 }
-
 
 :root{
   --Window_Scaler: 1;
