@@ -107,6 +107,7 @@
   --Width: 22.4rem;
   height: var(--Height);
   width: var(--Width);  
+  transform-origin: top left;
 } 
 
 .Show_About_Card{
