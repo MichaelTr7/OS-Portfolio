@@ -110,6 +110,7 @@ function Toggle_Window(){
   // console.log("Toggle Window ...");
   var Window_ID = String(this.id).replace("Icon","Window");
   var Target_Window = document.getElementById(Window_ID);
+  Pop_To_Top(Target_Window);
   var Contains_Minimize = Target_Window.classList.contains("Shrink_Window");
   var Contains_Close = Target_Window.classList.contains("Close_Window");
   
