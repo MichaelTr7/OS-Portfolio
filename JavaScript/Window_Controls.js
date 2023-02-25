@@ -89,6 +89,7 @@ function Minimize_Window(){
   Parent_Window.classList.remove('Shrink_Window');
   void Parent_Window.offsetWidth;   
   Parent_Window.classList.add('Shrink_Window');  
+  
 }
 
 function Maximize_Window(){
@@ -99,6 +100,8 @@ function Maximize_Window(){
 }
 
 function Toggle_Window(){
+  var Dock_Icon = document.getElementById(this.id);
+  Dock_Icon.style.pointerEvents = 'none';
   var All_Windows = document.getElementsByClassName("Window_Templates");
   for(Index=0; Index<All_Windows.length; Index++){
     All_Windows[Index].classList.remove('Unshrink_Window'); 
@@ -128,6 +131,12 @@ function Toggle_Window(){
   if(Contains_Close){
     Target_Window.classList.remove("Close_Window");
   }
+  
+  setTimeout(function () {
+    Dock_Icon.style.pointerEvents = 'all';
+
+  }, 1000);
+
 }
 
 function Prevent_Dragging_On_Child_Elements(e){
