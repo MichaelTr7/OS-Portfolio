@@ -71,7 +71,12 @@ body::-webkit-scrollbar {
 }
 
 
-
+.Disabled_Toggle_Buttons{
+  /* background-color: rgba(244,191,79,1); */
+  background-color: grey;
+  filter: opacity(0.3);
+  pointer-events: none;
+}
 
 
 
