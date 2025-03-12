@@ -23,7 +23,7 @@ function Open_Email(){
   }
   
   let Email_Body = document.getElementById('Body_Input').value;
-  let email = "mail.os.portfolio+messages@gmail.com";
+  let email = "";
   let subject = 'OS Portfolio Message From ' + Name;
   var emailBody = Email_Body.replace(/(\r\n|\n)/g, "%0D%0A");  
   document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
